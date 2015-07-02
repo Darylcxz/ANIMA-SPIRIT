@@ -18,6 +18,7 @@ public class KenaBomb : MonoBehaviour {
 		
 		if (Input.GetButtonDown ("Action") && Gooexplode.onGoo == true) {
 			rb.AddExplosionForce(power, exppoint.transform.position, radius, 3.0f,ForceMode.Impulse);
+
 			Disappear();
 		}
 	}

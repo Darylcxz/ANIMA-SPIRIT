@@ -98,6 +98,11 @@ public class Lightsource : MonoBehaviour {
 					lightbeam.SetPosition (1, hit7.point);
 					if(lightTriggered2 == false && slope2.transform.position.y < 171.8f)
 						lightTriggered2 = true;
+					if(!isplaying)
+					{
+						ding.Play();
+						isplaying = true;
+					}
 				}
 			}
 		}
