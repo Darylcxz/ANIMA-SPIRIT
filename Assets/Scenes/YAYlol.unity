@@ -1276,12 +1276,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 645329661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ebeb8669bb83834fa0d6508d506af6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 15068de7561957141a9a5fe9b517cc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AIState: 0
   kaboom: {fileID: 1427861583}
-  bigBoom: {fileID: 19887388, guid: b2ba0a19f831ad64e818a556e8f18d1d, type: 2}
+  bigboom: {fileID: 0}
   glow: {fileID: 1709077751}
+--- !u!54 &645329663
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645329661}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &645329664
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645329661}
+  m_Enabled: 1
+  m_Radius: .5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &653103291 stripped
 Transform:
   m_PrefabParentObject: {fileID: 472348, guid: 388b5fbdfe6b1e64b99e1ceb8b8a38b6, type: 2}
@@ -5519,7 +5555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469668, guid: 9027ed585199bfd4891e3be4cff077b9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 267
+      value: 267.600006
       objectReference: {fileID: 0}
     - target: {fileID: 469668, guid: 9027ed585199bfd4891e3be4cff077b9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5565,7 +5601,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 14334592, guid: 9027ed585199bfd4891e3be4cff077b9, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11488718, guid: 9027ed585199bfd4891e3be4cff077b9, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9027ed585199bfd4891e3be4cff077b9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1973387768
@@ -5697,8 +5738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c370abaf8fb8e124196e7e51fefe79bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 30
-  jumpforce: 0
+  movespeed: 80
+  jumpforce: 70
   gravity: 100
 --- !u!114 &2001729729
 MonoBehaviour:
@@ -5706,7 +5747,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2001729727}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc1d4ad98e54a4140a02887b877073cd, type: 3}
   m_Name: 

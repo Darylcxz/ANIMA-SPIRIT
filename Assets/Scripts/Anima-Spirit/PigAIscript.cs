@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PigAIScript : MonoBehaviour {
+public class PigAIScript : AIbase {
 
     Transform player;
     NavMeshAgent pig;
@@ -24,7 +24,8 @@ public class PigAIScript : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        
+
+		print("start");
         pig = gameObject.GetComponent<NavMeshAgent>();
         originPos = gameObject.GetComponent<Transform>().position;
 	
@@ -129,4 +130,14 @@ public class PigAIScript : MonoBehaviour {
        // CancelInvoke();
      
     }
+
+	protected override void ActivateAbility()
+	{
+
+	}
+
+	protected override void PassiveAbility()
+	{
+
+	}
 }
