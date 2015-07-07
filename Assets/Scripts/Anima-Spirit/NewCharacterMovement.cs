@@ -34,7 +34,6 @@ public class NewCharacterMovement : MonoBehaviour {
 				if(Input.GetButtonDown("Jump"))
 					moveDirection.y = jumpforce;
 			}
-			else if(
 			moveDirection.y -= gravity * Time.deltaTime;
 			ctrllr.Move (moveDirection * Time.deltaTime);
 		}
