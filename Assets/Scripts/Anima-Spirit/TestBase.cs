@@ -9,9 +9,7 @@ public class TestBase : AIbase {
 	}
 	
 	// Update is called once per frame
-	void Update () {
 	
-	}
     protected override void ActivateAbility()
     {
         //throw new System.NotImplementedException();
