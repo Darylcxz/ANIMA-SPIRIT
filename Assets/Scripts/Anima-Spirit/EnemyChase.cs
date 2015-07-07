@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyChase : MonoBehaviour {
+public class EnemyChase : AIbase {
 	enum State {Idle, Chase, Death, Return};
 	State myStates;
 	private NavMeshAgent agent;
@@ -15,7 +15,6 @@ public class EnemyChase : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent> ();
 		target = GameObject.Find ("Character");
 	}
-	
 
 	// Update is called once per frame
 	void Update () {
@@ -52,6 +51,16 @@ public class EnemyChase : MonoBehaviour {
 		}
 
 	
+	}
+
+	protected override void ActivateAbility()
+	{
+
+	}
+
+	protected override void PassiveAbility()
+	{
+		
 	}
 
 
