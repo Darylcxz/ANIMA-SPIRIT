@@ -264,6 +264,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &80328093
 Transform:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AIState: 0
-  retreatDist: 0
+  retreatDist: 50
 --- !u!54 &352507338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -772,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e981f5d4c96a07741b0fee65ef9cb5f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PigLogic: 0
 --- !u!195 &352507340
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1063,12 +1065,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 741817865}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3480bd719bf699d47a0c2342c0aea33c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AIState: 0
+  retreatDist: 50
 --- !u!54 &741817867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1158,7 +1161,7 @@ Transform:
   m_LocalScale: {x: 1.65303588, y: 1.65303588, z: 1.65303588}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
 --- !u!1001 &800789712
 Prefab:
   m_ObjectHideFlags: 0
