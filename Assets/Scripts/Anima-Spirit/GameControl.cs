@@ -11,7 +11,7 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		charactermovement.isBeingControlled = true;
+		charactermovement.isBeingControlled = false;
 
 
 	}

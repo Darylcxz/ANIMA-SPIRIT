@@ -17,8 +17,8 @@ public class WanderScripte : MonoBehaviour {
     };
 
     public States AIStates = States.idle;
-    bool ready;
-    float waitTime;
+    bool ready = false;
+    float waitTime = 3.0f;
     Vector3 origin;
     float distance;
 
@@ -27,8 +27,8 @@ public class WanderScripte : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Agent = GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
-        ready = false;
-        waitTime = 3.0f;
+ 
+   
 
 	}
 	
@@ -46,10 +46,10 @@ public class WanderScripte : MonoBehaviour {
             case States.idle:
                 Invoke("WaitTimer", waitTime);
                 //idle logic here
-                
-                
-                
-                
+
+
+
+                Debug.Log("penis");
                 
                 
                 if (ready)

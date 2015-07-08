@@ -17,8 +17,8 @@ public class lightStatue : MonoBehaviour {
 	void Update () {
 
 		transform.Rotate (Vector3.up * 70 * Time.deltaTime);
-
-		if (Physics.Raycast (raypos, transform.forward, out hit, 200)) {
+		Debug.DrawRay(raypos,transform.forward * 250);
+		if (Physics.Raycast (raypos, transform.forward, out hit, 250)) {
 
 			if(hit.collider.tag == "Destructible" && lightworking == true)
 			{
