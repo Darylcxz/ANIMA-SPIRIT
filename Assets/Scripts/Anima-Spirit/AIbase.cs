@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof( NavMeshAgent))]
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent (typeof( NavMeshAgent))]
+//[RequireComponent(typeof(Rigidbody))]
 //[RequireComponent(typeof(CharacterController))]
 
 
@@ -10,6 +10,9 @@ public abstract class AIbase : MonoBehaviour {
 
 	bool autoFire = false;
 	bool isPossessed = false;
+
+    Transform player;
+    NavMeshAgent Agent;
 
    public enum States
     {
@@ -21,28 +24,28 @@ public abstract class AIbase : MonoBehaviour {
         pursue
     };
 
-    public States AIState = States.idle;
-    float idleTime = 3.0f;
-    bool AIReady = false;
-
-    Transform spawnPoint;
-    NavMeshAgent AIBody;
-    CharacterController moveControl;
-    Rigidbody rb;
+    public States AIState = States.walk;
+    bool ready = false;
+    float waitTime = 3.0f;
+    Vector3 origin;
     float distance;
+   public float retreatDist = 50.0f;
+
+    
 	 
 	protected abstract void ActivateAbility();
 	protected abstract void PassiveAbility();
 	// Use this for initialization
     void Start()
     {
-        spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<Transform>();
-        AIBody = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Agent = GetComponent<NavMeshAgent>();
+        origin = gameObject.transform.position;
 
     }
 	// Update is called once per frame
-	void Update () {
+	protected void Update () {
+        distance = Vector3.Distance(gameObject.transform.position, origin); //distance between you and origin
         Roam();
 		PassiveAbility ();
         
@@ -56,30 +59,72 @@ public abstract class AIbase : MonoBehaviour {
 			
 	}
 
-	void Roam()
+	protected virtual void Roam()
 	{
 		//logic for AI roaming
         switch (AIState)
         {
             case States.idle:
                 //plays AI specific Animations
-              //  AIState = States.walk;
-                AIBody.Move(transform.forward * 100);
-                print("hey");
+                Invoke("WaitTimer", waitTime);
+
+
+
+
+
+                if (ready)
+                {
+                    AIState = States.walk;
+                    ready = false;
+                    CancelInvoke();
+                }
                 break;
             case States.walk:
                 //walks forward for a set amount of time (random distance)
-                gameObject.transform.localPosition += transform.forward*100;
+                Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
+                gameObject.transform.localPosition += transform.forward/5;
+                if(distance > retreatDist)
+                {
+                    AIState = States.retreat;
+                    ready = false;
+                    CancelInvoke();
+                }
+                else if (ready)
+                {
+                    AIState = States.rotate;
+                    ready = false;
+                    CancelInvoke();
+                }
                 break;
             case States.rotate:
                 //rotates for set amount of time (random angle)
+                Invoke("WaitTimer", waitTime*(Random.Range(0.1f,1.0f)));
+                gameObject.transform.eulerAngles += new Vector3(0, Mathf.Ceil(Random.Range(-2,1)), 0);
+                if (ready)
+                {
+                    AIState = States.walk;
+                    ready = false;
+                    CancelInvoke();
+                }
                 break;
             case States.retreat:
                 //runs back to start
+                Agent.SetDestination(origin);
+                if (distance < 10)
+                {
+                    Agent.ResetPath();
+                    AIState = States.idle;
+                    ready = false;
+                    CancelInvoke();
+                }
                 break;
             case States.possessed:
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
                 //with this, the functions below may need to obe placed in here.
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    ActivateAbility();
+                }
                 break;
             case States.pursue:
                 //faces player and walks toward player. additional feature, may be discarded. Good to have.
@@ -114,15 +159,20 @@ public abstract class AIbase : MonoBehaviour {
 
 	}
 
-	void OnMouseDown()
-	{
-		if(GameControl.spiritmode)
-		{
-			//possess logic
-			isPossessed = true;
+    void WaitTimer()
+    {
+        ready = true;
+    }
 
-		}
-	}
+    //void OnMouseDown()
+    //{
+    //    if(GameControl.spiritmode)
+    //    {
+    //        //possess logic
+    //        isPossessed = true;
+
+    //    }
+    //}
 
     //void GoodMovement()
     //{
