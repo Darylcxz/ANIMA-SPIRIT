@@ -13,9 +13,6 @@ public class PigUniqueAI : AIbase {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
 	protected override void ActivateAbility()
 	{
 		kaboom.Play();

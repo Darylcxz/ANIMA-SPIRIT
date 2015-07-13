@@ -3,9 +3,11 @@ using System.Collections;
 
 public class TestBase : AIbase {
 
+    protected Vector3 asd;
 	// Use this for initialization
 	void Start () {
-	
+        Agent = GetComponent<NavMeshAgent>();
+        origin = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -18,6 +20,10 @@ public class TestBase : AIbase {
     protected override void PassiveAbility()
     {
       //  throw new System.NotImplementedException();
-        Debug.Log("meow");
+       
+    }
+    protected override Vector3 OriginPos()
+    {
+        return asd;
     }
 }

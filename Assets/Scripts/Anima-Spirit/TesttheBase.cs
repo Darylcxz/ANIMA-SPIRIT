@@ -11,9 +11,7 @@ public class TesttheBase : AIbase {
 	}
 	
 	// Update is called once per frame
-	void Update () {
 	
-	}
 
 	protected override void ActivateAbility()
 	{
