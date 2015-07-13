@@ -40,14 +40,14 @@ public abstract class AIbase : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Agent = gameObject.GetComponent<NavMeshAgent>();
-        Debug.Log(origin);
+       
        // origin = gameObject.transform.position;
 
     }
 	// Update is called once per frame
 	protected void Update () {
         distance = Vector3.Distance(gameObject.transform.position, origin); //distance between you and origin
-        Debug.Log(origin);
+     
         Roam();
 		PassiveAbility ();
         
@@ -85,7 +85,6 @@ public abstract class AIbase : MonoBehaviour {
                 //walks forward for a set amount of time (random distance)
                 Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
                 gameObject.transform.localPosition += transform.forward/5;
-                Debug.Log(Agent);
                 if(distance > retreatDist)
                 {
                     AIState = States.retreat;
@@ -112,7 +111,7 @@ public abstract class AIbase : MonoBehaviour {
                 break;
             case States.retreat:
                 //runs back to start
-                Debug.Log(origin);
+                
                 Agent.SetDestination(origin);
                 if (distance < 10)
                 {

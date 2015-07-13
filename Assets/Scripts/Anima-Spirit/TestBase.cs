@@ -22,8 +22,5 @@ public class TestBase : AIbase {
       //  throw new System.NotImplementedException();
        
     }
-    protected override Vector3 OriginPos()
-    {
-        return asd;
-    }
+   
 }
