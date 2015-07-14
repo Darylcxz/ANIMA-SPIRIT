@@ -26,6 +26,9 @@ public class MovementController : MonoBehaviour {
     float hMove;
     float vMove;
 
+    float vMoveRight;
+    float hMoveRight;
+
     int attackMode = 0; //1: Stab, 2: swing
 
     float groundDist;
@@ -56,10 +59,16 @@ public class MovementController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         CheckInput();
-        Debug.Log(attackMode + "" + ready);
+     //   Debug.Log(attackMode + "" + ready);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
+
+        if (possess && ready == false && isRolling == false && isGrounded())
+        {
+            charStates = States.possess;
+        }
+
         switch (charStates)
         {
             case States.idle:
@@ -88,7 +97,7 @@ public class MovementController : MonoBehaviour {
                 break;
             case States.move:
                 RotatingLogic(hMove, vMove);
-                MovementLogic();
+                MovementLogic(hMove,vMove);
                 attackMode = 0;
                 if (vMove == 0 && hMove ==0)
                 {
@@ -107,6 +116,14 @@ public class MovementController : MonoBehaviour {
                 }           
                 break;
             case States.possess:
+                MovementLogic(hMoveRight, vMoveRight);
+                RotatingLogic(hMoveRight, vMoveRight);
+                if (GameControl.spiritmode == false)
+                {
+                    charStates = States.idle;
+
+                    Debug.Log("possass");
+                }
                 break;
             case States.roll:
                 
@@ -150,10 +167,14 @@ public class MovementController : MonoBehaviour {
         possess = Input.GetMouseButtonDown(1);
         hMove = Input.GetAxis("Horizontal");
         vMove = Input.GetAxis("Vertical");
+
+        hMoveRight = Input.GetAxis("RHorizontal");
+        vMoveRight = Input.GetAxis("RVertical");
     }
-    void MovementLogic()
+    void MovementLogic(float horizontal, float vertical)
     {
-        Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+        
+        Vector3 targetVelocity = new Vector3(horizontal, 0, vertical);
         targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;

@@ -7,6 +7,7 @@ public class TestBase : AIbase {
 	// Use this for initialization
 	void Start () {
         Agent = GetComponent<NavMeshAgent>();
+        _rigidBody = GetComponent<Rigidbody>();
         origin = gameObject.transform.position;
 	}
 	
