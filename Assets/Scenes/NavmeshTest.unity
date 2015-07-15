@@ -288,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c97bf1a263d90a45baacb047df9cbd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bolangu: {fileID: 0}
-  spiritjotai: {fileID: 0}
+  bolangu: {fileID: 2800000, guid: 0c6271a290ef75b4c97d58746c86c5b8, type: 3}
+  spiritjotai: {fileID: 2800000, guid: 1b0c39d9270a04943924d6076253c45c, type: 3}
 --- !u!1 &89617728 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 119582, guid: 4f7f227d5739e7e429c6ead9190e6f24, type: 2}
@@ -1536,6 +1536,33 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: -.00100000005, z: .998000026}
   m_TimeToStationary: .5
+--- !u!1 &1250686023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1250686025}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250686025
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1250686023}
+  m_LocalRotation: {x: 0, y: -.660092115, z: 0, w: .751184702}
+  m_LocalPosition: {x: -263.309998, y: 113.599998, z: -366.970001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
 --- !u!1001 &1351159482
 Prefab:
   m_ObjectHideFlags: 0
