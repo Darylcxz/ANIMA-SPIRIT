@@ -15,6 +15,7 @@ TagManager:
   - yellow
   - purple
   - SpawnPoint
+  - Torch
   layers:
   - Default
   - TransparentFX
