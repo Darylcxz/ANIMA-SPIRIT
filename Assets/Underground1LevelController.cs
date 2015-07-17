@@ -4,7 +4,7 @@ using System.Collections;
 public class Underground1LevelController : MonoBehaviour {
 
     public GameObject _destroyable;
-    public static bool isExplosion;
+    public bool isExplosion;
     public bool isDead;
 
 
@@ -22,7 +22,11 @@ public class Underground1LevelController : MonoBehaviour {
     {
         if (isExplosion)
         {
-            Destroy(_destroyable);
+            _destroyable.SetActive(false);
+        }
+        else if (!isExplosion)
+        {
+            _destroyable.SetActive(true);
         }
     }
 }

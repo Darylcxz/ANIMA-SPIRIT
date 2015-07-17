@@ -39,6 +39,7 @@ public class MovementController : MonoBehaviour {
     
 
     public float speed = 15.0f;
+    public float jumpForce = 5.0f;
     public float smoothDamp = 15.0f;
 
     Rigidbody _rigidBody;
@@ -112,7 +113,7 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.jump:
-                _rigidBody.AddForce(Vector3.up*5,ForceMode.Impulse);
+                _rigidBody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
                 if (!isGrounded())
                 {
                     charStates = States.idle;
@@ -202,7 +203,7 @@ public class MovementController : MonoBehaviour {
     public void attackEnd()
     {
         ready = true;
-        Debug.Log("Attack ended");
+      //  Debug.Log("Attack ended");
     }
     public void attackStart()
     {

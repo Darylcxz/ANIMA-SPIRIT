@@ -6,6 +6,7 @@ public class Gooexplode : MonoBehaviour {
 	public ParticleSystem bigboom;
 	public static bool onGoo;
     public float duration = 2.0f;
+    
     public Underground1LevelController levelController;
 
 
@@ -25,10 +26,12 @@ public class Gooexplode : MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Torch")
+        if (other.gameObject.CompareTag("Torch"))
         {
             Instantiate(bigboom, transform.position, Quaternion.identity);
+            Explode(gameObject.transform.position, 1.0f);
             Destroy(gameObject);
+            
         }
     }
 
@@ -36,7 +39,7 @@ public class Gooexplode : MonoBehaviour {
 	{
         if (other.gameObject != null)
         {
-            Debug.Log(other.gameObject.transform.name);
+            //Debug.Log(other.gameObject.transform.name);
         }
         if (other.gameObject.name == "Pig" && Input.GetButtonDown("Action")) {
 			Instantiate(bigboom,transform.position,Quaternion.identity);
@@ -47,11 +50,13 @@ public class Gooexplode : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.name == "Torch")
+        if (other.gameObject.CompareTag("Torch"))
         {
             ParticleSystem clone =  Instantiate(bigboom, transform.position, Quaternion.identity) as ParticleSystem;
+            Explode(gameObject.transform.position, 10.0f);
            // isExplosion = true;
-            Underground1LevelController.isExplosion = true;
+            //.isExplosion = true;
+          //  levelController.isExplosion = true;
             Destroy(clone, 1.5f);
             Destroy(gameObject);
             
@@ -68,9 +73,27 @@ public class Gooexplode : MonoBehaviour {
 
     IEnumerator SelfDestruct()
     {
-        Debug.Log("die");
+//        Debug.Log("die");
         yield return new WaitForSeconds(duration);
         Destroy(gameObject);
+    }
+
+    void Explode(Vector3 center,float radius)
+    {
+        Collider[] _objs = Physics.OverlapSphere(center, radius);
+        Debug.Log("dwedw");
+        for (int i = 0; i < _objs.Length; i++)
+        {
+            if (_objs[i].gameObject.CompareTag("destroy"))
+            {
+                Debug.Log(_objs[i].gameObject.name);
+
+                _objs[i].gameObject.SetActive(false);
+ 
+            }
+            
+            
+        }
     }
  
 }
