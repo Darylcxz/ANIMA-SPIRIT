@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932e5365f1cec7d428783dc7bca57708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bigboom: {fileID: 19811794, guid: cb95546aab31e104d900c9e2593e42b1, type: 2}
   _spawnThis: {fileID: 189938, guid: 6a0815c948b2ffc4c8eedfc0f0f99544, type: 2}
 --- !u!135 &13515586
 SphereCollider:
@@ -121,6 +122,11 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: .707106709
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: bigboom
+      value: 
+      objectReference: {fileID: 19811794, guid: cb95546aab31e104d900c9e2593e42b1,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102296}
