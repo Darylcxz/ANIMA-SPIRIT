@@ -40,6 +40,11 @@ public abstract class AIbase : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Agent = gameObject.GetComponent<NavMeshAgent>();
+        if(isPossessed == false)
+        {
+            print("error AIbase.ispossesed is assigned but value is never used");
+            isPossessed = true;
+        }
        
        // origin = gameObject.transform.position;
 

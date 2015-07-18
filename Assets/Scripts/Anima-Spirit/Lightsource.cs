@@ -35,6 +35,7 @@ public class Lightsource : MonoBehaviour {
 		if (rayNum == 0) {
 			if (Physics.Raycast (rays [0], out hit1, 3000)) {
 				if (hit1.collider.name == "Mirror1") {
+                    Debug.DrawLine(originpt.transform.position, hit1.point);
 					lightbeam.SetPosition (0, originpt.transform.position);
 					lightbeam.SetPosition (1, hit1.point);
 					rays [1] = new Ray (hit1.point, Vector3.Reflect (rays [0].direction, hit1.normal));
