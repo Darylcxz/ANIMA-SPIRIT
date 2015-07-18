@@ -11,7 +11,6 @@ public class GameControl : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		charactermovement.isBeingControlled = false;
 
 
 	}
@@ -37,7 +36,7 @@ public class GameControl : MonoBehaviour {
 		} else if (spiritmode == true) {
 
 			print ("possess mode deactivated");
-			charactermovement.isBeingControlled = true;
+		//	charactermovement.isBeingControlled = true;
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
 

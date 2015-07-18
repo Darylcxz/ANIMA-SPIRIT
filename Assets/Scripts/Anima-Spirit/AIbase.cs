@@ -13,6 +13,7 @@ public abstract class AIbase : MonoBehaviour {
 
     Transform player;
     protected NavMeshAgent Agent;
+    protected Rigidbody _rigidBody;
 
    public enum States
     {
@@ -24,12 +25,18 @@ public abstract class AIbase : MonoBehaviour {
         pursue
     };
 
+    //states related stuff
     public States AIState = States.walk;
     bool ready = false;
     float waitTime = 3.0f;
     protected Vector3 origin;
     float distance;
     public float retreatDist = 50.0f;
+
+    //movement stuff
+    float vMove;
+    float hMove;
+    float speed = 10.0f;
 
     
 	 
@@ -128,10 +135,17 @@ public abstract class AIbase : MonoBehaviour {
                 break;
             case States.possessed:
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
-                //with this, the functions below may need to obe placed in here.
-                if (Input.GetKeyDown(KeyCode.E))
+                //with this, the functions below may need to be placed in here.
+                Agent.ResetPath();
+                ready = false;
+                CheckInput();
+                AIMove();
+                if (GameControl.spiritmode == false)
                 {
-                    ActivateAbility();
+                    AIState = States.idle;
+                    Agent.ResetPath();
+                    ready = false;
+                    CancelInvoke();
                 }
                 break;
             case States.pursue:
@@ -160,10 +174,10 @@ public abstract class AIbase : MonoBehaviour {
 			ActivateAbility();
 		}
 
-		if(Input.GetMouseButtonDown(1))
-		{
-			isPossessed = false;
-		}
+        //if(Input.GetMouseButtonDown(1))
+        //{
+        //    isPossessed = false;
+        //}
 
 	}
 
@@ -179,15 +193,29 @@ public abstract class AIbase : MonoBehaviour {
     }
 
 
-    //void OnMouseDown()
-    //{
-    //    if(GameControl.spiritmode)
-    //    {
-    //        //possess logic
-    //        isPossessed = true;
+    void OnMouseDown()
+    {
+        if (GameControl.spiritmode)
+        {
+            //possess logic
+            AIState = States.possessed;
 
-    //    }
-    //}
+        }
+    }
+
+    void AIMove()
+    {
+        hMove = Input.GetAxis("Horizontal");
+        vMove = Input.GetAxis("Vertical");
+
+        Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+        targetVelocity.Normalize();
+        targetVelocity *= speed;
+        Vector3 velocity = _rigidBody.velocity;
+        Vector3 vChange = targetVelocity - velocity;
+        vChange = new Vector3(Mathf.Clamp(vChange.x, -speed, speed), 0, (Mathf.Clamp(vChange.z, -speed, speed)));
+        _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
+    }
 
     //void GoodMovement()
     //{

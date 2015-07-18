@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3338306}
   - 23: {fileID: 2384402}
   - 95: {fileID: 9581642}
+  - 65: {fileID: 6596188}
   m_Layer: 0
   m_Name: LowWall2
   m_TagString: Untagged
@@ -61,6 +62,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 174082}
   m_Mesh: {fileID: 4300000, guid: 2f9376822c9d00c49a887250648fe319, type: 3}
+--- !u!65 &6596188
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 174082}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.01599991, y: 3.04799986, z: .126999989}
+  m_Center: {x: -.508000195, y: .508000135, z: -.0634998754}
 --- !u!95 &9581642
 Animator:
   serializedVersion: 3
