@@ -35,15 +35,16 @@ public class Lightsource : MonoBehaviour {
 		if (rayNum == 0) {
 			if (Physics.Raycast (rays [0], out hit1, 3000)) {
 				if (hit1.collider.name == "Mirror1") {
-                    Debug.DrawLine(originpt.transform.position, hit1.point);
 					lightbeam.SetPosition (0, originpt.transform.position);
 					lightbeam.SetPosition (1, hit1.point);
 					rays [1] = new Ray (hit1.point, Vector3.Reflect (rays [0].direction, hit1.normal));
+                    Debug.DrawRay(hit1.point, Vector3.Reflect(rays[0].direction, hit1.normal));
 				}
 			}
 		} else if (rayNum == 1) {
 			if (Physics.Raycast (rays [1], out hit2, 3000)) {
 				if (hit2.collider.name == "Mirror2") {
+                    Debug.DrawLine(hit1.point, hit2.point);
 					lightbeam.SetPosition (0, rays [1].origin);
 					lightbeam.SetPosition (1, hit2.point);
 					rays [2] = new Ray (hit2.point, Vector3.Reflect (rays [1].direction, hit2.normal));

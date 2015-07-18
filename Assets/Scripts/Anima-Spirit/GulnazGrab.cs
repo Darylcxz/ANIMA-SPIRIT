@@ -5,6 +5,7 @@ public class GulnazGrab : MonoBehaviour {
 
     private RaycastHit hit;
     public static bool struggling;
+    public Transform attachpoint;
 	// Use this for initialization
 	void Start () {
 
@@ -15,14 +16,14 @@ public class GulnazGrab : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(Physics.Raycast(transform.position, transform.forward, out hit, 50))
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 100))
         {
-            if(Input.GetButtonDown("Action") && hit.collider.tag == "movable")
+            if(Input.GetKeyDown("e") && hit.collider.tag == "movable")
             {
                 if(struggling == false)
                 {
                     struggling = true;
-                    hit.collider.transform.SetParent(transform);
+                    hit.collider.transform.SetParent(attachpoint);
                 }
 
                 else if(struggling == true)

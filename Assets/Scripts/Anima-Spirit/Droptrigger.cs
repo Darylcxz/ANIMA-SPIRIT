@@ -3,14 +3,30 @@ using System.Collections;
 
 public class Droptrigger : MonoBehaviour {
 	// Use this for initialization
-    public static bool shouldFall;
+    private bool drop;
+    public GameObject tile;
 	void Start () {
-	
+
 	}
+
+    void Update()
+    {
+        if (drop)
+        {
+            tile.transform.Translate(Vector3.forward * -2 * Time.deltaTime);
+        }
+    }
 	
 	// Update is called once per frame
     void OnTriggerEnter()
     {
-        shouldFall = true;
+        StartCoroutine(Dropthetile());
+    }
+
+    IEnumerator Dropthetile()
+    {
+        yield return new WaitForSeconds(1);
+        drop = true;
+
     }
 }
