@@ -29,12 +29,12 @@ public class NewCharacterMovement : MonoBehaviour {
 				moveDirection = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 				ctrllr.transform.LookAt(transform.position + moveDirection);
 				moveDirection *= movespeed;
-				myAnim.SetInteger("movespeed",1);
+				myAnim.SetFloat("speed",11);
 				
 				if(Input.GetButtonDown("Jump"))
 					moveDirection.y = jumpforce;
                 if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
-                    myAnim.SetInteger("movespeed", 0);
+                    myAnim.SetFloat("speed", 0);
 			}
 			moveDirection.y -= gravity * Time.deltaTime;
 			ctrllr.Move (moveDirection * Time.deltaTime);
