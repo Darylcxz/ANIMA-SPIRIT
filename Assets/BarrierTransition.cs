@@ -10,7 +10,8 @@ public class BarrierTransition : MonoBehaviour {
 	void Start () {
         shakeMe = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
         shakeMe.ShakeMeBaby(duration -0.5f);
-        Invoke("HideMe", duration +0.5f);
+       Invoke("HideMe", duration +0.5f);
+       // StartCoroutine("ChangeScene");
 	}
 	
 	// Update is called once per frame
@@ -20,7 +21,9 @@ public class BarrierTransition : MonoBehaviour {
 	}
     void HideMe()
     {
-        _hideThis.SetActive(false);
 
+        _hideThis.SetActive(false);
+        Application.LoadLevel(Application.loadedLevel + 1);
     }
+   
 }

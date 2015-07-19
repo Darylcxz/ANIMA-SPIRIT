@@ -83,13 +83,13 @@ public class MovementController : MonoBehaviour {
                 isRolling = false;
                 if (vMove != 0f || hMove != 0f)
                 {
-                    charStates = States.move;                   
+                    charStates = States.move;     
                 }
                 if (jump && isGrounded())
                 {
                     charStates = States.jump;
                 }
-                if (attack)
+                if (attack && GameControl.spiritmode == false)
                 {
                     charStates = States.stab;
                 }
@@ -138,8 +138,6 @@ public class MovementController : MonoBehaviour {
                 if (!isRolling)
                 {
                     charStates = States.idle;
-                    
-                    
                 }
                 break;
             case States.stab:
@@ -183,22 +181,28 @@ public class MovementController : MonoBehaviour {
     }
     void MovementLogic(float horizontal, float vertical)
     {
+        if(GameControl.spiritmode == false)
+        {
+            Vector3 targetVelocity = new Vector3(horizontal, 0, vertical);
+            targetVelocity.Normalize();
+            targetVelocity *= speed;
+            Vector3 velocity = _rigidBody.velocity;
+            Vector3 vChange = targetVelocity - velocity;
+            vChange = new Vector3(Mathf.Clamp(vChange.x, -speed, speed), 0, (Mathf.Clamp(vChange.z, -speed, speed)));
+            _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
+        }
         
-        Vector3 targetVelocity = new Vector3(horizontal, 0, vertical);
-        targetVelocity.Normalize();
-        targetVelocity *= speed;
-        Vector3 velocity = _rigidBody.velocity;
-        Vector3 vChange = targetVelocity - velocity;
-        vChange = new Vector3(Mathf.Clamp(vChange.x,-speed, speed), 0, (Mathf.Clamp(vChange.z, -speed, speed)));
-        _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
         
     }
     void RotatingLogic(float h, float v)
     {
-        Vector3 targetDir = new Vector3(h, 0, v);
-        Quaternion targetRot = Quaternion.LookRotation(targetDir,Vector3.up);
-        Quaternion newRot = Quaternion.Lerp(_rigidBody.rotation, targetRot, smoothDamp * Time.deltaTime);
-        _rigidBody.MoveRotation(newRot);
+        if (GameControl.spiritmode == false)
+        {
+            Vector3 targetDir = new Vector3(h, 0, v);
+            Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
+            Quaternion newRot = Quaternion.Lerp(_rigidBody.rotation, targetRot, smoothDamp * Time.deltaTime);
+            _rigidBody.MoveRotation(newRot);
+        }
     }
     public void attackEnd()
     {
