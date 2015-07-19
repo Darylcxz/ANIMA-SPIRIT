@@ -140,6 +140,7 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.idle;
                     agent.ResetPath();
                     ready = false;
+                    cameratarget.followTarget = GameObject.Find("Character");
                     CancelInvoke();
                 }
                 break;

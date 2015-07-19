@@ -4,7 +4,7 @@ using System.Collections;
 public class GulnazGrab : MonoBehaviour {
 
     public Transform attachpoint;
-    private bool holding = false;
+    public static bool holding = false;
 
 	// Use this for initialization
 	void Start () {

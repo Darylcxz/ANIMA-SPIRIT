@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class MirrorLizardAI : AIbase {
-    public GameObject mirror;
-    private BoxCollider mirrorcollider;
+    private RaycastHit kk;
+    private LineRenderer laser;
+    public static bool gotLight;
 	// Use this for initialization
 	void Start () {
         _rigidBody = GetComponent<Rigidbody>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
-        mirrorcollider = mirror.GetComponent<BoxCollider>();
+        laser = GetComponent<LineRenderer>();
 	}
 
     protected override void ActivateAbility()
@@ -19,14 +20,30 @@ public class MirrorLizardAI : AIbase {
 
     protected override void PassiveAbility()
     {
-        if(GameControl.spiritmode == true)
+        if(gotLight)
         {
-            mirrorcollider.enabled = true;
-        }
-        else
-        {
-            mirrorcollider.enabled = false;
+            if (Physics.Raycast(transform.position, transform.forward, out kk, 200))
+            {
+                laser.SetPosition(0, transform.position);
+                laser.SetPosition(1, kk.point);
+
+                if(kk.collider.name == "GooPoly")
+                {
+                    Destroy(kk.collider.gameObject);
+                }
+            }
+
+            else
+            {
+                laser.SetPosition(0, transform.position);
+                laser.SetPosition(1, transform.forward * 200);
+            }
         }
 
+        else
+        {
+            laser.SetPosition(0, transform.position);
+            laser.SetPosition(1, transform.position);
+        }
     }
 }
