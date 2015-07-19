@@ -58,9 +58,7 @@ public class Gooexplode : MonoBehaviour {
             //.isExplosion = true;
           //  levelController.isExplosion = true;
             Destroy(clone, 1.5f);
-            Destroy(gameObject);
-            
-                        
+            Destroy(gameObject);        
         }
     }
 

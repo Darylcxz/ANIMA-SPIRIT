@@ -27,7 +27,6 @@ public class Lightsource : MonoBehaviour {
 		lightbeam = GetComponent<LineRenderer> ();
 		originpt = GameObject.Find ("lightsource");
 		rays [0] = new Ray (originpt.transform.position, originpt.transform.forward);
-
 	}
 	
 	// Update is called once per frame
@@ -38,17 +37,27 @@ public class Lightsource : MonoBehaviour {
 					lightbeam.SetPosition (0, originpt.transform.position);
 					lightbeam.SetPosition (1, hit1.point);
 					rays [1] = new Ray (hit1.point, Vector3.Reflect (rays [0].direction, hit1.normal));
-                    Debug.DrawRay(hit1.point, Vector3.Reflect(rays[0].direction, hit1.normal));
 				}
 			}
 		} else if (rayNum == 1) {
 			if (Physics.Raycast (rays [1], out hit2, 3000)) {
 				if (hit2.collider.name == "Mirror2") {
-                    Debug.DrawLine(hit1.point, hit2.point);
 					lightbeam.SetPosition (0, rays [1].origin);
 					lightbeam.SetPosition (1, hit2.point);
 					rays [2] = new Ray (hit2.point, Vector3.Reflect (rays [1].direction, hit2.normal));
 				}
+                else
+                {
+                    lightbeam.SetPosition(0, rays[1].origin);
+                    lightbeam.SetPosition(1, hit2.point);
+                    if (hit2.collider.name == "Goo")
+                    {
+
+                        Destroy(hit2.collider.gameObject);
+                        lightTriggered = true;
+                    }
+
+                }
 			}
 		} else if (rayNum == 2) {
 			if (Physics.Raycast (rays [2], out hit3, 3000)) {
