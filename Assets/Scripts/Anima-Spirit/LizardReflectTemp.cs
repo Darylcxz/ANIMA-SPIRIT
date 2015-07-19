@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LizardReflectTemp : MonoBehaviour {
     private LineRenderer lightray;
+    public LineRenderer lightray2;
     private RaycastHit hit1;
     private RaycastHit hit2;
     public int rayint;
@@ -22,24 +23,22 @@ public class LizardReflectTemp : MonoBehaviour {
         {
             if (Physics.Raycast(rayz[0], out hit1, 200))
             {
-                if (hit1.collider.name == "Mirror1")
+                if (hit1.collider.name == "EvilMirror")
                 {
                     lightray.SetPosition(0, originpt.transform.position);
                     lightray.SetPosition(1, hit1.point);
-                    rayz[1] = new Ray(hit1.point, Vector3.Reflect(rayz[0].direction, hit1.normal));
+                    MirrorLizardAI.gotLight = true;
+                    print("trueeeeee");
+                }
+
+                else if(hit1.collider.tag == "floor")
+                {
+                    lightray.SetPosition(0, originpt.transform.position);
+                    lightray.SetPosition(1, hit1.point);
+                    MirrorLizardAI.gotLight = false;
                 }
             }
         }
 
-        else if(rayint == 1)
-        {
-            if (Physics.Raycast(rayz[1], out hit2, 200))
-            {
-                Debug.DrawLine(hit1.point, hit2.point);
-                lightray.SetPosition(0, hit1.point);
-                lightray.SetPosition(1, hit2.point);
-            }
-
-        }
 	}
 }

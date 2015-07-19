@@ -196,7 +196,7 @@ public class MovementController : MonoBehaviour {
     }
     void RotatingLogic(float h, float v)
     {
-        if (GameControl.spiritmode == false)
+        if (GameControl.spiritmode == false && GulnazGrab.holding == false)
         {
             Vector3 targetDir = new Vector3(h, 0, v);
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
