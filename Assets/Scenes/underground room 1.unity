@@ -1045,7 +1045,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 443098, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.16000009
+      value: 4.53999996
       objectReference: {fileID: 0}
     - target: {fileID: 443098, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1053,7 +1053,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443098, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -11.5073843
+      value: -18.1900005
       objectReference: {fileID: 0}
     - target: {fileID: 443098, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1073,7 +1073,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 443098, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 11435378, guid: 86df9ec67ba2bcc42860d75086aa9958, type: 2}
       propertyPath: jumpForce
