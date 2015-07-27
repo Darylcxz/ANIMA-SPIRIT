@@ -60,14 +60,18 @@ public class MovementController : MonoBehaviour {
         
 	
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    void Update()
+    {
         CheckInput();
-//        Debug.Log(_rigidBody.velocity.magnitude);
+        //        Debug.Log(_rigidBody.velocity.magnitude);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
+    }
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+       
 
         if (possess && ready == false && isRolling == false && isGrounded())
         {
