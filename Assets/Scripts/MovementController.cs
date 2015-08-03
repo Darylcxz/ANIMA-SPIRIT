@@ -32,8 +32,8 @@ public class MovementController : MonoBehaviour {
 
     int attackMode = 0; //1: Stab, 2: swing
 
-    float groundDist;
-    float waitTime = 0.5f;
+//    float groundDist;
+//    float waitTime = 0.5f;
     bool ready = false;
     bool isRolling = false;
     
@@ -43,7 +43,7 @@ public class MovementController : MonoBehaviour {
     public float smoothDamp = 15.0f;
 
     Rigidbody _rigidBody;
-    Collider _collider;
+//    Collider _collider;
 
     Vector3 groundPos;
     Vector3 playerPos;
@@ -52,8 +52,8 @@ public class MovementController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _rigidBody = gameObject.GetComponent<Rigidbody>();
-        groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
-        _collider = gameObject.GetComponent<Collider>();
+     //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
+     //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
         
         
