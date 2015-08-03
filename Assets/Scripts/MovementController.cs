@@ -32,8 +32,8 @@ public class MovementController : MonoBehaviour {
 
     int attackMode = 0; //1: Stab, 2: swing
 
-    float groundDist;
-    float waitTime = 0.5f;
+//    float groundDist;
+//    float waitTime = 0.5f;
     bool ready = false;
     bool isRolling = false;
     
@@ -43,7 +43,7 @@ public class MovementController : MonoBehaviour {
     public float smoothDamp = 15.0f;
 
     Rigidbody _rigidBody;
-    Collider _collider;
+//    Collider _collider;
 
     Vector3 groundPos;
     Vector3 playerPos;
@@ -52,22 +52,26 @@ public class MovementController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _rigidBody = gameObject.GetComponent<Rigidbody>();
-        groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
-        _collider = gameObject.GetComponent<Collider>();
+     //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
+     //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
         
         
         
 	
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    void Update()
+    {
         CheckInput();
-//        Debug.Log(_rigidBody.velocity.magnitude);
+        //        Debug.Log(_rigidBody.velocity.magnitude);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
+    }
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+       
 
         if (possess && ready == false && isRolling == false && isGrounded())
         {

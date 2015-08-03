@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WanderScripte : MonoBehaviour {
 
-    Transform player;
+  //  Transform player;
     NavMeshAgent Agent;
     public enum States
     { 
@@ -24,7 +24,7 @@ public class WanderScripte : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+      //  player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         Agent = GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
  
