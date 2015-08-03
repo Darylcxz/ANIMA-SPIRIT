@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MovementController : MonoBehaviour {
 
-   public enum States
+	
+	public enum States
     {
         idle,
         move,
@@ -19,7 +20,8 @@ public class MovementController : MonoBehaviour {
 
     //input stuff
 
-    bool roll;
+    //bool roll;
+   float roll;
     bool attack;
     bool jump;
     bool possess;
@@ -55,6 +57,8 @@ public class MovementController : MonoBehaviour {
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
+		//GPM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GamepadManager>();
+		//GamepadManager = GameObject.FindGameObjectWithTag("GameController");//.GetComponent<GamepadManager>();
         
         
         
@@ -85,7 +89,8 @@ public class MovementController : MonoBehaviour {
                 attackMode = 0;
                 ready = false;
                 isRolling = false;
-                if (vMove != 0f || hMove != 0f)
+               // if (vMove != 0f || hMove != 0f)
+				if(GamepadManager.v1 !=0 || GamepadManager.h1 !=0)
                 {
                     charStates = States.move;     
                 }
@@ -97,17 +102,20 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.stab;
                 }
-                if (roll)
+                if (roll!=0)
                 {
                     charStates = States.roll;
                     isRolling = true;
                 }
                 break;
             case States.move:
-                RotatingLogic(hMove, vMove);
-                MovementLogic(hMove,vMove);
+               // RotatingLogic(hMove, vMove);
+                //MovementLogic(hMove,vMove);
+				RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+				MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 attackMode = 0;
-                if (vMove == 0 && hMove ==0)
+               // if (vMove == 0 && hMove ==0)
+				if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)
                 {
                     charStates = States.idle;
                 }
@@ -124,8 +132,10 @@ public class MovementController : MonoBehaviour {
                 }           
                 break;
             case States.possess:
-                MovementLogic(hMoveRight, vMoveRight);
-                RotatingLogic(hMoveRight, vMoveRight);
+               // MovementLogic(hMoveRight, vMoveRight);
+                //RotatingLogic(hMoveRight, vMoveRight);
+				MovementLogic(GamepadManager.h2, GamepadManager.v2);
+				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
@@ -173,10 +183,15 @@ public class MovementController : MonoBehaviour {
 
     void CheckInput()
     {
-        roll = Input.GetKeyDown(KeyCode.LeftShift);
-        attack = Input.GetMouseButtonDown(0);
-        jump = Input.GetKeyDown(KeyCode.Space);
-        possess = Input.GetMouseButtonDown(1);
+       // roll = Input.GetKeyDown(KeyCode.LeftShift);
+		roll = GamepadManager.triggerR;
+
+        //attack = Input.GetMouseButtonDown(0);
+		attack = GamepadManager.buttonX;
+		// jump = Input.GetKeyDown(KeyCode.Space);
+		jump = GamepadManager.buttonA;
+       // possess = Input.GetMouseButtonDown(1);
+		possess = GamepadManager.buttonY;
         hMove = Input.GetAxis("Horizontal");
         vMove = Input.GetAxis("Vertical");
 
