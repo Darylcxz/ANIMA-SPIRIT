@@ -205,11 +205,13 @@ public abstract class AIbase : MonoBehaviour {
 
     void AIMove()
     {
-        hMove = Input.GetAxis("Horizontal");
-        vMove = Input.GetAxis("Vertical");
+       // hMove = Input.GetAxis("Horizontal");
+        //vMove = Input.GetAxis("Vertical");
 
-        Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
-        targetVelocity.Normalize();
+       // Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+		Vector3 targetVelocity = new Vector3(GamepadManager.h1, 0, GamepadManager.v1);
+
+		targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;
         Vector3 vChange = targetVelocity - velocity;
