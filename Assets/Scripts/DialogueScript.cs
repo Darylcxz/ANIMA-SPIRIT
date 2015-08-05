@@ -21,7 +21,9 @@ public class DialogueScript : MonoBehaviour
     private bool istalking = false;
 	
 	private void Start() {
-		//ParseDialogue(textData);
+        textbox.enabled = false;
+        dialogs.enabled = false;
+        characterpic.enabled = false;
 	}
 
     private void Update()

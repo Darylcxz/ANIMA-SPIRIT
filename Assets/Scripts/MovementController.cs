@@ -89,8 +89,8 @@ public class MovementController : MonoBehaviour {
                 attackMode = 0;
                 ready = false;
                 isRolling = false;
-               // if (vMove != 0f || hMove != 0f)
-				if(GamepadManager.v1 !=0 || GamepadManager.h1 !=0)
+                if (vMove != 0f || hMove != 0f)
+				//if(GamepadManager.v1 !=0 || GamepadManager.h1 !=0)
                 {
                     charStates = States.move;     
                 }
@@ -109,13 +109,13 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.move:
-               // RotatingLogic(hMove, vMove);
-                //MovementLogic(hMove,vMove);
-				RotatingLogic(GamepadManager.h1, GamepadManager.v1);
-				MovementLogic(GamepadManager.h1, GamepadManager.v1);
+                RotatingLogic(hMove, vMove);
+                MovementLogic(hMove,vMove);
+				//RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+				//MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 attackMode = 0;
-               // if (vMove == 0 && hMove ==0)
-				if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)
+                if (vMove == 0 && hMove ==0)
+				//if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)
                 {
                     charStates = States.idle;
                 }
@@ -132,10 +132,10 @@ public class MovementController : MonoBehaviour {
                 }           
                 break;
             case States.possess:
-               // MovementLogic(hMoveRight, vMoveRight);
-                //RotatingLogic(hMoveRight, vMoveRight);
-				MovementLogic(GamepadManager.h2, GamepadManager.v2);
-				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
+                MovementLogic(hMoveRight, vMoveRight);
+                RotatingLogic(hMoveRight, vMoveRight);
+				//MovementLogic(GamepadManager.h2, GamepadManager.v2);
+				//RotatingLogic(GamepadManager.h2, GamepadManager.v2);
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
