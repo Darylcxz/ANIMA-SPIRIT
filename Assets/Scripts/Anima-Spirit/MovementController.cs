@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MovementController : MonoBehaviour {
 
-   public enum States
+	
+	public enum States
     {
         idle,
         move,
@@ -19,7 +20,8 @@ public class MovementController : MonoBehaviour {
 
     //input stuff
 
-    bool roll;
+    //bool roll;
+   float roll;
     bool attack;
     bool jump;
     bool possess;
@@ -32,8 +34,8 @@ public class MovementController : MonoBehaviour {
 
     int attackMode = 0; //1: Stab, 2: swing
 
-    float groundDist;
-    float waitTime = 0.5f;
+//    float groundDist;
+//    float waitTime = 0.5f;
     bool ready = false;
     bool isRolling = false;
     
@@ -43,7 +45,7 @@ public class MovementController : MonoBehaviour {
     public float smoothDamp = 15.0f;
 
     Rigidbody _rigidBody;
-    Collider _collider;
+//    Collider _collider;
 
     Vector3 groundPos;
     Vector3 playerPos;
@@ -52,22 +54,28 @@ public class MovementController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _rigidBody = gameObject.GetComponent<Rigidbody>();
-        groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
-        _collider = gameObject.GetComponent<Collider>();
+     //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
+     //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
+		//GPM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GamepadManager>();
+		//GamepadManager = GameObject.FindGameObjectWithTag("GameController");//.GetComponent<GamepadManager>();
         
         
         
 	
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+    void Update()
+    {
         CheckInput();
-//        Debug.Log(_rigidBody.velocity.magnitude);
+        //        Debug.Log(_rigidBody.velocity.magnitude);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
+    }
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+       
 
         if (possess && ready == false && isRolling == false && isGrounded())
         {
@@ -81,7 +89,8 @@ public class MovementController : MonoBehaviour {
                 attackMode = 0;
                 ready = false;
                 isRolling = false;
-                if (vMove != 0f || hMove != 0f)
+               // if (vMove != 0f || hMove != 0f)
+				if(GamepadManager.v1 !=0 || GamepadManager.h1 !=0)
                 {
                     charStates = States.move;     
                 }
@@ -93,17 +102,20 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.stab;
                 }
-                if (roll)
+                if (roll!=0)
                 {
                     charStates = States.roll;
                     isRolling = true;
                 }
                 break;
             case States.move:
-                RotatingLogic(hMove, vMove);
-                MovementLogic(hMove,vMove);
+               // RotatingLogic(hMove, vMove);
+                //MovementLogic(hMove,vMove);
+				RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+				MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 attackMode = 0;
-                if (vMove == 0 && hMove ==0)
+               // if (vMove == 0 && hMove ==0)
+				if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)
                 {
                     charStates = States.idle;
                 }
@@ -120,8 +132,10 @@ public class MovementController : MonoBehaviour {
                 }           
                 break;
             case States.possess:
-                MovementLogic(hMoveRight, vMoveRight);
-                RotatingLogic(hMoveRight, vMoveRight);
+               // MovementLogic(hMoveRight, vMoveRight);
+                //RotatingLogic(hMoveRight, vMoveRight);
+				MovementLogic(GamepadManager.h2, GamepadManager.v2);
+				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
@@ -169,10 +183,15 @@ public class MovementController : MonoBehaviour {
 
     void CheckInput()
     {
-        roll = Input.GetKeyDown(KeyCode.LeftShift);
-        attack = Input.GetMouseButtonDown(0);
-        jump = Input.GetKeyDown(KeyCode.Space);
-        possess = Input.GetMouseButtonDown(1);
+       // roll = Input.GetKeyDown(KeyCode.LeftShift);
+		roll = GamepadManager.triggerR;
+
+        //attack = Input.GetMouseButtonDown(0);
+		attack = GamepadManager.buttonX;
+		// jump = Input.GetKeyDown(KeyCode.Space);
+		jump = GamepadManager.buttonA;
+       // possess = Input.GetMouseButtonDown(1);
+		possess = GamepadManager.buttonY;
         hMove = Input.GetAxis("Horizontal");
         vMove = Input.GetAxis("Vertical");
 

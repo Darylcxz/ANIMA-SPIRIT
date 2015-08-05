@@ -29,14 +29,6 @@ public class CameraShake : MonoBehaviour {
         originalPos = camTransform.localPosition;
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Shakerino")
-        {
-            shake += 5f;
-           
-        }
-    }
 
     void Update()
     {

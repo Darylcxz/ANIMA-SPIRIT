@@ -9,9 +9,10 @@ using System.Collections;
 public abstract class AIbase : MonoBehaviour {
 
 	bool autoFire = false;
-	bool isPossessed = false;
+//	bool isPossessed = false;
+    public bool canPosses = true;
 
-    Transform player;
+    protected Transform player;
     protected NavMeshAgent agent;
     protected Rigidbody _rigidBody;
 
@@ -28,20 +29,22 @@ public abstract class AIbase : MonoBehaviour {
     //states related stuff
     public States AIState = States.walk;
     bool ready = false;
-    float waitTime = 3.0f;
+    protected float waitTime = 3.0f;
     protected Vector3 origin;
-    float distance;
+    protected float distance;
     public float retreatDist;
 
     //movement stuff
     float vMove;
     float hMove;
-    float speed = 5;
+    float speed = 5f; //player movement speed;
+    public float AISpeed = 1f; // AI selfmove speed;
 
     
 	 
 	protected abstract void ActivateAbility();
 	protected abstract void PassiveAbility();
+   // protected abstract void AggroAbility();
 	// Use this for initialization
     void Start()
     {
@@ -55,7 +58,7 @@ public abstract class AIbase : MonoBehaviour {
         distance = Vector3.Distance(gameObject.transform.position, origin); //distance between you and origin
      
         Roam();
-		PassiveAbility ();
+        PassiveAbility();		
         
         //if (!isPossessed) {
         //    Roam ();
@@ -90,7 +93,7 @@ public abstract class AIbase : MonoBehaviour {
             case States.walk:
                 //walks forward for a set amount of time (random distance)
                 Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
-                gameObject.transform.localPosition += transform.forward/35;
+                gameObject.transform.localPosition += (transform.forward/35)*AISpeed;
                 if(distance > retreatDist)
                 {
                     AIState = States.retreat;
@@ -145,7 +148,8 @@ public abstract class AIbase : MonoBehaviour {
                 }
                 break;
             case States.pursue:
-                //faces player and walks toward player. additional feature, may be discarded. Good to have.
+                //faces player and walks toward player, reserved for enemy behaviour
+                ActivateAbility(); //Enemy Behaviour
                 break;
 
 
@@ -191,7 +195,7 @@ public abstract class AIbase : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (GameControl.spiritmode)
+        if (GameControl.spiritmode && canPosses)
         {
             //possess logic
             AIState = States.possessed;
@@ -201,11 +205,13 @@ public abstract class AIbase : MonoBehaviour {
 
     void AIMove()
     {
-        hMove = Input.GetAxis("Horizontal");
-        vMove = Input.GetAxis("Vertical");
+       // hMove = Input.GetAxis("Horizontal");
+        //vMove = Input.GetAxis("Vertical");
 
-        Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
-        targetVelocity.Normalize();
+       // Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+		Vector3 targetVelocity = new Vector3(GamepadManager.h1, 0, GamepadManager.v1);
+
+		targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;
         Vector3 vChange = targetVelocity - velocity;
