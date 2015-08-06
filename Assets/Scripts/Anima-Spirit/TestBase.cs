@@ -6,7 +6,7 @@ public class TestBase : AIbase {
     protected Vector3 asd;
 	// Use this for initialization
 	void Start () {
-        Agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
         origin = gameObject.transform.position;
 	}

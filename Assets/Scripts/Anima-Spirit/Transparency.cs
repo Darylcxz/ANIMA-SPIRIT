@@ -19,14 +19,19 @@ public class Transparency : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        //mesh.enabled = false;
-        mesh.material = yasuo[1];
+        if (other.gameObject.name == "transparency")
+        {
+            mesh.material = yasuo[1];
+        }
+        
        
     }
 
     void OnTriggerExit(Collider other)
     {
-        //mesh.enabled = true;
-        mesh.material = yasuo[0];
+        if (other.gameObject.name == "transparency")
+        {
+            mesh.material = yasuo[0];
+        }
     }
 }

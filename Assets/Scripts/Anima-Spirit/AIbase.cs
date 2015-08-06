@@ -9,10 +9,11 @@ using System.Collections;
 public abstract class AIbase : MonoBehaviour {
 
 	bool autoFire = false;
-	bool isPossessed = false;
+//	bool isPossessed = false;
+    public bool canPosses = true;
 
-    Transform player;
-    protected NavMeshAgent Agent;
+    protected Transform player;
+    protected NavMeshAgent agent;
     protected Rigidbody _rigidBody;
 
    public enum States
@@ -28,32 +29,28 @@ public abstract class AIbase : MonoBehaviour {
     //states related stuff
     public States AIState = States.walk;
     bool ready = false;
-    float waitTime = 3.0f;
+    protected float waitTime = 3.0f;
     protected Vector3 origin;
-    float distance;
-    public float retreatDist = 50.0f;
+    protected float distance;
+    public float retreatDist;
 
     //movement stuff
     float vMove;
     float hMove;
-    float speed = 10.0f;
+    float speed = 5f; //player movement speed;
+    public float AISpeed = 1f; // AI selfmove speed;
 
     
 	 
 	protected abstract void ActivateAbility();
 	protected abstract void PassiveAbility();
+   // protected abstract void AggroAbility();
 	// Use this for initialization
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Agent = gameObject.GetComponent<NavMeshAgent>();
-        if(isPossessed == false)
-        {
-            print("error AIbase.ispossesed is assigned but value is never used");
-            isPossessed = true;
-        }
-       
-       // origin = gameObject.transform.position;
+        agent = gameObject.GetComponent<NavMeshAgent>();
+        origin = gameObject.transform.position;
 
     }
 	// Update is called once per frame
@@ -61,7 +58,7 @@ public abstract class AIbase : MonoBehaviour {
         distance = Vector3.Distance(gameObject.transform.position, origin); //distance between you and origin
      
         Roam();
-		PassiveAbility ();
+        PassiveAbility();		
         
         //if (!isPossessed) {
         //    Roam ();
@@ -96,7 +93,7 @@ public abstract class AIbase : MonoBehaviour {
             case States.walk:
                 //walks forward for a set amount of time (random distance)
                 Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
-                gameObject.transform.localPosition += transform.forward/5;
+                gameObject.transform.localPosition += (transform.forward/35)*AISpeed;
                 if(distance > retreatDist)
                 {
                     AIState = States.retreat;
@@ -124,10 +121,10 @@ public abstract class AIbase : MonoBehaviour {
             case States.retreat:
                 //runs back to start
                 
-                Agent.SetDestination(origin);
+                agent.SetDestination(origin);
                 if (distance < 10)
                 {
-                    Agent.ResetPath();
+                    agent.ResetPath();
                     AIState = States.idle;
                     ready = false;
                     CancelInvoke();
@@ -136,20 +133,23 @@ public abstract class AIbase : MonoBehaviour {
             case States.possessed:
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
                 //with this, the functions below may need to be placed in here.
-                Agent.ResetPath();
+                agent.ResetPath();
                 ready = false;
+                cameratarget.followTarget = gameObject;
                 CheckInput();
                 AIMove();
                 if (GameControl.spiritmode == false)
                 {
                     AIState = States.idle;
-                    Agent.ResetPath();
+                    agent.ResetPath();
                     ready = false;
+                    cameratarget.followTarget = GameObject.Find("Character");
                     CancelInvoke();
                 }
                 break;
             case States.pursue:
-                //faces player and walks toward player. additional feature, may be discarded. Good to have.
+                //faces player and walks toward player, reserved for enemy behaviour
+                ActivateAbility(); //Enemy Behaviour
                 break;
 
 
@@ -195,7 +195,7 @@ public abstract class AIbase : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (GameControl.spiritmode)
+        if (GameControl.spiritmode && canPosses)
         {
             //possess logic
             AIState = States.possessed;
@@ -205,15 +205,18 @@ public abstract class AIbase : MonoBehaviour {
 
     void AIMove()
     {
-        hMove = Input.GetAxis("Horizontal");
-        vMove = Input.GetAxis("Vertical");
+       // hMove = Input.GetAxis("Horizontal");
+        //vMove = Input.GetAxis("Vertical");
 
-        Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
-        targetVelocity.Normalize();
+       // Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+		Vector3 targetVelocity = new Vector3(GamepadManager.h1, 0, GamepadManager.v1);
+
+		targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;
         Vector3 vChange = targetVelocity - velocity;
         vChange = new Vector3(Mathf.Clamp(vChange.x, -speed, speed), 0, (Mathf.Clamp(vChange.z, -speed, speed)));
+        transform.LookAt(transform.position + targetVelocity);
         _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
     }
 

@@ -23,12 +23,14 @@ public class GooBallsScript : MonoBehaviour {
     {
         if (collide.gameObject.tag != "Player")
         {
-            GameObject spawnClone = Instantiate(_spawnThis, transform.position, gameObject.GetComponent<Transform>().rotation) as GameObject;
-            Destroy(gameObject);
+//            GameObject spawnClone = Instantiate(_spawnThis, transform.position, gameObject.GetComponent<Transform>().rotation) as GameObject;
+            gameObject.GetComponent<AudioSource>().Play();
+            Destroy(gameObject,0.2f);
         }
         if (collide.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<AudioSource>().Play();
+            Destroy(gameObject,0.2f);
         }
 
         //if (collide.gameObject.name == "Torch")

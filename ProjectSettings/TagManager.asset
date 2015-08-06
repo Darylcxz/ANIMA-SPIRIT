@@ -17,6 +17,7 @@ TagManager:
   - SpawnPoint
   - Torch
   - destroy
+  - goo
   layers:
   - Default
   - TransparentFX
