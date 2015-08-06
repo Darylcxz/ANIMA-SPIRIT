@@ -19,9 +19,10 @@ public class MovementController : MonoBehaviour {
    Animator _anim;
 
     //input stuff
+   public bool bKeyboard = true;
 
     //bool roll;
-   float roll;
+    float roll;
     bool attack;
     bool jump;
     bool possess;
@@ -57,8 +58,7 @@ public class MovementController : MonoBehaviour {
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
-		//GPM = GameObject.FindGameObjectWithTag("GameController").GetComponent<GamepadManager>();
-		//GamepadManager = GameObject.FindGameObjectWithTag("GameController");//.GetComponent<GamepadManager>();
+
         
         
         
@@ -184,19 +184,43 @@ public class MovementController : MonoBehaviour {
     void CheckInput()
     {
        // roll = Input.GetKeyDown(KeyCode.LeftShift);
-		roll = GamepadManager.triggerR;
+		if (bKeyboard)
+		{
+			hMove = Input.GetAxis("Horizontal");
+			vMove = Input.GetAxis("Vertical");
+			//roll = Input.GetKeyDown(KeyCode.LeftShift);
+			if (Input.GetKeyDown(KeyCode.LeftShift))
+			{
+				roll = 1;
+			}
+			if (Input.GetKeyUp(KeyCode.LeftShift))
+			{
+ 				roll =0;
+			}
+			attack = Input.GetMouseButtonDown(0);
+			jump = Input.GetKeyDown(KeyCode.Space);
+			possess = Input.GetMouseButtonDown(1);
+		}
+		else if (!bKeyboard)
+		{
+			hMove = GamepadManager.h1;
+			vMove = GamepadManager.v1;
+			roll = GamepadManager.triggerR;
+			attack = GamepadManager.buttonX;
+			jump = GamepadManager.buttonA;
+			possess = GamepadManager.buttonY;
+		}
+		
 
         //attack = Input.GetMouseButtonDown(0);
-		attack = GamepadManager.buttonX;
+		
 		// jump = Input.GetKeyDown(KeyCode.Space);
-		jump = GamepadManager.buttonA;
+		
        // possess = Input.GetMouseButtonDown(1);
-		possess = GamepadManager.buttonY;
-        hMove = Input.GetAxis("Horizontal");
-        vMove = Input.GetAxis("Vertical");
+		
+       
 
-        hMoveRight = Input.GetAxis("RHorizontal");
-        vMoveRight = Input.GetAxis("RVertical");
+       
     }
     void MovementLogic(float horizontal, float vertical)
     {
@@ -217,7 +241,8 @@ public class MovementController : MonoBehaviour {
     {
         if (GameControl.spiritmode == false && GulnazGrab.holding == false)
         {
-            Vector3 targetDir = new Vector3(h, 0, v);
+            Vector3 targetDir = new Vector3(h, 0, v).normalized;
+			
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
             Quaternion newRot = Quaternion.Lerp(_rigidBody.rotation, targetRot, smoothDamp * Time.deltaTime);
             _rigidBody.MoveRotation(newRot);

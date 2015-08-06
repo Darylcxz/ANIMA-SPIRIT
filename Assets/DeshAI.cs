@@ -70,10 +70,21 @@ public class DeshAI : AIbase {
 				}
 				break;
 			case AttackPattern.DASH:
+				Invoke("WaitTime", 3f);
 				agent.SetDestination(player.position);
-				agent.speed = 7;
+				//agent.speed = 7;
+				agent.speed = Mathf.Clamp(agent.speed * 2, 1, 10);
 				agent.autoBraking = false;
-				if (hit)
+				if (ready2)
+				{
+					attackStates = AttackPattern.SHAKE;
+					ready2 = false;
+					agent.speed = 3.5f;
+					agent.ResetPath();
+					CancelInvoke();
+
+				}
+				else if (hit)
 				{
 					attackStates = AttackPattern.IDLE;
 					agent.ResetPath();
@@ -108,7 +119,7 @@ public class DeshAI : AIbase {
 
 	void Vibrate()
 	{
-		Vector3 _origin = gameObject.transform.localPosition;
+//		Vector3 _origin = gameObject.transform.localPosition;
 		float shakeAmt = 0.3f;
 		//float minusFactor = 1.0f;
 		//shake = _f;
