@@ -6,14 +6,14 @@
     <D3 character="Gulnaz">Ok...................Bye.</D3>
   </Rockman>
   <Serik>
-    <D1 character="Gulnaz">Hey Serik! We're stuck now! The debris is blocking the entrance!</D1>
+    <D1 character="Gulnaz">Hey Serik! We're stuck now! [!CDATA[&lt;font color = "#ff0000"&gt;The debris is blocking the entrance!&lt;/font&gt;]]</D1>
     <D2 character="Serik">Hmmm... we need to get rid of it somehow...</D2>
     <D3 character="Gulnaz">There's a lava pig over there! Maybe we can make use of it somehow...</D3>
     <D4 character="Serik">Actually, back in the vilage, I realised I could temporarily possess creatures. Maybe I could do the same to the pig!</D4>
     <D5 character="Gulnaz">Yes! That's worth a try! Look! there's some goo here! We can blow the debris away with an explosion!</D5>
   </Serik>
   <Ryuunosuke>
-    <D1 character="Ryuunosuke">Objection!!...Objection!..Objection!.Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!</D1>
+    <D1 character="Ryuunosuke">異議あり！異議あり！異議あり！異議あり！異議あり！異議あり！異議あり！異議あり！異議あり！異議あり！Objection!Objection!Objection!Objection!Objection!</D1>
     <D2 character="Ryuunosuke">Objection!....................................................Objection!!!!!!!!!</D2>
     <D3 character="Gulnaz">Objection! Shut the fuck up!</D3>
   </Ryuunosuke>
