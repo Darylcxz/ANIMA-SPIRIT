@@ -19,6 +19,7 @@ public class DialogueScript : MonoBehaviour
     private RaycastHit hit;
     private bool textcomplete = false;
     private bool istalking = false;
+    public AudioSource beepsound;
 	
 	private void Start() {
         textbox.enabled = false;
@@ -132,7 +133,7 @@ public class DialogueScript : MonoBehaviour
         for (int i = 0; i < sentence.Length; i++)
         {
             str += sentence[i];
-            
+            beepsound.Play();
             if (i == sentence.Length - 1)
             {
                 print("truuuuuueeeee");

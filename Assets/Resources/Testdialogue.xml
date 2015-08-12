@@ -1,20 +1,111 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dialogue>
-  <Rockman>
-    <D1 character="Rockman">Hi! I am Megaman exe!</D1>
-    <D2 character="Rockman">Rockbuster! Charge!..................................Fire!!!!</D2>
-    <D3 character="Gulnaz">Ok...................Bye.</D3>
-  </Rockman>
+  <Exittent>
+    <D1 character="Gulnaz">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
+    <D2 character="Gulnaz">I wonder what the rest are up to...</D2>
+    <D3></D3>
+  </Exittent>
+  <Grave>
+    <D1 character="God">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
+    <D2 character="God">Never forget - Matriarch Gulnara"</D2>
+    <D3 character="Gulnaz">I still miss you, Ne-ma...</D3>
+    <D4 character="Gulnaz">...</D4>
+    <D5 character="Gulnaz">Coznac definitely needs your guidance now..</D5>
+  </Grave>
+  <Ruslan>
+    <D1 character="Ruslan">Ah, good morning, Gulnaz. You're up early.</D1>
+    <D2 character="Ruslan">Moreso than usual, anyway.</D2>
+    <D3 character="Gulnaz">Mornin' Ruslan. I guess I'm just excited to get my dagger back from the smith!</D3>
+    <D4 character="Gulnaz">Going out for a gathering hunt seems to be the only thing that can take my mind off what has been going on lately...</D4>
+    <D5 character="Ruslan">It is quite the predicament. Our tribe is in disarray, and instrumental magic isn't helping.</D5>
+    <D6 character="Gulnaz">I'm not a fan either... Can't you do something about it- being the Spirit Counselor and all?</D6>
+    <D7 character="Ruslan">You know how it is with Aibek and I... He's obstinate. Only your grandma could ever get to him, spirits bless her.</D7>
+    <D8 character="Ruslan">...</D8>
+    <D9 character="Ruslan">...Gulnaz.</D9>
+    <D10 character="Ruslan">The spirits in this area, I can sense their malaise.</D10>
+    <D11 character="Ruslan">We've been in this area for far too long. Magic may be sustaining us, but I fear that staying any longer might bring a blight.</D11>
+    <D12 character="Gulnaz">Not on my watch it's not.</D12>
+    <D13 character="Ruslan">Hahaha... You've always displayed the same fiery ardour as your precursors.</D13>
+    <D13 character="Gulnaz">I try my best.</D13>
+  </Ruslan>
+  <Ruslan2>
+    <D1 character="Ruslan">I think I saw Serik up ahead. Why don't you chat with him instead?</D1>
+  </Ruslan2>
   <Serik>
-    <D1 character="Gulnaz">Hey Serik! We're stuck now! The debris is blocking the entrance!</D1>
-    <D2 character="Serik">Hmmm... we need to get rid of it somehow...</D2>
-    <D3 character="Gulnaz">There's a lava pig over there! Maybe we can make use of it somehow...</D3>
-    <D4 character="Serik">Actually, back in the vilage, I realised I could temporarily possess creatures. Maybe I could do the same to the pig!</D4>
-    <D5 character="Gulnaz">Yes! That's worth a try! Look! there's some goo here! We can blow the debris away with an explosion!</D5>
+    <D1 character="Gulnaz">Hey bird-boy.</D1>
+    <D2 character="Serik">Uh, hey, muscle brain. Also- I like all animals equally. Not just birds.</D2>
+    <D3 character="Gulnaz">Uh-huh. So what're you up to?</D3>
+    <D4 character="Serik">Doing some chores for Dad. </D4>
+    <D5 character="Gulnaz">Hmm. Does it per chance involve using gross animal parts and impeding traditionalistic values?</D5>
+    <D6 character="Serik">...</D6>
+    <D7 character="Gulnaz">...</D7>
+    <D8 character="Serik">HAHAHAHAHA!</D8>
+    <D9 character="Gulnaz">HAHAHAHAHAHAHAHAHA!</D9>
+    <D10 character="Serik">Oh..that's a good one.</D10>
+    <D11 character="Serik">Anyways, I have to get back to my chores. </D11>
+    <D12 character="Gulnaz">Sure you don't need any of my muscly assistance?</D12>
+    <D13 character="Serik">Psh, I won't.</D13>
   </Serik>
-  <Ryuunosuke>
-    <D1 character="Ryuunosuke">Objection!!...Objection!..Objection!.Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!Objection!</D1>
-    <D2 character="Ryuunosuke">Objection!....................................................Objection!!!!!!!!!</D2>
-    <D3 character="Gulnaz">Objection! Shut the fuck up!</D3>
-  </Ryuunosuke>
+  <Serik2>
+    <D1 character="Gulnaz">Need a hand?</D1>
+    <D2 character="Serik">I'm fine..!</D2>
+    <D3 character="Serik">I think.</D3>
+    <D4 character="Gulnaz">Sure.</D4>
+  </Serik2>
+  <Serik3>
+    <D1 character="Serik">Boy. I wish I had a AAA sandwich.</D1>
+    <D2 character="Gulnaz">What?</D2>
+    <D3 character="Serik">W- what?</D3>
+    <D4 character="Gulnaz">Uh..........it's nothing. Bye.</D4>
+  </Serik3>
+  <Inzhu>
+    <D1 character="Inzhu">Well, well! If it isn't the lass herself! How goes the hunting?</D1>
+    <D2 character="Gulnaz">Uh. It's been good.</D2>
+    <D3 character="Inzhu">Maybe you should take up magic instead? It's surely much more effective than swinging a piece of metal around.</D3>
+    <D4 character="Gulnaz">NO way! I'm a beast with a dagger. Plus, I'm not on board with the magic thing. It's shady, it's direspectful, and it's too good to be true.</D4>
+    <D5 character="Inzhu">Hum, suit yourself. If you change your mind, Aibek's conducting lessons up ahead. We've got a bunch of corpses from the last hunt for the intruments.</D5>
+    <D6 character="Gulnaz">Eugh.. Aibek and animal corpses.</D6>
+    <D7 character="Inzhu">Say what you will about Aibek, Gulnaz, but he is the nominal head. People trust him, as I do.</D7>
+    <D8 character="Inzhu">Well, Temir said he was looking for you. Why don't you go get your dagger? He's at his hut to your right.</D8>
+    <D8 character="Gulnaz">Thanks. Let's debate the good of magic some other time.</D8>
+  </Inzhu>
+  <Inzhu2>
+    <D1 character="Inzhu">Don't you have a piece of metal to swing around?</D1>
+    <D2 character="Gulnaz">Don't you have a magic spell to fail?</D2>
+    <D3 character="Inzhu">Touche.</D3>
+  </Inzhu2>
+  <Temir1>
+    <D1 character="Temir">You're here.</D1>
+    <D2 character="Gulnaz">Yes.....</D2>
+    <D3 character="Gulnaz">Yes, I am here.</D3>
+    <D4 character="Temir">Here's your dagger.</D4>
+    <D5 character="Gulnaz">Yes!</D5>
+    <D6 character="Temir">Give it a swing on those uglies over there, why don't you?</D6>
+    <D7 character="Gulnaz">With pleasure!</D7>
+  </Temir1>
+  <Temir2>
+    <D1 character="Temir">What're you waiting for?</D1>
+  </Temir2>
+  <Temir3>
+    <D1 character="Temir">You're not too bad, kid.</D1>
+    <D2 character="Gulnaz">I know.</D2>
+    <D3 character="Temir">Could lose the cockiness.</D3>
+    <D4 character="Gulnaz">I think it's well placed.</D4>
+    <D5 character="Temir">Hmph.</D5>
+  </Temir3>
+  <Serik4>
+    <D1 character="Serik">Oh.... Hey there Gulnaz..</D1>
+    <D2 character="Gulnaz">Those haystacks look pretty heavy, Serik.</D2>
+    <D3 character="Serik">Uh-huh.</D3>
+    <D4 character="Gulnaz">Need a hand?</D4>
+    <D5 character="Serik">No.</D5>
+    <D6 character="Serik">...</D6>
+    <D6 character="Serik">..Yes.</D6>
+  </Serik4>
+  <Serik5>
+    <D1 character="Serik">Wow! Do those even weigh a thing to you?</D1>
+    <D2 character="Gulnaz">Not really, no.</D2>
+    <D3 character="Serik">Well, I'm going uphill to report to my dad. Do you wanna come with?</D3>
+    <D4 character="Gulnaz">Sure, I've got some time to kill.</D4>
+  </Serik5>
 </Dialogue>
