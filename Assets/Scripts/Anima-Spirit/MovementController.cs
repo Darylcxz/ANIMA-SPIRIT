@@ -34,6 +34,7 @@ public class MovementController : MonoBehaviour {
     float hMoveRight;
 
     int attackMode = 0; //1: Stab, 2: swing
+	float attackSpeed = 1;
 
 //    float groundDist;
 //    float waitTime = 0.5f;
@@ -71,6 +72,17 @@ public class MovementController : MonoBehaviour {
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
+		Debug.Log(attackMode);
+		_anim.speed = attackSpeed;
+		
+		if (attackSpeed > 3)
+		{
+			attackSpeed = 3;
+		}
+		if (attackSpeed < 1)
+		{
+			attackSpeed = 1;
+		}
     }
 	
 	// Update is called once per frame
@@ -87,8 +99,9 @@ public class MovementController : MonoBehaviour {
             case States.idle:
             //check if player is grounded
                 attackMode = 0;
-                ready = false;
+              //	  ready = false;
                 isRolling = false;
+				attackSpeed = 1;
                 if (vMove != 0f || hMove != 0f)
 				//if(GamepadManager.v1 !=0 || GamepadManager.h1 !=0)
                 {
@@ -101,6 +114,7 @@ public class MovementController : MonoBehaviour {
                 if (attack && GameControl.spiritmode == false)
                 {
                     charStates = States.stab;
+					attackMode = 1;
                 }
                 if (roll!=0)
                 {
@@ -155,28 +169,33 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.stab:
-                attackMode = 1;
-                if(attack)
+				attackSpeed+=Time.deltaTime;
+             //   attackMode = 1;
+                if(attack && attackMode == 1 && !ready)
                 {                  
                     charStates = States.swing;
-                   // ready = false;           
+                 //   ready = false;
+					attackMode = 2;
                 }
-                if (ready)
+                else if (ready)
                 {
                     charStates = States.idle;
                 }
                 break;
             case States.swing:
-                attackMode = 2;
-                if (ready)
+				attackSpeed+=Time.deltaTime;
+               // attackMode = 2;
+				if (attack && attackMode == 2 && !ready)
+				{
+					charStates = States.stab;
+					//ready = false;
+					attackMode = 1;
+				}
+                else if (ready)
                 {
                     charStates = States.idle;          
                 }          
-                if (attack)
-                {
-                    charStates = States.stab;
-                  //  ready = false;
-                }
+                
                 break;
         }
 	}
@@ -251,6 +270,7 @@ public class MovementController : MonoBehaviour {
     public void attackEnd()
     {
         ready = true;
+		attackMode = 0;
       //  Debug.Log("Attack ended");
     }
     public void attackStart()

@@ -184,7 +184,7 @@ AnimatorStateTransition:
   m_TransitionDuration: .25
   m_TransitionOffset: 0
   m_ExitTime: .739130437
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -315,7 +315,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Roll
-  m_Speed: 2.5
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110190412}
@@ -507,10 +507,10 @@ AnimatorStateMachine:
     m_Position: {x: 324, y: 36, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110238280}
-    m_Position: {x: 408, y: 180, z: 0}
+    m_Position: {x: 336, y: 192, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110252868}
-    m_Position: {x: 540, y: 108, z: 0}
+    m_Position: {x: 504, y: 120, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
