@@ -124,6 +124,12 @@ public class DialogueScript : MonoBehaviour
                 print("reading from Rockman");
                 characterpic.sprite = chara3;
                 break;
+
+            default:
+                print("reading from someone else");
+                characterpic.sprite = null;
+                break;
+
         }
     }
 
