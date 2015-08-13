@@ -20,6 +20,7 @@ public class DialogueScript : MonoBehaviour
     private bool textcomplete = false;
     private bool istalking = false;
     public AudioSource beepsound;
+    public AudioClip beep;
 	
 	private void Start() {
         textbox.enabled = false;
@@ -139,7 +140,8 @@ public class DialogueScript : MonoBehaviour
         for (int i = 0; i < sentence.Length; i++)
         {
             str += sentence[i];
-            beepsound.Play();
+            beepsound.PlayOneShot(beep);
+            Debug.Log("playbeep");
             if (i == sentence.Length - 1)
             {
                 print("truuuuuueeeee");
@@ -152,7 +154,7 @@ public class DialogueScript : MonoBehaviour
                 i = sentence.Length;
             }
             dialogs.text = str;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }
