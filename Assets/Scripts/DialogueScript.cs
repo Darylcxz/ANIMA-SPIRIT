@@ -33,8 +33,8 @@ public class DialogueScript : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * 5);
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !istalking)
-        if (cantalk)
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !istalking)
+        //if (cantalk)
         {
             if (Input.GetButtonDown("Action"))
             {
