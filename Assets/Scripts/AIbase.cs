@@ -40,6 +40,10 @@ public abstract class AIbase : MonoBehaviour {
     float speed = 5f; //player movement speed;
     public float AISpeed = 1f; // AI selfmove speed;
 
+	//AI Stats and stuff
+	protected float health;
+
+
     
 	 
 	protected abstract void ActivateAbility();

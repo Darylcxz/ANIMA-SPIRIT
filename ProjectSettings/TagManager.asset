@@ -18,6 +18,7 @@ TagManager:
   - Torch
   - destroy
   - goo
+  - dagger
   layers:
   - Default
   - TransparentFX
