@@ -21,6 +21,8 @@ public class DialogueScript : MonoBehaviour
     private bool istalking = false;
     public AudioSource beepsound;
     public AudioClip beep;
+    public static string NPCname;
+    public static bool cantalk;
 	
 	private void Start() {
         textbox.enabled = false;
@@ -31,11 +33,11 @@ public class DialogueScript : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * 5);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !istalking)
+        //if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !istalking)
+        if (cantalk)
         {
             if (Input.GetButtonDown("Action"))
             {
-                charaname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
                 istalking = true;
@@ -47,6 +49,7 @@ public class DialogueScript : MonoBehaviour
             textcomplete = false;
             if(texttoshow.NextSibling != null)
             {
+                beepsound.PlayOneShot(beep);
                 string tempstr = Nextnode(texttoshow);
                 StartCoroutine(Printletters(tempstr));
             }
@@ -86,7 +89,7 @@ public class DialogueScript : MonoBehaviour
 	}
 	
 	private string FirstDialogue(XmlNode node) {
-        XmlNode thenode = node[charaname];
+        XmlNode thenode = node[NPCname];
         XmlNode newtext = thenode.FirstChild;
         Checkchara(newtext);
         texttoshow = newtext;
@@ -140,8 +143,6 @@ public class DialogueScript : MonoBehaviour
         for (int i = 0; i < sentence.Length; i++)
         {
             str += sentence[i];
-            beepsound.PlayOneShot(beep);
-            Debug.Log("playbeep");
             if (i == sentence.Length - 1)
             {
                 print("truuuuuueeeee");
@@ -154,7 +155,7 @@ public class DialogueScript : MonoBehaviour
                 i = sentence.Length;
             }
             dialogs.text = str;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }
