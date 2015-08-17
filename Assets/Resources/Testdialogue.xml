@@ -40,7 +40,7 @@
     <D6 character="Serik">...</D6>
     <D7 character="Gulnaz">...</D7>
     <D8 character="Serik">HAHAHAHAHA!</D8>
-    <D9 character="Gulnaz">HAHAHAHAHAHAHAHAHA!</D9>
+    <D9 character="Gulnaz">Hahahaha!</D9>
     <D10 character="Serik">Oh..that's a good one.</D10>
     <D11 character="Serik">Anyways, I have to get back to my chores. </D11>
     <D12 character="Gulnaz">Sure you don't need any of my muscly assistance?</D12>
@@ -108,4 +108,32 @@
     <D3 character="Serik">Well, I'm going uphill to report to my dad. Do you wanna come with?</D3>
     <D4 character="Gulnaz">Sure, I've got some time to kill.</D4>
   </Serik5>
+  <enter1-1>
+    <D1 character="Gulnaz">I know you don't go out often, but exatly what are you gawking at?</D1>
+    <D2 character="Serik">It's nothing! I just haven't been this far from the tribe before...</D2>
+    <D3 character="Gulnaz">You've got to be kidding, right?</D3>
+    <D4 character="Serik">Is your sword alone really going to keep us safe from... whatever's out there?</D4>
+    <D5 character="Gulnaz">Oh, you HAVE to be kidding.</D5>
+    <D6 character="Serik">I just lost my body, so really, I'm not very keen on losing any more of my livilhood. You know. Die?</D6>
+    <D7 character="Gulnaz">Listen to me, Serik. All my life, I've been hunting for game and animal parts. I know everything there is to survive, and I know this place like the back of my hand!</D7>
+    <D8 character="Gulnaz">Since we've been here for so long. Thanks to your oh-so-great dad.</D8>
+    <D9 character="Serik">...Yeah. </D9>
+  </enter1-1>
+  <desh1-1>
+    <D1 character="Gulnaz">Hold up.</D1>
+    <D2 character="Serik">What! What is it!! Is it Donald Trump?</D2>
+    <D3 character="Gulnaz">What?! No!</D3>
+    <D4 character="Gulnaz">That thing! Over there!</D4>
+    <D5 character="Serik">WHAT IS THAT?!</D5>
+    <D6 character="Gulnaz">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
+  </desh1-1>
+  <Shake1-1>
+    <D1 character="Serik">AAAHHH!!! It's coming for you!</D1>
+  </Shake1-1>
+  <defeated1-1>
+    <D1 character="Gulnaz">And that's how it's done.</D1>
+    <D2 character="Gulnaz">Still doubting my ability?</D2>
+    <D3 character="Serik ">Well, I don't doubt that we're still susceptible to death.</D3>
+    <D4 character="Gulnaz">Hmph.</D4>
+  </defeated1-1>
 </Dialogue>
