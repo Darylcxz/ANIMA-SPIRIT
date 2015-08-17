@@ -23,7 +23,8 @@ public class DeshAI : AIbase {
 
 	// Use this for initialization
 	void Start () {
-      
+
+		health = 3.0f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
@@ -106,6 +107,14 @@ public class DeshAI : AIbase {
 				}
 				break;
 			case AttackPattern.RECOIL:
+				//play recoil animation;
+				agent.ResetPath();
+				agent.speed = 3.5f;
+				agent.autoBraking = true;
+				CancelInvoke();
+				hit = false;
+				ready2 = false;
+				attackStates = AttackPattern.IDLE;
 				break;
 		}
 		
@@ -114,18 +123,24 @@ public class DeshAI : AIbase {
     protected override void PassiveAbility()
     {
        // throw new System.NotImplementedException();
+		Debug.Log(health);
+		if (health < 1)
+		{
+			Destroy(gameObject);
+			Debug.Log("ded");
+		}
     }
 	
 
 	void Vibrate()
 	{
 //		Vector3 _origin = gameObject.transform.localPosition;
-		float shakeAmt = 0.3f;
+		float shakeAmt = 10f;
 		//float minusFactor = 1.0f;
 		//shake = _f;
 
 		
-		gameObject.transform.localPosition = transform.localPosition + Random.insideUnitSphere * shakeAmt;
+		gameObject.transform.localPosition = transform.localPosition + Random.insideUnitSphere *(shakeAmt*Time.deltaTime);
 	//	Debug.Log("swqsd");
 		
 		//shake -= Time.deltaTime * minusFactor;
@@ -139,6 +154,12 @@ public class DeshAI : AIbase {
 		if (_col.collider.tag == "Player")
 		{
 			hit = true;
+		}
+		if (_col.collider.tag == "dagger")
+		{
+			attackStates = AttackPattern.RECOIL;
+			health--;
+			Debug.Log("ouch");
 		}
 	}
 }

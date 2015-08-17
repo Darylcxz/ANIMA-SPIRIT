@@ -47,6 +47,7 @@ public class MovementController : MonoBehaviour {
     public float smoothDamp = 15.0f;
 
     Rigidbody _rigidBody;
+	Collider _dagger;
 //    Collider _collider;
 
     Vector3 groundPos;
@@ -55,6 +56,9 @@ public class MovementController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
+		_dagger.enabled = false;
+	
         _rigidBody = gameObject.GetComponent<Rigidbody>();
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
@@ -169,6 +173,7 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.stab:
+				_dagger.enabled = true;
 				attackSpeed+=Time.deltaTime;
              //   attackMode = 1;
                 if(attack && attackMode == 1 && !ready)
@@ -180,9 +185,11 @@ public class MovementController : MonoBehaviour {
                 else if (ready)
                 {
                     charStates = States.idle;
+					_dagger.enabled = false;
                 }
                 break;
             case States.swing:
+				_dagger.enabled = true;
 				attackSpeed+=Time.deltaTime;
                // attackMode = 2;
 				if (attack && attackMode == 2 && !ready)
@@ -193,7 +200,8 @@ public class MovementController : MonoBehaviour {
 				}
                 else if (ready)
                 {
-                    charStates = States.idle;          
+                    charStates = States.idle;
+					_dagger.enabled = false;
                 }          
                 
                 break;
