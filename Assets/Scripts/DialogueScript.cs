@@ -38,6 +38,7 @@ public class DialogueScript : MonoBehaviour
         {
             if (Input.GetButtonDown("Action"))
             {
+                NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
                 istalking = true;
