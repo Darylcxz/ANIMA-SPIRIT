@@ -23,17 +23,26 @@ public class DialogueScript : MonoBehaviour
     public AudioClip beep;
     public static string NPCname;
     public static bool cantalk;
+    private Vector3 center;
+    private Vector3 side1;
+    private Vector3 side2;
 	
 	private void Start() {
         textbox.enabled = false;
         dialogs.enabled = false;
         characterpic.enabled = false;
+
 	}
 
     private void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward * 5);
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5) && !istalking)
+        center = transform.position + new Vector3(0, 0.5f, 0);
+        side1 = center + new Vector3(0.2f, 0, 0);
+        side2 = center + new Vector3(-0.2f, 0, 0);
+        Debug.DrawRay(center, transform.forward * 1);
+        Debug.DrawRay(side1, transform.forward * 1);
+        Debug.DrawRay(center, transform.forward * 1);
+        if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         //if (cantalk)
         {
             if (Input.GetButtonDown("Action"))

@@ -74,7 +74,7 @@
     <D2 character="Gulnaz">Don't you have a magic spell to fail?</D2>
     <D3 character="Inzhu">Touche.</D3>
   </Inzhu2>
-  <Temir1>
+  <Temir>
     <D1 character="Temir">You're here.</D1>
     <D2 character="Gulnaz">Yes.....</D2>
     <D3 character="Gulnaz">Yes, I am here.</D3>
@@ -82,7 +82,7 @@
     <D5 character="Gulnaz">Yes!</D5>
     <D6 character="Temir">Give it a swing on those uglies over there, why don't you?</D6>
     <D7 character="Gulnaz">With pleasure!</D7>
-  </Temir1>
+  </Temir>
   <Temir2>
     <D1 character="Temir">What're you waiting for?</D1>
   </Temir2>
