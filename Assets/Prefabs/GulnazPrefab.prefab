@@ -677,8 +677,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 410576}
   - 95: {fileID: 9552572}
-  - 114: {fileID: 11477660}
-  - 114: {fileID: 11445122}
   - 54: {fileID: 5462310}
   - 114: {fileID: 11477136}
   - 136: {fileID: 13671782}
@@ -1669,7 +1667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.0500002, y: .100000001, z: -1.03999996}
+  m_LocalPosition: {x: -5.37522745, y: .783830404, z: -33.7197571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423082}
@@ -2943,21 +2941,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attach: {fileID: 126554}
---- !u!114 &11445122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1d4ad98e54a4140a02887b877073cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 20
-  jumpspeed: 10
-  gravity: 20
-  attachpos: {fileID: 417298}
 --- !u!114 &11445300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2999,23 +2982,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charStates: 0
   bKeyboard: 1
+  bTutorial: 1
+  bForcedMove: 1
   speed: 7.5
   jumpForce: 1.5
   smoothDamp: 15
---- !u!114 &11477660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147630}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c370abaf8fb8e124196e7e51fefe79bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 30
-  jumpforce: 0
-  gravity: 100
 --- !u!136 &13614932
 CapsuleCollider:
   m_ObjectHideFlags: 1

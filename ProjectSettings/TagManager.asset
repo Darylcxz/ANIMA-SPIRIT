@@ -19,6 +19,7 @@ TagManager:
   - destroy
   - goo
   - dagger
+  - Camera
   layers:
   - Default
   - TransparentFX
