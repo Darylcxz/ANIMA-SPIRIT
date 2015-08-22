@@ -3,13 +3,13 @@ using System.Collections;
 
 public class DialogueTrigger : DialogueScript {
 
-	public MovementController _mScript;
+//	public MovementController _mScript2;
 
-	public override void Start()
-	{
-		base.Start();
-		_mScript = GetComponent<MovementController>();
-	}
+	//public override void Start()
+	//{
+	//	base.Start();
+	//	//_mScript2 = GetComponent<MovementController>();
+	//}
 
 	// Use this for initialization
 	//public override void Start () {

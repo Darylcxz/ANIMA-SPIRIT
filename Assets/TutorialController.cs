@@ -13,7 +13,7 @@ public class TutorialController : MonoBehaviour {
 	public List<GameObject> mountList = new List<GameObject>();
 	public int sequenceNum;
 
-	public DialogueScript _dScript;
+	//public DialogueScript _dScript;
 
 	bool ready;
 	float _camSize = 4.0f;
@@ -26,7 +26,7 @@ public class TutorialController : MonoBehaviour {
 		
 		//_charCam.SetActive(false);
 		CamPanScript = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraPanning>();
-		_dScript = GetComponent<DialogueScript>();
+		//_dScript = GetComponent<DialogueScript>();
 		_camChar.GetComponent<Camera>();
 		_movieCam.GetComponent<Camera>();
 		_camChar.enabled = false;
