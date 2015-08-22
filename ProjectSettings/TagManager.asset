@@ -21,6 +21,8 @@ TagManager:
   - dagger
   - Prop
   - talking
+  - Camera
+  - GulnazBody
   layers:
   - Default
   - TransparentFX

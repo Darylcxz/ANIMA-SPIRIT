@@ -1224,8 +1224,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1002686603}
-  m_LocalRotation: {x: .283411622, y: 0, z: 0, w: .958998382}
-  m_LocalPosition: {x: 0, y: 0, z: 23.3700008}
+  m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
+  m_LocalPosition: {x: 0, y: 3.1500001, z: 19.8099995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1887472599}
@@ -1348,6 +1348,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 09ea4c8fbfe47b54183a2cd7d2d38c41, type: 2}
+    - target: {fileID: 13700000, guid: b751b3ed3dfff00419b79237a4e7f47b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f46cb7325c14dda46b561f13af63a50e, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b751b3ed3dfff00419b79237a4e7f47b, type: 3}
   m_IsPrefabParent: 0
@@ -1433,7 +1437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1071884515
 Animator:
   serializedVersion: 3
@@ -1538,6 +1542,14 @@ Prefab:
     - target: {fileID: 427916, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11477136, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: bForcedMove
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 115178, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: m_TagString
+      value: GulnazBody
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
@@ -3000,6 +3012,7 @@ MonoBehaviour:
   _camChar: {fileID: 940321202}
   _movieCam: {fileID: 328875607}
   CamPanScript: {fileID: 328875609}
+  _dScript: {fileID: 1087809618}
   mountList:
   - {fileID: 1461382034}
   - {fileID: 1002686603}

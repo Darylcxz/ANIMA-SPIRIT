@@ -27,6 +27,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side1;
     private Vector3 side2;
     public MovementController _mScript;
+	public static int _seqNum;
 	
 	public virtual void Start() {
         textbox.enabled = false;
@@ -63,6 +64,8 @@ public class DialogueScript : MonoBehaviour
                 //beepsound.PlayOneShot(beep);
                 string tempstr = Nextnode(texttoshow);
                 StartCoroutine(Printletters(tempstr));
+				Debug.Log(_seqNum + "if");
+				_seqNum++;
             }
 
             else
@@ -73,6 +76,8 @@ public class DialogueScript : MonoBehaviour
                 characterpic.enabled = false;
                 istalking = false;
                 _mScript.bForcedMove = false;
+				_seqNum = 0;
+				Debug.Log(_seqNum + "else");
             }
         }
 

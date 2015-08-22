@@ -213,6 +213,11 @@ public class MovementController : MonoBehaviour {
     void CheckInput()
     {
        // roll = Input.GetKeyDown(KeyCode.LeftShift);
+		if (bForcedMove)
+		{
+			hMove = 0;
+			vMove = 0;
+		}
 		if (bKeyboard && !bForcedMove)
 		{
 			hMove = Input.GetAxis("Horizontal");

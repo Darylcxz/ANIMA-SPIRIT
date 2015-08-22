@@ -10,6 +10,7 @@ public class TutorialController : MonoBehaviour {
 	public Camera _movieCam;
 
 	public CameraPanning CamPanScript;
+	public DialogueScript _dScript;
 	public List<GameObject> mountList = new List<GameObject>();
 	public int sequenceNum;
 
@@ -26,7 +27,7 @@ public class TutorialController : MonoBehaviour {
 		
 		//_charCam.SetActive(false);
 		CamPanScript = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraPanning>();
-		//_dScript = GetComponent<DialogueScript>();
+		_dScript = GameObject.FindGameObjectWithTag("GulnazBody").GetComponent<DialogueScript>();
 		_camChar.GetComponent<Camera>();
 		_movieCam.GetComponent<Camera>();
 		_camChar.enabled = false;
@@ -36,12 +37,23 @@ public class TutorialController : MonoBehaviour {
 	
 	// Update is called once per frame
 	 void Update () {
+		 Debug.Log(DialogueScript._seqNum + "up");
 		
 		if (Input.GetKeyDown(KeyCode.T))
 		{
 			sequenceNum++;
 		}
 		CamPanScript.SetMount(mountList[sequenceNum].transform);
+		if (DialogueScript._seqNum == 3 && DialogueScript.NPCname.Contains("desh"))
+		{
+			sequenceNum = 1;
+			CamPanScript.SetMount(mountList[sequenceNum].transform);
+			Debug.Log("dwed");
+		}
+		if (DialogueScript._seqNum == 4 && DialogueScript.NPCname.Contains("desh"))
+		{
+			sequenceNum = 0;
+		}
 		
 		if (bTimer)
 		{
@@ -53,7 +65,7 @@ public class TutorialController : MonoBehaviour {
 			_t = 1;
 			bTimer = false;
 		}
-		if (sequenceNum > 4)
+		if (sequenceNum > 5)
 		{
 			sequenceNum = 0;
 		}
@@ -71,14 +83,13 @@ public class TutorialController : MonoBehaviour {
 					_camChar.enabled = true;
 
 					ready = false;
-					_t = 0;
+				//	_t = 0;
 					CancelInvoke();
 				}
 				break;
 			case 1:
 				_camChar.enabled = false;
 				ready = false;
-				
 				break;
 			case 2:
 				break;
