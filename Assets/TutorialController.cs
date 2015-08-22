@@ -13,17 +13,20 @@ public class TutorialController : MonoBehaviour {
 	public List<GameObject> mountList = new List<GameObject>();
 	public int sequenceNum;
 
+	//public DialogueScript _dScript;
 
 	bool ready;
-	float _camSize = 3.0f;
+	float _camSize = 4.0f;
 	float _t;
 	bool bTimer = true;
 	float _temp;
 
 	// Use this for initialization
 	void Start () {
+		
 		//_charCam.SetActive(false);
 		CamPanScript = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraPanning>();
+		//_dScript = GetComponent<DialogueScript>();
 		_camChar.GetComponent<Camera>();
 		_movieCam.GetComponent<Camera>();
 		_camChar.enabled = false;
@@ -32,7 +35,8 @@ public class TutorialController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	 void Update () {
+		
 		if (Input.GetKeyDown(KeyCode.T))
 		{
 			sequenceNum++;
@@ -57,18 +61,23 @@ public class TutorialController : MonoBehaviour {
 		{
  			case 0:
 				Invoke("Wait", 5.0f);
+				
 				_movieCam.orthographicSize = _temp;//Mathf.Lerp(13.0f, _camSize, 0.1);
+				bTimer = true;
 				
 				//_camChar.enabled = true;
 				if (ready)
 				{
 					_camChar.enabled = true;
+
 					ready = false;
- 
+					_t = 0;
+					CancelInvoke();
 				}
 				break;
 			case 1:
 				_camChar.enabled = false;
+				ready = false;
 				
 				break;
 			case 2:

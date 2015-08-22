@@ -32,7 +32,7 @@ public class DialogueScript : MonoBehaviour
         textbox.enabled = false;
         dialogs.enabled = false;
         characterpic.enabled = false;
-        _mScript = gameObject.transform.parent.GetComponent<MovementController>();
+        _mScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
 
 	}
 
