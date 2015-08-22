@@ -24,13 +24,15 @@ public class PickUpScript : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E) && !hasItem)
             {
                 other.gameObject.transform.parent = _attach.transform;
-               // other.gameObject.transform.position = _attach.transform.position;
+                //other.gameObject.transform.position = _attach.transform.position;
                 hasItem = true;
             }
             else if (Input.GetKeyDown(KeyCode.E) && hasItem)
             {
                 _attach.transform.GetChild(0).transform.parent = null;
                 hasItem = false;
+                Debug.Log("detach");
+
             }
         }
        
