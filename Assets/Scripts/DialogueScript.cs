@@ -27,14 +27,14 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side1;
     private Vector3 side2;
 	
-	private void Start() {
+	public virtual void Start() {
         textbox.enabled = false;
         dialogs.enabled = false;
         characterpic.enabled = false;
 
 	}
 
-    private void Update()
+    public virtual void Update()
     {
         center = transform.position + new Vector3(0, 0.5f, 0);
         side1 = center + new Vector3(0.2f, 0, 0);
@@ -45,12 +45,11 @@ public class DialogueScript : MonoBehaviour
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         //if (cantalk)
         {
-            if (Input.GetButtonDown("Action"))
+            if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
-                istalking = true;
             }
         }
 
@@ -59,13 +58,14 @@ public class DialogueScript : MonoBehaviour
             textcomplete = false;
             if(texttoshow.NextSibling != null)
             {
-                beepsound.PlayOneShot(beep);
+                //beepsound.PlayOneShot(beep);
                 string tempstr = Nextnode(texttoshow);
                 StartCoroutine(Printletters(tempstr));
             }
 
             else
             {
+                CheckNames();
                 textbox.enabled = false;
                 dialogs.enabled = false;
                 characterpic.enabled = false;
@@ -84,6 +84,7 @@ public class DialogueScript : MonoBehaviour
         textbox.enabled = true;
         dialogs.enabled = true;
         characterpic.enabled = true;
+        istalking = true;
 
 		XmlDocument xmlDoc = new XmlDocument();
 		xmlDoc.Load(new StringReader(xmlData));
@@ -129,12 +130,12 @@ public class DialogueScript : MonoBehaviour
                 characterpic.sprite = chara2;
                 break;
 
-            case "Ryuunosuke":
+            case "Temir":
                 print("reading from Ryuunosuke");
                 characterpic.sprite = chara4;
                 break;
 
-            case "Rockman":
+            case "Ruslan":
                 print("reading from Rockman");
                 characterpic.sprite = chara3;
                 break;
@@ -165,7 +166,12 @@ public class DialogueScript : MonoBehaviour
                 i = sentence.Length;
             }
             dialogs.text = str;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    public virtual void CheckNames()
+    {
+        Debug.Log("checking and changing names");
     }
 }
