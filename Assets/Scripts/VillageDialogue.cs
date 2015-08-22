@@ -40,15 +40,21 @@ public class VillageDialogue : DialogueScript {
         else if(NPCname == "Serik")
         {
             serikcount += 1;
-            if (serikcount >= 0 && serikcount < 3)
-            {
-                serik.name = "Serik2";
-            }
+            serik.name = "Serik2";
+        }
 
-            else if(serikcount >= 3)
+        else if (NPCname == "Serik2")
+        {
+            serikcount++;
+            if(serikcount >= 3)
             {
                 serik.name = "Serik3";
             }
+        }
+
+        else if(NPCname == "Temir")
+        {
+            temir.name = "Temir2";
         }
 
     }

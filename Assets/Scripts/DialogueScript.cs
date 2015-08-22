@@ -26,11 +26,13 @@ public class DialogueScript : MonoBehaviour
     private Vector3 center;
     private Vector3 side1;
     private Vector3 side2;
+    public MovementController _mScript;
 	
 	public virtual void Start() {
         textbox.enabled = false;
         dialogs.enabled = false;
         characterpic.enabled = false;
+        _mScript = gameObject.transform.parent.GetComponent<MovementController>();
 
 	}
 
@@ -70,6 +72,7 @@ public class DialogueScript : MonoBehaviour
                 dialogs.enabled = false;
                 characterpic.enabled = false;
                 istalking = false;
+                _mScript.bForcedMove = false;
             }
         }
 
@@ -81,6 +84,7 @@ public class DialogueScript : MonoBehaviour
 
     public void ParseDialogue(string xmlData)
     {
+        _mScript.bForcedMove = true;
         textbox.enabled = true;
         dialogs.enabled = true;
         characterpic.enabled = true;
