@@ -20,6 +20,8 @@ public class MovementController : MonoBehaviour {
 
     //input stuff
    public bool bKeyboard = true;
+   public bool bTutorial = true;
+   public bool bForcedMove = true;
 
     //bool roll;
     float roll;
@@ -76,7 +78,7 @@ public class MovementController : MonoBehaviour {
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
         _anim.SetBool("isRolling", isRolling);//change param to be the same as bool isRolling
-		Debug.Log(attackMode);
+		//Debug.Log(attackMode);
 		_anim.speed = attackSpeed;
 		
 		if (attackSpeed > 3)
@@ -211,31 +213,38 @@ public class MovementController : MonoBehaviour {
     void CheckInput()
     {
        // roll = Input.GetKeyDown(KeyCode.LeftShift);
-		if (bKeyboard)
+		if (bKeyboard && !bForcedMove)
 		{
 			hMove = Input.GetAxis("Horizontal");
 			vMove = Input.GetAxis("Vertical");
 			//roll = Input.GetKeyDown(KeyCode.LeftShift);
-			if (Input.GetKeyDown(KeyCode.LeftShift))
+			if (Input.GetKeyDown(KeyCode.LeftShift) && !bTutorial)
 			{
 				roll = 1;
 			}
-			if (Input.GetKeyUp(KeyCode.LeftShift))
+			if (Input.GetKeyUp(KeyCode.LeftShift) && !bTutorial)
 			{
  				roll =0;
 			}
 			attack = Input.GetMouseButtonDown(0);
-			jump = Input.GetKeyDown(KeyCode.Space);
+			if (!bTutorial)
+			{
+				jump = Input.GetKeyDown(KeyCode.Space);
+			}		
 			possess = Input.GetMouseButtonDown(1);
 		}
-		else if (!bKeyboard)
+		else if (!bKeyboard && !bForcedMove)
 		{
 			hMove = GamepadManager.h1;
 			vMove = GamepadManager.v1;
-			roll = GamepadManager.triggerR;
+			
 			attack = GamepadManager.buttonX;
-			jump = GamepadManager.buttonA;
 			possess = GamepadManager.buttonY;
+			if (!bTutorial)
+			{
+				jump = GamepadManager.buttonA;
+				roll = GamepadManager.triggerR;
+			}
 		}
 		
 
