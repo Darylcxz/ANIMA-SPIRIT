@@ -7,6 +7,7 @@ public class VillageDialogue : DialogueScript {
     public GameObject ruslan;
     public GameObject temir;
     public GameObject serik;
+    public static bool hitDummy = false;
 
     private bool ruslan2;
     private short serikcount = 0;
@@ -26,7 +27,10 @@ public class VillageDialogue : DialogueScript {
     public override void Update()
     {
         base.Update();
-
+        if(hitDummy && temir.name == "Temir2")
+        {
+            temir.name = "Temir3";
+        }
     }
 
     public override void CheckNames()
