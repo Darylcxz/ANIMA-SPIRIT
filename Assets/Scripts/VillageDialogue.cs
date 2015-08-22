@@ -7,6 +7,8 @@ public class VillageDialogue : DialogueScript {
     public GameObject ruslan;
     public GameObject temir;
     public GameObject serik;
+    public GameObject inzhu;
+    public Transform newpos;
     public static bool hitDummy = false;
 
     private bool ruslan2;
@@ -30,6 +32,11 @@ public class VillageDialogue : DialogueScript {
         if(hitDummy && temir.name == "Temir2")
         {
             temir.name = "Temir3";
+        }
+
+        if(Checkhay.got2hay && Input.GetButtonDown("Action") && serik.name == "Serik4")
+        {
+            serik.name = "Serik5";
         }
     }
 
@@ -60,6 +67,18 @@ public class VillageDialogue : DialogueScript {
         {
             temir.name = "Temir2";
         }
+
+        else if(NPCname == "Temir3")
+        {
+            serik.transform.position = newpos.position;
+            serik.name = "Serik4";
+        }
+
+        else if(NPCname == "Inzhu")
+        {
+            inzhu.name = "Inzhu2";
+        }
+
 
     }
 }
