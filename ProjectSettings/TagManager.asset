@@ -19,6 +19,8 @@ TagManager:
   - destroy
   - goo
   - dagger
+  - Prop
+  - talking
   layers:
   - Default
   - TransparentFX

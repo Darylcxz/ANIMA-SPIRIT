@@ -19,7 +19,7 @@ public class PickUpScript : MonoBehaviour {
    
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Torch"))
+        if (other.gameObject.CompareTag("movable"))
         {
             if (Input.GetKeyDown(KeyCode.E) && !hasItem)
             {
