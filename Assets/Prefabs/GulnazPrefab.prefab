@@ -160,7 +160,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 438324}
   - 137: {fileID: 13783498}
-  - 114: {fileID: 11420172}
   m_Layer: 0
   m_Name: GulnazBody
   m_TagString: Untagged
@@ -299,7 +298,7 @@ GameObject:
   - 4: {fileID: 417298}
   - 65: {fileID: 6584720}
   - 114: {fileID: 11410170}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -682,7 +681,6 @@ GameObject:
   - 114: {fileID: 11477136}
   - 136: {fileID: 13671782}
   - 114: {fileID: 11445300}
-  - 114: {fileID: 11452346}
   m_Layer: 0
   m_Name: GulnazPrefab
   m_TagString: Player
@@ -1669,7 +1667,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -315.709991, y: -3.5, z: -388.619995}
+  m_LocalPosition: {x: -5.37522745, y: .783830404, z: -33.7197571}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423082}
@@ -1760,7 +1758,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126554}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .00499999989, y: .588240027, z: .35800001}
+  m_LocalPosition: {x: .00499999989, y: .588240027, z: .537}
   m_LocalScale: {x: .396931589, y: .832561195, z: .398622274}
   m_Children: []
   m_Father: {fileID: 410576}
@@ -2943,27 +2941,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attach: {fileID: 126554}
---- !u!114 &11420172
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9115ee183c725da4c926e59d42a97ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
-  dialogs: {fileID: 0}
-  characterpic: {fileID: 0}
-  chara1: {fileID: 21300000, guid: 700f517002f4f6a4ea43e13b48671eee, type: 3}
-  chara2: {fileID: 21300000, guid: 11a04a437b63f4c41abdcab6d9040e91, type: 3}
-  chara3: {fileID: 21300000, guid: d4e817eb8c61d7642b2a739f8cb9bbcc, type: 3}
-  chara4: {fileID: 21300000, guid: 762b728f0448d494d9617a352da89bc5, type: 3}
-  textbox: {fileID: 0}
-  beepsound: {fileID: 0}
-  beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
 --- !u!114 &11445300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2971,34 +2948,6 @@ MonoBehaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147630}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfb82cc51a96504f9cd3ee3eb86b272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Display: 0
-  displayed: 0
-  controllerDisplay: {fileID: 0}
-  X: {fileID: 0}
-  Y: {fileID: 0}
-  A: {fileID: 0}
-  B: {fileID: 0}
-  LB: {fileID: 0}
-  RB: {fileID: 0}
-  LT: {fileID: 0}
-  RT: {fileID: 0}
-  LeftStick: {fileID: 0}
-  RightStick: {fileID: 0}
-  Dpad: {fileID: 0}
-  buttons: []
-  sticks: []
-  pad: []
---- !u!114 &11452346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147630}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebfb82cc51a96504f9cd3ee3eb86b272, type: 3}
   m_Name: 
@@ -3033,8 +2982,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charStates: 0
   bKeyboard: 1
-  speed: 4
-  jumpForce: 2
+  bTutorial: 1
+  bForcedMove: 1
+  speed: 7.5
+  jumpForce: 1.5
   smoothDamp: 15
 --- !u!136 &13614932
 CapsuleCollider:
@@ -3563,8 +3514,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 462086}
   m_AABB:
-    m_Center: {x: .191373393, y: .213126689, z: -.0356066525}
-    m_Extent: {x: .140390024, y: .135592192, z: .117706075}
+    m_Center: {x: .00129935145, y: .213126689, z: -.0356066525}
+    m_Extent: {x: .147658467, y: .135592192, z: .117706075}
   m_DirtyAABB: 0
 --- !u!137 &13771160
 SkinnedMeshRenderer:
@@ -3923,8 +3874,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 462086}
   m_AABB:
-    m_Center: {x: .0128902495, y: .109473571, z: .000273153186}
-    m_Extent: {x: .281078726, y: .239507005, z: .163207188}
+    m_Center: {x: .00520861149, y: .109473571, z: .000273153186}
+    m_Extent: {x: .288760364, y: .239507005, z: .163207188}
   m_DirtyAABB: 0
 --- !u!1001 &100100000
 Prefab:
