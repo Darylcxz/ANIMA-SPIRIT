@@ -14,6 +14,11 @@ public class TutorialController : MonoBehaviour {
 	public List<GameObject> mountList = new List<GameObject>();
 	public int sequenceNum;
 
+	public Animator deshControl;
+
+	public Transform _target;
+	public NavMeshAgent _desh;
+
 	//public DialogueScript _dScript;
 
 	bool ready;
@@ -21,6 +26,8 @@ public class TutorialController : MonoBehaviour {
 	float _t;
 	bool bTimer = true;
 	float _temp;
+
+	bool slowT;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +38,8 @@ public class TutorialController : MonoBehaviour {
 		_camChar.GetComponent<Camera>();
 		_movieCam.GetComponent<Camera>();
 		_camChar.enabled = false;
-		
+		deshControl = GameObject.FindGameObjectWithTag("desh").GetComponent<Animator>();
+		_desh = GameObject.FindGameObjectWithTag("desh").GetComponent<NavMeshAgent>();
 	
 	}
 	
@@ -50,15 +58,17 @@ public class TutorialController : MonoBehaviour {
 			CamPanScript.SetMount(mountList[sequenceNum].transform);
 			Debug.Log("dwed");
 		}
-		if (DialogueScript._seqNum == 4 && DialogueScript.NPCname.Contains("desh"))
-		{
-			sequenceNum = 0;
-		}
+		
 		
 		if (bTimer)
 		{
 			_t += Time.deltaTime / 1.5f ;
 			_temp = Mathf.Lerp(13.0f, _camSize, _t);
+		}
+		if (slowT)
+		{
+			_t += Time.deltaTime / 2f;
+			Time.timeScale = Mathf.Lerp(1f, 0f, _t);
 		}
 		if (_t > 1)
 		{
@@ -72,6 +82,7 @@ public class TutorialController : MonoBehaviour {
 		switch (sequenceNum)
 		{
  			case 0:
+				//Zoom when enter
 				Invoke("Wait", 5.0f);
 				
 				_movieCam.orthographicSize = _temp;//Mathf.Lerp(13.0f, _camSize, 0.1);
@@ -81,22 +92,60 @@ public class TutorialController : MonoBehaviour {
 				if (ready)
 				{
 					_camChar.enabled = true;
-
 					ready = false;
+					bTimer = false;
 				//	_t = 0;
 					CancelInvoke();
 				}
 				break;
 			case 1:
+				//zoom to desh
 				_camChar.enabled = false;
 				ready = false;
+				if (DialogueScript._seqNum == 4 && DialogueScript.NPCname.Contains("desh"))
+				{
+					sequenceNum = 2;
+				}
 				break;
 			case 2:
+				//back to player
+				if (DialogueScript.NPCname.Contains("Shake"))
+				{
+					sequenceNum = 3;
+					_t = 0;
+					ready = false; 
+				}
 				break;
 			case 3:
+				slowT = true;
+				_desh.SetDestination(_target.position);
+				
+				//AHH it's coming for you!
+				Invoke("Wait", 5.0f);
+				if (ready)
+				{
+					ready = false;
+					sequenceNum = 4;
+					Debug.Log("move to unfreeze");
+					CancelInvoke();
+				}
 				break;
 			case 4:
+				//back to player
+				if (Input.GetKeyDown(KeyCode.LeftShift))
+				{
+					slowT = false;
+					_t = 0;
+					Time.timeScale = 1;
+				}
 				break;
+			case 5:
+				//slow-mo shenanigans
+				break;
+			case 6:
+				//player kills desh
+				break;
+
 		}
 	
 	}

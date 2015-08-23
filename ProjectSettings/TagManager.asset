@@ -23,6 +23,7 @@ TagManager:
   - talking
   - Camera
   - GulnazBody
+  - desh
   layers:
   - Default
   - TransparentFX
