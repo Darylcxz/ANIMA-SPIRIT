@@ -28,6 +28,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
+    private bool faceme;
 	
 	public virtual void Start() {
         textbox.enabled = false;
@@ -45,11 +46,13 @@ public class DialogueScript : MonoBehaviour
         Debug.DrawRay(center, transform.forward * 1);
         Debug.DrawRay(side1, transform.forward * 1);
         Debug.DrawRay(center, transform.forward * 1);
+
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         //if (cantalk)
         {
             if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
+                faceme = true;
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
