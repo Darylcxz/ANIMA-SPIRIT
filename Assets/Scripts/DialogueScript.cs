@@ -14,6 +14,8 @@ public class DialogueScript : MonoBehaviour
     public Sprite chara2;
     public Sprite chara3;
     public Sprite chara4;
+    public Sprite chara5;
+    public Sprite chara6;
     public Image textbox;
     private string charaname;
     private RaycastHit hit;
@@ -28,11 +30,14 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
+    private bool faceme;
+    public Text showname;
 	
 	public virtual void Start() {
         textbox.enabled = false;
         dialogs.enabled = false;
         characterpic.enabled = false;
+        showname.enabled = false;
         _mScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
 
 	}
@@ -45,11 +50,13 @@ public class DialogueScript : MonoBehaviour
         Debug.DrawRay(center, transform.forward * 1);
         Debug.DrawRay(side1, transform.forward * 1);
         Debug.DrawRay(center, transform.forward * 1);
+
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         //if (cantalk)
         {
             if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
+                faceme = true;
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
@@ -74,6 +81,7 @@ public class DialogueScript : MonoBehaviour
                 textbox.enabled = false;
                 dialogs.enabled = false;
                 characterpic.enabled = false;
+                showname.enabled = false;
                 istalking = false;
                 _mScript.bForcedMove = false;
 				_seqNum = 0;
@@ -93,6 +101,7 @@ public class DialogueScript : MonoBehaviour
         textbox.enabled = true;
         dialogs.enabled = true;
         characterpic.enabled = true;
+        showname.enabled = true;
         istalking = true;
 
 		XmlDocument xmlDoc = new XmlDocument();
@@ -132,21 +141,35 @@ public class DialogueScript : MonoBehaviour
             case "Gulnaz":
                 print("reading from gulnaz");
                 characterpic.sprite = chara1;
+                showname.text = character;
                 break;
 
             case "Serik":
                 print("reading from serik");
                 characterpic.sprite = chara2;
+                showname.text = character;
                 break;
 
             case "Temir":
-                print("reading from Ryuunosuke");
+                print("reading from Temir");
                 characterpic.sprite = chara4;
+                showname.text = character;
                 break;
 
             case "Ruslan":
-                print("reading from Rockman");
+                print("reading from Ruslan");
                 characterpic.sprite = chara3;
+                showname.text = character;
+                break;
+
+            case "Inzhu":
+                characterpic.sprite = chara5;
+                showname.text = character;
+                break;
+
+            case "GhostSerik":
+                characterpic.sprite = chara6;
+                showname.text = "Serik";
                 break;
 
             default:
