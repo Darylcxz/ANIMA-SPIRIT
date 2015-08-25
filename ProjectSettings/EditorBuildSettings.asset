@@ -5,27 +5,29 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-1 (2nd floor Start.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/underground room 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Transition 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/underground room 1 AFTER.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-1 (2nd floor Aft R1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/underground room 2.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Transition 2.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/underground room 2-A.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Transition 3.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/underground room 2-B.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3-1 (2nd floor Aft R2.unity
+  - enabled: 1
+    path: Assets/Scenes/VillageScene.unity
