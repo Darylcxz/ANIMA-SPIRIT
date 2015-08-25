@@ -19,6 +19,7 @@ public class DialogueScript : MonoBehaviour
     public Image textbox;
     private string charaname;
     private RaycastHit hit;
+    private RaycastHit hit2;
     private bool textcomplete = false;
     private bool istalking = false;
     public AudioSource beepsound;
@@ -30,7 +31,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
-    private bool faceme;
+    private bool faceme = false;
     public Text showname;
 	
 	public virtual void Start() {
@@ -52,8 +53,8 @@ public class DialogueScript : MonoBehaviour
         Debug.DrawRay(center, transform.forward * 1);
 
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
-        //if (cantalk)
         {
+
             if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
                 faceme = true;
@@ -78,6 +79,7 @@ public class DialogueScript : MonoBehaviour
             else
             {
                 CheckNames();
+                //faceme = false;
                 textbox.enabled = false;
                 dialogs.enabled = false;
                 characterpic.enabled = false;
@@ -92,6 +94,21 @@ public class DialogueScript : MonoBehaviour
         else if (Input.GetButtonDown("Action") && !textcomplete && istalking)
         {
             textcomplete = true;
+        }
+
+
+        if (faceme && hit.collider.name != "Grave")
+        {
+            hit.transform.Rotate(Vector3.up, 100 * Time.deltaTime);
+            
+            if(Physics.Raycast(hit.transform.position, hit.transform.forward, out hit2, 0.6f))
+            {
+                if(hit2.collider.name == "Character")
+                {
+                    faceme = false;
+                }
+            }
+            
         }
     }
 
@@ -198,7 +215,7 @@ public class DialogueScript : MonoBehaviour
                 i = sentence.Length;
             }
             dialogs.text = str;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 
