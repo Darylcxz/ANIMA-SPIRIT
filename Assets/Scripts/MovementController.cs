@@ -19,9 +19,9 @@ public class MovementController : MonoBehaviour {
    Animator _anim;
 
     //input stuff
-   public bool bKeyboard = true;
+   public bool bKeyboard = false;
    public bool bTutorial = true;
-   public bool bForcedMove = true;
+   public bool bForcedMove = false;
 
     //bool roll;
     float roll;
