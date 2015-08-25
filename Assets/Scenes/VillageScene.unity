@@ -19599,6 +19599,7 @@ MonoBehaviour:
   beep: {fileID: 8300000, guid: 9043a486907077248b2c6851a4f5e6a5, type: 3}
   _mScript: {fileID: 1491737867}
   showname: {fileID: 1627148315}
+  charanim: {fileID: 0}
   ruslan: {fileID: 1327351148}
   temir: {fileID: 872562305}
   serik: {fileID: 1943165480}

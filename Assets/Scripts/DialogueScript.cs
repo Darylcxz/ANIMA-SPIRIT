@@ -33,6 +33,7 @@ public class DialogueScript : MonoBehaviour
 	public static int _seqNum;
     private bool faceme = false;
     public Text showname;
+    public Animator charanim;
 	
 	public virtual void Start() {
         textbox.enabled = false;
@@ -40,6 +41,7 @@ public class DialogueScript : MonoBehaviour
         characterpic.enabled = false;
         showname.enabled = false;
         _mScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
+        charanim = GameObject.Find("Character").GetComponent<Animator>();
 
 	}
 
@@ -87,6 +89,8 @@ public class DialogueScript : MonoBehaviour
                 _mScript.bForcedMove = false;
 				_seqNum = 0;
 				Debug.Log(_seqNum + "else");
+                charanim.SetBool("isTalking", false);
+                charanim.SetBool("bVictory", false);
             }
         }
 
@@ -143,6 +147,8 @@ public class DialogueScript : MonoBehaviour
                 print("reading from gulnaz");
                 characterpic.sprite = chara1;
                 showname.text = character;
+                charanim.SetBool("isTalking", true);
+                Invoke("StopAnim", 0.2f);
                 break;
 
             case "Serik":
@@ -177,7 +183,6 @@ public class DialogueScript : MonoBehaviour
                 print("reading from someone else");
                 characterpic.sprite = null;
                 break;
-
         }
     }
 
@@ -206,5 +211,11 @@ public class DialogueScript : MonoBehaviour
     public virtual void CheckNames()
     {
         Debug.Log("checking and changing names");
+    }
+
+    void StopAnim()
+    {
+        charanim.SetBool("isTalking", false);
+        charanim.SetBool("bVictory", false);
     }
 }
