@@ -118,10 +118,16 @@ public class TutorialController : MonoBehaviour {
 				break;
 			case 3:
 				slowT = true;
+				if (DialogueScript._seqNum == 1)
+				{
+					sequenceNum = 4;
+				}
 				_desh.SetDestination(_target.position);
+				float waittime = 2.0f;
 				
 				//AHH it's coming for you!
-				Invoke("Wait", 5.0f);
+				Invoke("Wait", waittime);
+	
 				if (ready)
 				{
 					ready = false;
