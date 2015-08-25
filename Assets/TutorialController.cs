@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class TutorialController : MonoBehaviour {
 
 	//public GameObject _charCam;
 	//public GameObject _camMovie;
+	public Image _rtText;
+
 	public Camera _camChar;
 	public Camera _movieCam;
 
 	public CameraPanning CamPanScript;
 	public DialogueScript _dScript;
 	public List<GameObject> mountList = new List<GameObject>();
+	public MovementController _moveScript;
 	public int sequenceNum;
 
 	public Animator deshControl;
@@ -40,6 +44,7 @@ public class TutorialController : MonoBehaviour {
 		_camChar.enabled = false;
 		deshControl = GameObject.FindGameObjectWithTag("desh").GetComponent<Animator>();
 		_desh = GameObject.FindGameObjectWithTag("desh").GetComponent<NavMeshAgent>();
+		_moveScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
 	
 	}
 	
@@ -123,30 +128,45 @@ public class TutorialController : MonoBehaviour {
 					sequenceNum = 4;
 				}
 				_desh.SetDestination(_target.position);
-				float waittime = 2.0f;
+				//float waittime = 2.0f;
 				
-				//AHH it's coming for you!
-				Invoke("Wait", waittime);
+				//AHH 
+				//slow-mo
+				//Invoke("Wait", waittime);
 	
-				if (ready)
-				{
-					ready = false;
-					sequenceNum = 4;
-					Debug.Log("move to unfreeze");
-					CancelInvoke();
-				}
+				//if (ready)
+				//{
+				//	ready = false;
+				//	sequenceNum = 4;
+				//	Debug.Log("move to unfreeze");
+				//	CancelInvoke();
+				//}
 				break;
 			case 4:
-				//back to player
-				if (Input.GetKeyDown(KeyCode.LeftShift))
+				//it's coming for you!
+				//player roll
+				//show graphic
+				if (DialogueScript._seqNum == 0)
+				{
+					_rtText.enabled = true;
+ 
+				}
+				
+
+				if (Input.GetKeyDown(KeyCode.LeftShift) && _moveScript.bForcedMove == false)
 				{
 					slowT = false;
 					_t = 0;
 					Time.timeScale = 1;
+					sequenceNum = 5;
+					
 				}
 				break;
 			case 5:
-				//slow-mo shenanigans
+				//back to player + roll
+				//close graphic
+				_rtText.enabled = false;
+
 				break;
 			case 6:
 				//player kills desh
