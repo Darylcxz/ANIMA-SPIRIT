@@ -34,6 +34,7 @@ public class DialogueScript : MonoBehaviour
     private bool faceme = false;
     public Text showname;
     public Animator charanim;
+	public Animator serikAnim;
 	
 	public virtual void Start() {
         textbox.enabled = false;
@@ -42,6 +43,7 @@ public class DialogueScript : MonoBehaviour
         showname.enabled = false;
         _mScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
         charanim = GameObject.Find("Character").GetComponent<Animator>();
+		serikAnim = GameObject.FindGameObjectWithTag("SerikGhost").GetComponent<Animator>();
 
 	}
 
@@ -177,6 +179,8 @@ public class DialogueScript : MonoBehaviour
             case "GhostSerik":
                 characterpic.sprite = chara6;
                 showname.text = "Serik";
+				serikAnim.SetBool("bSerikTalk", true);
+                Invoke("StopAnim", 0.2f);
                 break;
 
             default:
@@ -217,5 +221,6 @@ public class DialogueScript : MonoBehaviour
     {
         charanim.SetBool("isTalking", false);
         charanim.SetBool("bVictory", false);
+		serikAnim.SetBool("bSerikTalk", false);
     }
 }

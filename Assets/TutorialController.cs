@@ -16,6 +16,9 @@ public class TutorialController : MonoBehaviour {
 	public DialogueScript _dScript;
 	public List<GameObject> mountList = new List<GameObject>();
 	public MovementController _moveScript;
+	public DeshTutorial _dTutScript;
+	public GameObject Serik;
+
 	public int sequenceNum;
 
 	public Animator deshControl;
@@ -45,6 +48,8 @@ public class TutorialController : MonoBehaviour {
 		deshControl = GameObject.FindGameObjectWithTag("desh").GetComponent<Animator>();
 		_desh = GameObject.FindGameObjectWithTag("desh").GetComponent<NavMeshAgent>();
 		_moveScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
+		_dTutScript = GameObject.FindGameObjectWithTag("desh").GetComponent<DeshTutorial>();
+
 	
 	}
 	
@@ -80,10 +85,7 @@ public class TutorialController : MonoBehaviour {
 			_t = 1;
 			bTimer = false;
 		}
-		if (sequenceNum > 5)
-		{
-			sequenceNum = 0;
-		}
+		
 		switch (sequenceNum)
 		{
  			case 0:
@@ -166,10 +168,28 @@ public class TutorialController : MonoBehaviour {
 				//back to player + roll
 				//close graphic
 				_rtText.enabled = false;
-
+				Debug.Log(_dTutScript.deshDead);
+				if (_dTutScript.deshDead == true)
+				{
+					DialogueScript.NPCname = "defeated1-1";
+					string textData = _dScript.dialogue.text;
+					_dScript.ParseDialogue(textData);
+					sequenceNum = 6;
+				}
+				
 				break;
 			case 6:
 				//player kills desh
+				if (DialogueScript._seqNum == 1 && DialogueScript.NPCname.Contains("shoes"))
+				{
+					Serik.SetActive(false);
+				}
+				Debug.Log("dwedwfew");
+				//NPCname = gameObject.name;
+			    
+				
+				break;
+			case 7:
 				break;
 
 		}
