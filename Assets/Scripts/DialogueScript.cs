@@ -57,7 +57,6 @@ public class DialogueScript : MonoBehaviour
 
             if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
-                faceme = true;
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
@@ -94,21 +93,6 @@ public class DialogueScript : MonoBehaviour
         else if (Input.GetButtonDown("Action") && !textcomplete && istalking)
         {
             textcomplete = true;
-        }
-
-
-        if (faceme && hit.collider.name != "Grave")
-        {
-            hit.transform.Rotate(Vector3.up, 100 * Time.deltaTime);
-            
-            if(Physics.Raycast(hit.transform.position, hit.transform.forward, out hit2, 0.6f))
-            {
-                if(hit2.collider.name == "Character")
-                {
-                    faceme = false;
-                }
-            }
-            
         }
     }
 
