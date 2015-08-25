@@ -57,6 +57,7 @@ public class VillageDialogue : DialogueScript {
         if(NPCname == "Temir" && _seqNum == 4)
         {
             sword.SetActive(true);
+            charanim.SetBool("bVictory", true);
         }
     }
 
