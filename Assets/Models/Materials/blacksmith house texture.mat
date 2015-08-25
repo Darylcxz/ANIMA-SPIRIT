@@ -20,7 +20,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e164adb0216cad24f82f61f69ba4d916, type: 3}
+          m_Texture: {fileID: 2800000, guid: 1918fef8624f3f64fa9bb7609ee195bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -91,7 +91,11 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .5
+        second: .379999995
+      data:
+        first:
+          name: PixelSnap
+        second: 0
       data:
         first:
           name: _Parallax

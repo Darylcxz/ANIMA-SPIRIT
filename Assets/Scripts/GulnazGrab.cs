@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GulnazGrab : MonoBehaviour {
     public Transform attachpoint;
-    private bool touching = false;
+    //private bool touching = false;
     public static bool holding = false;
     private Vector3 center;
     private Vector3 side1;

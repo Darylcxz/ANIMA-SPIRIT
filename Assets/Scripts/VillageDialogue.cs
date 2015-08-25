@@ -9,7 +9,12 @@ public class VillageDialogue : DialogueScript {
     public GameObject serik;
     public GameObject inzhu;
     public Transform newpos;
+    public Image tutImage;
+    public Sprite pressb;
+    public Sprite analogstick;
     public static bool hitDummy = false;
+    public static bool interactOn = false;
+    public GameObject sword;
 
     private bool ruslan2;
     private short serikcount = 0;
@@ -18,9 +23,11 @@ public class VillageDialogue : DialogueScript {
     public override void Start()
     {
         base.Start();
+        sword.SetActive(false);
         NPCname = "Exittent";
         string textData = dialogue.text;
         ParseDialogue(textData);
+        tutImage.enabled = false;
     }
 
 	// Use this for initialization
@@ -38,6 +45,19 @@ public class VillageDialogue : DialogueScript {
         {
             serik.name = "Serik5";
         }
+
+        if(interactOn)
+        {
+            tutImage.enabled = true;
+            tutImage.sprite = pressb;
+            Invoke("TutorialOff", 5);
+            interactOn = false;
+        }
+
+        if(NPCname == "Temir" && _seqNum == 4)
+        {
+            sword.SetActive(true);
+        }
     }
 
     public override void CheckNames()
@@ -46,6 +66,13 @@ public class VillageDialogue : DialogueScript {
         if(NPCname == "Ruslan")
         {
             ruslan.name = "Ruslan2";
+        }
+
+        else if(NPCname == "Exittent")
+        {
+            tutImage.enabled = true;
+            tutImage.sprite = analogstick;
+            Invoke("TutorialOff", 5);
         }
 
         else if(NPCname == "Serik")
@@ -61,6 +88,12 @@ public class VillageDialogue : DialogueScript {
             {
                 serik.name = "Serik3";
             }
+        }
+
+        else if(NPCname == "Serik4")
+        {
+            tutImage.enabled = true;
+            Invoke("TutorialOff", 5);
         }
 
         else if(NPCname == "Temir")
@@ -81,4 +114,15 @@ public class VillageDialogue : DialogueScript {
 
 
     }
+
+    void TutorialOff()
+    {
+        if(tutImage.enabled)
+        {
+            tutImage.enabled = false;
+        }
+        
+    }
+
+
 }
