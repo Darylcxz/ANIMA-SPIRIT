@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class DialogueTrigger : DialogueScript {
+	//bool _triggered = false;
 
 //	public MovementController _mScript2;
 
@@ -23,11 +24,20 @@ public class DialogueTrigger : DialogueScript {
 	//}
 	void OnTriggerEnter(Collider _col)
 	{
-		if (_col.tag == "Player")
+		if (_col.tag == "Player" )
 		{
 			NPCname = gameObject.name;
 			string textData = dialogue.text;
 			ParseDialogue(textData);
+			//_triggered = true;
+		//	Destroy(gameObject, 5.0f);
+		}
+	}
+	void OnTriggerExit(Collider _c)
+	{
+		if (_c.tag == "Player")
+		{
+			Destroy(gameObject, 0.1f);
 		}
 	}
 }
