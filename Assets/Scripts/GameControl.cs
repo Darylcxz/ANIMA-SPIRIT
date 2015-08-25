@@ -20,7 +20,7 @@ public class GameControl : MonoBehaviour {
 
 		//if (Input.GetMouseButtonDown (1)) 
 
-		if(GamepadManager.buttonYDown)
+		if(GamepadManager.buttonYDown || Input.GetMouseButtonDown(1))
 		{
 
 			possessModeToggle();
