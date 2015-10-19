@@ -24,6 +24,7 @@ TagManager:
   - Camera
   - GulnazBody
   - desh
+  - SerikGhost
   layers:
   - Default
   - TransparentFX

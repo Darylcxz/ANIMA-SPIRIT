@@ -33,7 +33,6 @@ public class GameControl : MonoBehaviour {
 		if (spiritmode == false) {
 
 			spiritmode = true;
-
 			print ("possess mode activated");
 
 		} else if (spiritmode == true) {
