@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MovementController : MonoBehaviour {
@@ -55,6 +56,13 @@ public class MovementController : MonoBehaviour {
     Vector3 groundPos;
     Vector3 playerPos;
 
+	// Mana Stuff;
+
+	public Image _manaBarUI;
+	public float currMana;
+	float maxMana;
+	bool _mana;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -65,6 +73,8 @@ public class MovementController : MonoBehaviour {
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
         _anim = gameObject.GetComponent<Animator>();
+		maxMana = 10f;
+		currMana = maxMana;
 
         
         
@@ -74,6 +84,7 @@ public class MovementController : MonoBehaviour {
     void Update()
     {
         CheckInput();
+		CheckMana();
         //        Debug.Log(_rigidBody.velocity.magnitude);
         _anim.SetFloat("speed", _rigidBody.velocity.magnitude); // changes anim speed value to make it play move anim
         _anim.SetInteger("attack", attackMode); //1: stab, 2:swing
@@ -95,7 +106,7 @@ public class MovementController : MonoBehaviour {
 	void FixedUpdate () {
        
 
-        if (possess && ready == false && isRolling == false && isGrounded())
+        if (possess && ready == false && isRolling == false && isGrounded() && currMana > 0)
         {
             charStates = States.possess;
         }
@@ -152,16 +163,25 @@ public class MovementController : MonoBehaviour {
                 }           
                 break;
             case States.possess:
+				_mana = false;
                 MovementLogic(hMoveRight, vMoveRight);
                 RotatingLogic(hMoveRight, vMoveRight);
 				//MovementLogic(GamepadManager.h2, GamepadManager.v2);
 				//RotatingLogic(GamepadManager.h2, GamepadManager.v2);
+				
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
-
+					_mana = true;
                     Debug.Log("possass");
                 }
+				if (currMana < 0)
+				{
+					GameControl.spiritmode = false;
+					charStates = States.idle;
+					_mana = true;
+					currMana = 0;
+				}
                 break;
             case States.roll:
                // _rigidBody.AddForce(transform.forward/1.5f,ForceMode.Impulse);
@@ -308,4 +328,18 @@ public class MovementController : MonoBehaviour {
     {
         isRolling = false;
     }
+	void CheckMana()
+	{
+		_manaBarUI.fillAmount = currMana / maxMana;
+		Debug.Log(currMana);
+		if (currMana > maxMana && _mana == true) // check if mana is maxed
+		{
+			currMana = maxMana; //caps it back
+			_mana = false;
+		}
+		else if (currMana < maxMana && _mana == true)
+		{
+			currMana += Time.deltaTime/5;	
+		}
+	}
 }

@@ -15,6 +15,7 @@ public abstract class AIbase : MonoBehaviour {
     protected Transform player;
     protected NavMeshAgent agent;
     protected Rigidbody _rigidBody;
+	public MovementController playerMana;
 
    public enum States
     {
@@ -53,6 +54,7 @@ public abstract class AIbase : MonoBehaviour {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
 
@@ -137,6 +139,7 @@ public abstract class AIbase : MonoBehaviour {
             case States.possessed:
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
                 //with this, the functions below may need to be placed in here.
+				playerMana.currMana -= Time.deltaTime;
                 agent.ResetPath();
                 ready = false;
                 cameratarget.followTarget = gameObject;

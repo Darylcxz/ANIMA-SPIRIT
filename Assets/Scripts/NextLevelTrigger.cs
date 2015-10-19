@@ -10,6 +10,10 @@ public class NextLevelTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			Application.LoadLevel(Application.loadedLevel + 1);
+		}
 	
 	}
     void OnTriggerEnter(Collider _col)
