@@ -4579,7 +4579,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.63753271
+      value: 1.89999998
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -6329,7 +6329,7 @@ Transform:
   m_Children:
   - {fileID: 80328093}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!114 &562157558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6466,7 +6466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.99642324
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -14944,7 +14944,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.6375289
+      value: 2.1400001
       objectReference: {fileID: 0}
     - target: {fileID: 431404, guid: 0b15b847e8174a441a796acbc3d7eebd, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15450,44 +15450,12 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 97d6ec85a4af4c14b93da8aeadb08b8a, type: 3}
   m_PrefabInternal: {fileID: 2132373742}
---- !u!1 &1491737862 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 147630, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
-  m_PrefabInternal: {fileID: 1057448783}
 --- !u!114 &1491737867 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11477136, guid: 59d5f39d265aaff45b9ee3c3d78c0b36,
     type: 2}
   m_PrefabInternal: {fileID: 1057448783}
   m_Script: {fileID: 11500000, guid: 56f9719705a67e64182c59dc31b5146d, type: 3}
---- !u!114 &1491737870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1491737862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfb82cc51a96504f9cd3ee3eb86b272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Display: 0
-  displayed: 0
-  controllerDisplay: {fileID: 0}
-  X: {fileID: 0}
-  Y: {fileID: 0}
-  A: {fileID: 0}
-  B: {fileID: 0}
-  LB: {fileID: 0}
-  RB: {fileID: 0}
-  LT: {fileID: 0}
-  RT: {fileID: 0}
-  LeftStick: {fileID: 0}
-  RightStick: {fileID: 0}
-  Dpad: {fileID: 0}
-  buttons: []
-  sticks: []
-  pad: []
 --- !u!1001 &1496626753
 Prefab:
   m_ObjectHideFlags: 0
