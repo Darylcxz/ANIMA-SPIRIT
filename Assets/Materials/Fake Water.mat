@@ -2,17 +2,15 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Fake Water
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _NORMALMAP
+  m_ShaderKeywords: _ALPHABLEND_ON _DETAIL_MULX2 _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: 3000
-  stringTagMap:
-    RenderType: Transparent
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -21,20 +19,20 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 10, y: 10}
+          m_Scale: {x: 5, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: e08c295755c0885479ad19f518286ff2, type: 3}
+          m_Texture: {fileID: 2800000, guid: 89fe4f9af77c90043b147e876bc99201, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 89fe4f9af77c90043b147e876bc99201, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -56,7 +54,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 10, y: 10}
+          m_Scale: {x: 5, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -70,7 +68,7 @@ Material:
           name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 5, y: 5}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -82,16 +80,16 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
           name: _SrcBlend
         second: 5
       data:
         first:
           name: _DstBlend
         second: 10
-      data:
-        first:
-          name: _Cutoff
-        second: .5
       data:
         first:
           name: _Parallax
@@ -103,7 +101,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .370000005
       data:
         first:
           name: _BumpScale
@@ -122,15 +120,15 @@ Material:
         second: 0
       data:
         first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
           name: _Mode
         second: 2
       data:
         first:
           name: _Metallic
-        second: 0
-      data:
-        first:
-          name: _EmissionScaleUI
         second: 0
     m_Colors:
       data:
@@ -140,7 +138,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .116565756, g: .359530896, b: .566176474, a: .515999973}
+        second: {r: .116565756, g: .359530896, b: .566176474, a: .745098054}
       data:
         first:
           name: _EmissionColorUI
