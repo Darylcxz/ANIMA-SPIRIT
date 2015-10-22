@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour {
 
@@ -7,12 +8,20 @@ public class GameControl : MonoBehaviour {
 	public static bool spiritmode = false;
 	public Texture bolangu;
 	public Texture spiritjotai;
+    public Image possesionmode;
+    private Collider[] hitcolliders;
+    private int ordernum = 0;
+    public GameObject pointer;
+    private Vector3 heightplus = new Vector3(0, 1, 0);
+    private int enemylayer;
+    
 
 	// Use this for initialization
 	void Start () {
 
-
-
+        possesionmode.enabled = false;
+        character = GameObject.Find("Character");
+        enemylayer = 1 << LayerMask.NameToLayer("DetectPossess");
 	}
 	
 	// Update is called once per frame
@@ -22,9 +31,19 @@ public class GameControl : MonoBehaviour {
 
 		if(GamepadManager.buttonYDown || Input.GetMouseButtonDown(1))
 		{
-
 			possessModeToggle();
 		}
+
+        if(GamepadManager.dpadRightDown && spiritmode)
+        {
+            NextPossessTarget();
+        }
+
+        if (GamepadManager.dpadLeftDown && spiritmode)
+        {
+            PrevPossessTarget();
+        }
+        
 	
 	}
 
@@ -33,11 +52,15 @@ public class GameControl : MonoBehaviour {
 		if (spiritmode == false) {
 
 			spiritmode = true;
+            possesionmode.enabled = true;
 			print ("possess mode activated");
+            hitcolliders = Physics.OverlapSphere(character.transform.position, 20, enemylayer);
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
 
 		} else if (spiritmode == true) {
 
 			print ("possess mode deactivated");
+            possesionmode.enabled = false;
 		//	charactermovement.isBeingControlled = true;
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
@@ -46,15 +69,33 @@ public class GameControl : MonoBehaviour {
 
 	}
 
-	void OnGUI()
-	{
-		if(spiritmode == true)
-			GUI.DrawTexture(new Rect(0, 0, 1600, 900), spiritjotai, ScaleMode.StretchToFill, true, 10.0F);
+    void NextPossessTarget()
+    {
+        if(ordernum != hitcolliders.Length - 1)
+        {
+            ordernum++;
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
+        }
 
+        else
+        {
+            ordernum = 0;
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
+        }
+    }
 
-		if (KeyItemSpin.holdingItem == true) {
-			GUI.DrawTexture(new Rect(1400, 760, 150, 100), bolangu, ScaleMode.StretchToFill, true, 10.0F);
-		}
-	}
+    void PrevPossessTarget()
+    {
+        if(ordernum - 1 != -1)
+        {
+            ordernum -= 1;
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
+        }
+        else
+        {
+            ordernum = hitcolliders.Length - 1;
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
+        }
+    }
 	
 }

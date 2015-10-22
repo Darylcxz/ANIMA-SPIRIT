@@ -330,8 +330,8 @@ public class MovementController : MonoBehaviour {
     }
 	void CheckMana()
 	{
-		_manaBarUI.fillAmount = currMana / maxMana;
-		Debug.Log(currMana);
+		//_manaBarUI.fillAmount = currMana / maxMana;
+//		Debug.Log(currMana);
 		if (currMana > maxMana && _mana == true) // check if mana is maxed
 		{
 			currMana = maxMana; //caps it back
