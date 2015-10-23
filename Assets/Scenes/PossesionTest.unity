@@ -936,7 +936,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6583284, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
       propertyPath: m_Center.y
-      value: 5.53999996
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6583284, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
       propertyPath: m_Size.z
@@ -953,6 +953,34 @@ Prefab:
     - target: {fileID: 5435088, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
       propertyPath: m_Interpolate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19595004, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_Radius
+      value: 15.9300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 19595004, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_BaseOffset
+      value: 16.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 19595004, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_Height
+      value: 22.2000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583284, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_Size.y
+      value: 25.4400005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435088, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435088, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435088, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 645c66b45b8bdca4ba962f3f06a8cf1d, type: 2}

@@ -237,6 +237,7 @@ public abstract class AIbase : MonoBehaviour {
                 if (GamepadManager.buttonADown && hit.collider.name == "arrow")
                 {
                     AIState = States.possessed;
+                    hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
                 }
             }
         }

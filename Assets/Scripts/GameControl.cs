@@ -43,6 +43,11 @@ public class GameControl : MonoBehaviour {
         {
             PrevPossessTarget();
         }
+
+        if(GamepadManager.buttonA && spiritmode)
+        {
+            
+        }
         
 	
 	}
@@ -64,6 +69,7 @@ public class GameControl : MonoBehaviour {
 		//	charactermovement.isBeingControlled = true;
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
+            pointer.transform.position = new Vector3(0, 100, 0);
 
 		}
 
