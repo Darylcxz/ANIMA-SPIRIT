@@ -11,6 +11,9 @@
     <D4 character="Gulnaz">...</D4>
     <D5 character="Gulnaz">Coznac definitely needs your guidance now..</D5>
   </Grave>
+  <leavearea1>
+    <D1 character="Gulnaz">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
+  </leavearea1>
   <Ruslan>
     <D1 character="Ruslan">Ah, good morning, Gulnaz. You're up early.</D1>
     <D2 character="Ruslan">Moreso than usual, anyway.</D2>
@@ -27,6 +30,10 @@
     <D13 character="Gulnaz">Not on my watch it's not.</D13>
     <D14 character="Ruslan">Hahaha... You've always displayed the same fiery ardour as your precursors.</D14>
     <D15 character="Gulnaz">I try my best.</D15>
+    <D16 character="Ruslan">Oh! That's right..</D16>
+    <D17 character="Ruslan">Could you perhaps pass this letter to Inzhu? I need her to give it to Aibek.</D17>
+    <D18 character="Gulnaz">A letter for the chieftain? Uh, sure, I can do that.</D18>
+    <D18 character="Ruslan">You have my thanks, Gulnaz.</D18>
   </Ruslan>
   <Ruslan2>
     <D1 character="Ruslan">I think I saw Serik up ahead. Why don't you chat with him instead?</D1>
@@ -56,6 +63,10 @@
     <D3 character="Serik">W- what?</D3>
     <D4 character="Gulnaz">Uh..........it's nothing. Bye.</D4>
   </Serik3>
+  <enterarea4>
+    <D1 character="Gulnaz">Inzhu's probably here somewhere. </D1>
+    <D2 character="Gulnaz">I should hand over the letter to her.</D2>
+  </enterarea4>
   <Inzhu>
     <D1 character="Inzhu">Well, well! If it isn't the lass herself! How goes the hunting?</D1>
     <D2 character="Gulnaz">Eh. It's been good.</D2>
@@ -65,9 +76,14 @@
     <D6 character="Inzhu">Hum, suit yourself. If you change your mind, Aibek's conducting lessons up ahead. We've got a bunch of carcasses for the instruments from the last hunt.</D6>
     <D7 character="Gulnaz">Eugh.. Aibek and carcasses.</D7>
     <D8 character="Inzhu">Say what you will about Aibek, Gulnaz, but he is the Chieftan. People trust him, as I do.</D8>
-    <D9 character="Inzhu">Well, Temir said she was looking for you. Why don't you go get your sword? She's at her hut to your right.</D9>
+    <D9 character="Gulnaz">Speaking of... Ruslan wanted this letter delivered to Aibek. Here.</D9>
+    <D9 character="Inzhu">What's this, I'm a middle man now? </D9>
+    <D9 character="Inzhu">Anyway, Temir said she was looking for you. Why don't you go get your sword? She's at her hut to your right.</D9>
     <D10 character="Gulnaz">Thanks. Let's debate the good of magic some other time.</D10>
   </Inzhu>
+  <inzhucockblock>
+    <D1 character="Inzhu">Woah! Where do you think you're going? Temirs' hut is off to the right.</D1>
+  </inzhucockblock>
   <Inzhu2>
     <D1 character="Inzhu">Don't you have a piece of metal to swing around?</D1>
     <D2 character="Gulnaz">Don't you have a magic spell to fail?</D2>
@@ -80,7 +96,6 @@
     <D4 character="Temir">Here's your sword.</D4>
     <D5 character="Gulnaz">Yes!</D5>
     <D6 character="Temir">Give it a swing on those dummies over there, why don't you?</D6>
-    <D7 character="Gulnaz">With pleasure!</D7>
   </Temir>
   <Temir2>
     <D1 character="Temir">What're you waiting for?</D1>
@@ -92,6 +107,18 @@
     <D4 character="Gulnaz">I think it's well placed.</D4>
     <D5 character="Temir">Hmph.</D5>
   </Temir3>
+  <Temirhashadit>
+    <D1 character="Temir">Woah, easy on the dummies, Gulnaz.</D1>
+    <D2 character="Gulnaz">Oh! Uh, whoops!</D2>
+    <D3 character="Temir">Don't make me craft the dummies again.</D3>
+  </Temirhashadit>
+  <Serikcalls>
+    <D1 character="Serik">Ugh! I need a break.</D1>
+    <D2 character="Serik">This is too much...</D2>
+  </Serikcalls>
+  <Inzhucockblocksagain>
+    <D1 character="Inzhu">Uh, are you gonna help out your bestie over there or what?</D1>
+  </Inzhucockblocksagain>
   <Serik4>
     <D1 character="Serik">Oh.... Hey there Gulnaz..</D1>
     <D2 character="Gulnaz">Those haystacks look pretty heavy, Serik.</D2>
