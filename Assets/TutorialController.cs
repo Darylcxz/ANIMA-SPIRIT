@@ -90,17 +90,22 @@ public class TutorialController : MonoBehaviour {
 		{
  			case 0:
 				//Zoom when enter
+
 				Invoke("Wait", 5.0f);
 				
 				_movieCam.orthographicSize = _temp;//Mathf.Lerp(13.0f, _camSize, 0.1);
 				bTimer = true;
-				
+				//if (!ready)
+				//{
+				//	_moveScript.bForcedMove = true;
+				//}
 				//_camChar.enabled = true;
 				if (ready)
 				{
 					_camChar.enabled = true;
 					ready = false;
 					bTimer = false;
+					_moveScript.bForcedMove = false;
 				//	_t = 0;
 					CancelInvoke();
 				}
@@ -182,7 +187,7 @@ public class TutorialController : MonoBehaviour {
 				//player kills desh
 				if (DialogueScript._seqNum == 1 && DialogueScript.NPCname.Contains("shoes"))
 				{
-					Serik.SetActive(false);
+					Serik.SetActive(false);// serik dashes away
 				}
 				Debug.Log("dwedwfew");
 				//NPCname = gameObject.name;
