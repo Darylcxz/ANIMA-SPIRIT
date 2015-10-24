@@ -31,7 +31,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
-    private bool faceme = false;
+    //private bool faceme = false;
     public Text showname;
     public Animator charanim;
 	public Animator serikAnim;
