@@ -31,7 +31,7 @@ public class DialogueScript : MonoBehaviour
     private Vector3 side2;
     public MovementController _mScript;
 	public static int _seqNum;
-    private bool faceme = false;
+    //private bool faceme = false;
     public Text showname;
     public Animator charanim;
 	public Animator serikAnim;
@@ -52,19 +52,24 @@ public class DialogueScript : MonoBehaviour
         center = transform.position + new Vector3(0, 0.5f, 0);
         side1 = center + new Vector3(0.2f, 0, 0);
         side2 = center + new Vector3(-0.2f, 0, 0);
-        Debug.DrawRay(center, transform.forward * 1);
-        Debug.DrawRay(side1, transform.forward * 1);
-        Debug.DrawRay(center, transform.forward * 1);
+        Debug.DrawRay(center, transform.forward * 5);
+        Debug.DrawRay(side1, transform.forward * 5);
+        Debug.DrawRay(side2, transform.forward * 5);
 
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         {
 
-            if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
+			if (hit.collider.tag == "movable")
+			{
+				Debug.Log("de");
+			}
+			if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
                 NPCname = hit.collider.name;
                 string textData = dialogue.text;
                 ParseDialogue(textData);
             }
+			
         }
 
         else if (Input.GetButtonDown("Action") && textcomplete && istalking)
