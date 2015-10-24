@@ -140,10 +140,10 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.move:
-                //RotatingLogic(hMove, vMove);
-                //MovementLogic(hMove,vMove);
-				RotatingLogic(GamepadManager.h1, GamepadManager.v1);
-				MovementLogic(GamepadManager.h1, GamepadManager.v1);
+                RotatingLogic(hMove, vMove);
+                MovementLogic(hMove,vMove);
+				//RotatingLogic(GamepadManager.h1, GamepadManager.v1);
+				//MovementLogic(GamepadManager.h1, GamepadManager.v1);
                 attackMode = 0;
                 if (vMove == 0 && hMove ==0)
 				//if (GamepadManager.v1 == 0 && GamepadManager.h1 ==0)

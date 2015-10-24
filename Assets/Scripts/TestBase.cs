@@ -3,20 +3,22 @@ using System.Collections;
 
 public class TestBase : AIbase {
 
+    public ParticleSystem explosion;
+
     protected Vector3 asd;
 	// Use this for initialization
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
         origin = gameObject.transform.position;
+        
 	}
 	
 	// Update is called once per frame
 	
     protected override void ActivateAbility()
     {
-        //throw new System.NotImplementedException();
-        
+        explosion.Play();
     }
     protected override void PassiveAbility()
     {
