@@ -353,7 +353,7 @@ Prefab:
       objectReference: {fileID: 1008855133}
     - target: {fileID: 11477136, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: bKeyboard
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
