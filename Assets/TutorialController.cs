@@ -165,7 +165,9 @@ public class TutorialController : MonoBehaviour {
 					slowT = false;
 					_t = 0;
 					Time.timeScale = 1;
+					GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().transform.localEulerAngles = new Vector3(0, 90, 0);
 					sequenceNum = 5;
+
 					
 				}
 				break;
