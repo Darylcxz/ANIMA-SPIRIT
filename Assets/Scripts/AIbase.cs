@@ -153,7 +153,7 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.idle;
                     agent.ResetPath();
                     ready = false;
-                    //Camerafollow.targetUnit = GameObject.Find("Character");
+                    Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
                 }
                 break;
