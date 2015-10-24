@@ -4,13 +4,15 @@ using System.Collections;
 public class PickUpScript : MonoBehaviour {
 
 
-    public GameObject _attach;
+ //   public GameObject _attach;
+	Transform _attach;
     
 
     bool hasItem = false;
 
 	// Use this for initialization
 	void Start () {
+		_attach = transform;
 	
 	}
 	
@@ -23,13 +25,13 @@ public class PickUpScript : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.E) && !hasItem)
             {
-                other.gameObject.transform.parent = _attach.transform;
+                other.gameObject.transform.parent = _attach;
                 //other.gameObject.transform.position = _attach.transform.position;
                 hasItem = true;
             }
             else if (Input.GetKeyDown(KeyCode.E) && hasItem)
             {
-                _attach.transform.GetChild(0).transform.parent = null;
+               _attach.GetChild(0).transform.parent = null;
                 hasItem = false;
                 Debug.Log("detach");
 
