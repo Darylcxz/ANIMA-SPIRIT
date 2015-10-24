@@ -47,7 +47,7 @@ public class MovementController : MonoBehaviour {
 
     public float speed = 15.0f;
     public float jumpForce = 5.0f;
-    public float smoothDamp = 15.0f;
+    public float smoothDamp = 1.0f;
 
     Rigidbody _rigidBody;
 	Collider _dagger;
@@ -164,10 +164,10 @@ public class MovementController : MonoBehaviour {
                 break;
             case States.possess:
 				_mana = false;
-                MovementLogic(hMoveRight, vMoveRight);
-                RotatingLogic(hMoveRight, vMoveRight);
-				//MovementLogic(GamepadManager.h2, GamepadManager.v2);
-				//RotatingLogic(GamepadManager.h2, GamepadManager.v2);
+                //MovementLogic(hMoveRight, vMoveRight);
+               // RotatingLogic(hMoveRight, vMoveRight);
+				MovementLogic(GamepadManager.h2, GamepadManager.v2);
+				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
 				
                 if (GameControl.spiritmode == false)
                 {
@@ -287,7 +287,9 @@ public class MovementController : MonoBehaviour {
     {
         if(GameControl.spiritmode == false)
         {
-            Vector3 targetVelocity = new Vector3(horizontal, 0, vertical);
+            float h2 = horizontal * 2;
+            float v2 = vertical * 2;
+            Vector3 targetVelocity = new Vector3(h2 + v2, 0, v2 - h2);
             targetVelocity.Normalize();
             targetVelocity *= speed;
             Vector3 velocity = _rigidBody.velocity;
@@ -302,7 +304,9 @@ public class MovementController : MonoBehaviour {
     {
         if (GameControl.spiritmode == false && GulnazGrab.holding == false)
         {
-            Vector3 targetDir = new Vector3(h, 0, v).normalized;
+            float h3 = h * 2;
+            float v3 = v * 2;
+            Vector3 targetDir = new Vector3(h3 + v3, 0, v3 - h3).normalized;
 			
             Quaternion targetRot = Quaternion.LookRotation(targetDir, Vector3.up);
             Quaternion newRot = Quaternion.Lerp(_rigidBody.rotation, targetRot, smoothDamp * Time.deltaTime);
@@ -330,8 +334,8 @@ public class MovementController : MonoBehaviour {
     }
 	void CheckMana()
 	{
-		_manaBarUI.fillAmount = currMana / maxMana;
-		Debug.Log(currMana);
+		//_manaBarUI.fillAmount = currMana / maxMana;
+//		Debug.Log(currMana);
 		if (currMana > maxMana && _mana == true) // check if mana is maxed
 		{
 			currMana = maxMana; //caps it back
