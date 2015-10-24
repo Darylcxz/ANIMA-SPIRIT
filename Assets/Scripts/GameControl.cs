@@ -51,7 +51,7 @@ public class GameControl : MonoBehaviour {
 
 	void possessModeToggle() {
 
-		if (spiritmode == false) {
+		if (!spiritmode && !freeze) {
 
 			spiritmode = true;
             freeze = true;
@@ -60,11 +60,9 @@ public class GameControl : MonoBehaviour {
             hitcolliders = Physics.OverlapSphere(character.transform.position, 20, enemylayer);
             pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
 
-		} else if (spiritmode == true) {
+		} else if (spiritmode) {
 
 			print ("possess mode deactivated");
-            //possesionmode.enabled = false;
-		    //charactermovement.isBeingControlled = true;
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
             pointer.transform.position = new Vector3(0, 100, 0);
