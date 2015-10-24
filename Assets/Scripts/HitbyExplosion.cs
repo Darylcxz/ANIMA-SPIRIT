@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewPossession : MonoBehaviour {
+public class HitbyExplosion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -12,4 +12,9 @@ public class NewPossession : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void OnParticleCollision(GameObject other)
+    {
+        print("burn!!!!");
+    }
 }
