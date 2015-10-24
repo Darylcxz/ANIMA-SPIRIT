@@ -16,6 +16,7 @@ public abstract class AIbase : MonoBehaviour {
     protected NavMeshAgent agent;
     protected Rigidbody _rigidBody;
 	public MovementController playerMana;
+    private RaycastHit hit;
 
    public enum States
     {
@@ -24,7 +25,8 @@ public abstract class AIbase : MonoBehaviour {
         rotate,
         retreat,
         possessed,
-        pursue
+        pursue,
+        doNothing
     };
 
     //states related stuff
@@ -64,7 +66,8 @@ public abstract class AIbase : MonoBehaviour {
         distance = Vector3.Distance(gameObject.transform.position, origin); //distance between you and origin
      
         Roam();
-        PassiveAbility();		
+        PassiveAbility();
+        CheckPossession();
         
         //if (!isPossessed) {
         //    Roam ();
@@ -159,6 +162,18 @@ public abstract class AIbase : MonoBehaviour {
                 ActivateAbility(); //Enemy Behaviour
                 break;
 
+            case States.doNothing:
+                //literally fucking does nothing
+                agent.ResetPath();
+                ready = false;
+                CancelInvoke();
+                Debug.Log("called");
+                if(GameControl.spiritmode == false)
+                {
+                    AIState = States.idle;
+                }
+                break;
+
 
         }
 
@@ -180,6 +195,8 @@ public abstract class AIbase : MonoBehaviour {
 		{
 			ActivateAbility();
 		}
+
+
 
         //if(Input.GetMouseButtonDown(1))
         //{
@@ -210,14 +227,31 @@ public abstract class AIbase : MonoBehaviour {
         }
     }
 
+    void CheckPossession()
+    {
+        if(GameControl.spiritmode && AIState != States.possessed)
+        {
+            AIState = States.doNothing;
+            if(Physics.Raycast(transform.position, Vector3.up, out hit, 2))
+            {
+                if (GamepadManager.buttonADown && hit.collider.name == "arrow")
+                {
+                    AIState = States.possessed;
+                    hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
+                }
+            }
+        }
+    }
+
     void AIMove()
     {
        // hMove = Input.GetAxis("Horizontal");
         //vMove = Input.GetAxis("Vertical");
 
        // Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+      
 		Vector3 targetVelocity = new Vector3(GamepadManager.h1, 0, GamepadManager.v1);
-
+        Debug.Log("MOVEEEEEEEE" + targetVelocity);
 		targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;
