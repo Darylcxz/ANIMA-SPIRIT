@@ -6,6 +6,7 @@ public class GameControl : MonoBehaviour {
 
 	private GameObject character;
 	public static bool spiritmode = false;
+    public static bool freeze = false;
 	public Texture bolangu;
 	public Texture spiritjotai;
     public Image possesionmode;
@@ -34,7 +35,7 @@ public class GameControl : MonoBehaviour {
 			possessModeToggle();
 		}
 
-        if(GamepadManager.dpadRightDown && spiritmode)
+        if(GamepadManager.dpadRightDown && spiritmode || Input.GetKeyDown("k") && spiritmode)
         {
             NextPossessTarget();
         }
@@ -44,11 +45,7 @@ public class GameControl : MonoBehaviour {
             PrevPossessTarget();
         }
 
-        if(GamepadManager.buttonA && spiritmode)
-        {
-            
-        }
-        
+        possesionmode.enabled = freeze;
 	
 	}
 
@@ -57,7 +54,8 @@ public class GameControl : MonoBehaviour {
 		if (spiritmode == false) {
 
 			spiritmode = true;
-            possesionmode.enabled = true;
+            freeze = true;
+            //possesionmode.enabled = true;
 			print ("possess mode activated");
             hitcolliders = Physics.OverlapSphere(character.transform.position, 20, enemylayer);
             pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
@@ -65,12 +63,15 @@ public class GameControl : MonoBehaviour {
 		} else if (spiritmode == true) {
 
 			print ("possess mode deactivated");
-            possesionmode.enabled = false;
-		//	charactermovement.isBeingControlled = true;
+            //possesionmode.enabled = false;
+		    //charactermovement.isBeingControlled = true;
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
             pointer.transform.position = new Vector3(0, 100, 0);
-
+            if(freeze)
+            {
+                freeze = false;
+            }
 		}
 
 	}
