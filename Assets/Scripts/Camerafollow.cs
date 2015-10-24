@@ -14,14 +14,13 @@ public class Camerafollow : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameControl.spiritmode == true) {
+		
 			float moveX = targetUnit.transform.position.x - transform.position.x;
 			float moveZ = targetUnit.transform.position.z - transform.position.z;
 			float moveY = targetUnit.transform.position.y - transform.position.y;
 			Vector3 currLocation = new Vector3 (transform.position.x + moveX / 6, transform.position.y + moveY / 6, transform.position.z + moveZ / 6);
 			transform.position = currLocation;
-		} else
-			transform.position = targetUnit.transform.position;
+		
 
 
 	}
