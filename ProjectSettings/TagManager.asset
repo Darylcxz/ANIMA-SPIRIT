@@ -25,6 +25,7 @@ TagManager:
   - GulnazBody
   - desh
   - SerikGhost
+  - monstaa
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - DetectPossess
   - 
   - 
   - 
