@@ -145,7 +145,7 @@ public abstract class AIbase : MonoBehaviour {
 				playerMana.currMana -= Time.deltaTime;
                 agent.ResetPath();
                 ready = false;
-                cameratarget.followTarget = gameObject;
+                Camerafollow.targetUnit = gameObject;
                 CheckInput();
                 AIMove();
                 if (GameControl.spiritmode == false)
@@ -153,7 +153,7 @@ public abstract class AIbase : MonoBehaviour {
                     AIState = States.idle;
                     agent.ResetPath();
                     ready = false;
-                    cameratarget.followTarget = GameObject.Find("Character");
+                    //Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
                 }
                 break;
@@ -167,8 +167,7 @@ public abstract class AIbase : MonoBehaviour {
                 agent.ResetPath();
                 ready = false;
                 CancelInvoke();
-                Debug.Log("called");
-                if(GameControl.spiritmode == false)
+                if(GameControl.freeze == false)
                 {
                     AIState = States.idle;
                 }
@@ -186,10 +185,12 @@ public abstract class AIbase : MonoBehaviour {
 		if(autoFire)
 		{
 			PressedE =  Input.GetKey(KeyCode.E);
+            PressedE = GamepadManager.buttonB;
 		}
 		else
 		{
 			PressedE = Input.GetKeyDown(KeyCode.E);
+            PressedE = GamepadManager.buttonBDown;
 		}
 		if(PressedE)
 		{
@@ -229,15 +230,16 @@ public abstract class AIbase : MonoBehaviour {
 
     void CheckPossession()
     {
-        if(GameControl.spiritmode && AIState != States.possessed)
+        if(GameControl.freeze && AIState != States.possessed)
         {
             AIState = States.doNothing;
             if(Physics.Raycast(transform.position, Vector3.up, out hit, 2))
             {
-                if (GamepadManager.buttonADown && hit.collider.name == "arrow")
+                if (GamepadManager.buttonADown && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
                 {
                     AIState = States.possessed;
                     hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
+                    GameControl.freeze = false;
                 }
             }
         }
@@ -245,13 +247,13 @@ public abstract class AIbase : MonoBehaviour {
 
     void AIMove()
     {
-       // hMove = Input.GetAxis("Horizontal");
+        //hMove = Input.GetAxis("Horizontal");
         //vMove = Input.GetAxis("Vertical");
 
-       // Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
-      
-		Vector3 targetVelocity = new Vector3(GamepadManager.h1, 0, GamepadManager.v1);
-        Debug.Log("MOVEEEEEEEE" + targetVelocity);
+        //Vector3 targetVelocity = new Vector3(hMove, 0, vMove);
+        float h2 = GamepadManager.h1 * 2;
+        float v2 = GamepadManager.v1 * 2;
+		Vector3 targetVelocity = new Vector3(h2 + v2, 0, v2 - h2);
 		targetVelocity.Normalize();
         targetVelocity *= speed;
         Vector3 velocity = _rigidBody.velocity;
