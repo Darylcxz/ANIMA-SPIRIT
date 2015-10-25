@@ -147,55 +147,55 @@
     <D9 character="GhostSerik" expression="3">...Yeah. </D9>
   </enter1-1>
   <desh1-1>
-    <D1 character="Gulnaz" expression="">Hold up.</D1>
-    <D2 character="GhostSerik" expression="">What! What is it!! Is it Bearguar?!!</D2>
-    <D3 character="Gulnaz" expression="">What?! No!</D3>
-    <D4 character="Gulnaz" expression="">That thing! Over there!</D4>
-    <D5 character="GhostSerik" expression="">WHAT IS THAT?!</D5>
-    <D6 character="Gulnaz" expression="">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
+    <D1 character="Gulnaz" expression="0">Hold up.</D1>
+    <D2 character="GhostSerik" expression="1">What! What is it!! Is it Bearguar?!!</D2>
+    <D3 character="Gulnaz" expression="0">What?! No!</D3>
+    <D4 character="Gulnaz" expression="0">That thing! Over there!</D4>
+    <D5 character="GhostSerik" expression="1">WHAT IS THAT?!</D5>
+    <D6 character="Gulnaz" expression="1">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
   </desh1-1>
   <Shake1-1>
-    <D1 character="GhostSerik">AAAHHH!!!</D1>
-    <D1 character="GhostSerik">It's coming for you!</D1>
+    <D1 character="GhostSerik" expression="1">AAAHHH!!!</D1>
+    <D1 character="GhostSerik" expression="1">It's coming for you!</D1>
   </Shake1-1>
   <defeated1-1>
-    <D1 character="Gulnaz">And that's how it's done.</D1>
-    <D2 character="Gulnaz">Still doubting my ability?</D2>
-    <D3 character="GhostSerik">Well, I don't doubt that we're still susceptible to death.</D3>
-    <D4 character="Gulnaz">Hmph.</D4>
+    <D1 character="Gulnaz" expression="5">And that's how it's done.</D1>
+    <D2 character="Gulnaz" expression="5">Still doubting my ability?</D2>
+    <D3 character="GhostSerik" expression="5">Well, I don't doubt that we're still susceptible to death.</D3>
+    <D4 character="Gulnaz" expression="0">Hmph.</D4>
   </defeated1-1>
   <shoes1-1>
-    <D1 character="GhostSerik">!!!</D1>
-    <D4 character="GhostSerik">Are those my..?!</D4>
+    <D1 character="GhostSerik" expression="1">!!!</D1>
+    <D4 character="GhostSerik" expression="1">Are those my..?!</D4>
   </shoes1-1>
   <shoes21-1>
-    <D1 character="GhostSerik">MY SHOES!!!</D1>
-    <D2 character="GhostSerik">Archura was just here!</D2>
-    <D3 character="Gulnaz">Serik, hold up! Spirits damn it!</D3>
+    <D1 character="GhostSerik" expression="0">MY SHOES!!!</D1>
+    <D2 character="GhostSerik" expression="1">Archura was just here!</D2>
+    <D3 character="Gulnaz" expression="0">Serik, hold up! Spirits damn it!</D3>
   </shoes21-1>
   <pig1-1>
     <D1 character="Pig">Oink! Oink, oink!</D1>
-    <D2 character="Gulnaz">...</D2>
+    <D2 character="Gulnaz" expression="1">...</D2>
     <D3 character="Pig">Oink!!!</D3>
-    <D4 character="Gulnaz">Okay. You don't want to upset me piggy.</D4>
+    <D4 character="Gulnaz" expression="0">Okay. You don't want to upset me piggy.</D4>
     <D5 character="Pig">Squeal!!</D5>
-    <D6 character="Gulnaz">Spirits, shut up! You sound just like-</D6>
-    <D6 character="Gulnaz">Serik?!</D6>
+    <D6 character="Gulnaz" expression="0">Spirits, shut up! You sound just like-</D6>
+    <D6 character="Gulnaz" expression="2">Serik?!</D6>
   </pig1-1>
   <posession1-1>
-    <D1 character="GhostSerik">Ah! I think? I may have just possessed that Lavapig??</D1>
-    <D2 character="Gulnaz">...I can see that.</D2>
-    <D3 character="GhostSerik">I.. I think I can do it again!</D3>
-    <D4 character="Gulnaz">WHY would you want to?!</D4>
-    <D5 character="GhostSerik">I don't know! Is this ability not potentially useful?</D5>
-    <D6 character="Gulnaz">I need a moment to register..this whole thing.</D6>
-    <D7 character="GhostSerik">Well, I'm gonna give this another go.</D7>
-    <D8 character="Gulnaz">I... yeah, go ahead.</D8>
+    <D1 character="GhostSerik" expression="1">Ah! I think? I may have just possessed that Lavapig??</D1>
+    <D2 character="Gulnaz" expression="2">...I can see that.</D2>
+    <D3 character="GhostSerik" expression="6">I.. I think I can do it again!</D3>
+    <D4 character="Gulnaz" expression="2">WHY would you want to?!</D4>
+    <D5 character="GhostSerik" expression="1">I don't know! Is this ability not potentially useful?</D5>
+    <D6 character="Gulnaz" expression="2">I need a moment to register..this whole thing.</D6>
+    <D7 character="GhostSerik" expression="6">Well, I'm gonna give this another go.</D7>
+    <D8 character="Gulnaz" expression="2">I... yeah, go ahead.</D8>
   </posession1-1>
   <seriksapig1-1>
     <D1 character="Pig">Oink!! Oink, oink!</D1>
-    <D2 character="Gulnaz">Uh.. Congratulations..I guess?</D2>
-    <D3 character="Gulnaz">Oh my Spirits!!</D3>
-    <D4 character="Gulnaz">That's awesome!</D4>
+    <D2 character="Gulnaz" expression="2">Uh.. Congratulations..I guess?</D2>
+    <D3 character="Gulnaz" expression="5">Oh my Spirits!!</D3>
+    <D4 character="Gulnaz" expression="5">That's awesome!</D4>
   </seriksapig1-1>
 </Dialogue>
