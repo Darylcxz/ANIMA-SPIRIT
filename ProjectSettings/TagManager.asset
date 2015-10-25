@@ -30,6 +30,7 @@ TagManager:
   - log
   - WaterWheel
   - Saw
+  - DeshWall
   layers:
   - Default
   - TransparentFX
