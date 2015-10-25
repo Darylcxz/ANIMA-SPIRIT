@@ -1,100 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dialogue>
   <Exittent>
-    <D1 character="Gulnaz" expression="2">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
-    <D2 character="Gulnaz" expression="2">I wonder what the rest are up to...</D2>
+    <D1 character="Gulnaz" expression="6">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
+    <D2 character="Gulnaz" expression="6">I wonder what the rest are up to...</D2>
   </Exittent>
   <Grave>
-    <D1 character="God">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
-    <D2 character="God">Never forget - Matriarch Gulnara"</D2>
-    <D3 character="Gulnaz">I still miss you, Ne-ma...</D3>
-    <D4 character="Gulnaz">...</D4>
-    <D5 character="Gulnaz">Coznac definitely needs your guidance now..</D5>
+    <D1 character="God" expression="">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
+    <D2 character="God" expression="">Never forget - Matriarch Gulnara"</D2>
+    <D3 character="Gulnaz" expression="3">I still miss you, Ne-ma...</D3>
+    <D4 character="Gulnaz" expression="3">...</D4>
+    <D5 character="Gulnaz" expression="3">Coznac definitely needs your guidance now..</D5>
   </Grave>
   <leavearea1>
-    <D1 character="Gulnaz" expression="1">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
+    <D1 character="Gulnaz" expression="6">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
   </leavearea1>
   <Ruslan>
     <D1 character="Ruslan">Ah, good morning, Gulnaz. You're up early.</D1>
     <D2 character="Ruslan">Moreso than usual, anyway.</D2>
-    <D3 character="Gulnaz">Mornin' Ruslan. I guess I'm just excited to get my dagger back from the smith!</D3>
-    <D4 character="Gulnaz">Going out for a hunt seems to be the only thing that can take my mind off what has been going on lately...</D4>
+    <D3 character="Gulnaz" expression="6">Mornin' Ruslan. I guess I'm just excited to get my dagger back from the smith!</D3>
+    <D4 character="Gulnaz" expression="5">Going out for a hunt seems to be the only thing that can take my mind off what has been going on lately...</D4>
     <D5 character="Ruslan">It is quite the predicament. Our tribe is in disarray, and instrumental magic isn't helping.</D5>
-    <D6 character="Gulnaz">I'm not a fan either... Can't you do something about it- being the Spirit Counselor and all?</D6>
+    <D6 character="Gulnaz" expression="3">I'm not a fan either... Can't you do something about it- being the Spirit Counselor and all?</D6>
     <D7 character="Ruslan">You know how it is with Aibek and I... He's obstinate. Only your grandma could ever get to him, spirits bless her.</D7>
     <D8 character="Ruslan">...</D8>
     <D9 character="Ruslan">...Gulnaz.</D9>
     <D10 character="Ruslan">The spirits in this area, I can sense their malaise.</D10>
     <D11 character="Ruslan">We've been in this area for far too long. </D11>
     <D12 character="Ruslan">Magic may be sustaining us, but I fear that staying any longer might bring a blight.</D12>
-    <D13 character="Gulnaz">Not on my watch it's not.</D13>
+    <D13 character="Gulnaz" expression="5">Not on my watch it's not.</D13>
     <D14 character="Ruslan">Hahaha... You've always displayed the same fiery ardour as your precursors.</D14>
-    <D15 character="Gulnaz">I try my best.</D15>
+    <D15 character="Gulnaz" expression="6">I try my best.</D15>
     <D16 character="Ruslan">Oh! That's right..</D16>
     <D17 character="Ruslan">Could you perhaps pass this letter to Inzhu? I need her to give it to Aibek.</D17>
-    <D18 character="Gulnaz">A letter for the chieftain? Uh, sure, I can do that.</D18>
+    <D18 character="Gulnaz" expression="2">A letter for the chieftain? Uh, sure, I can do that.</D18>
     <D18 character="Ruslan">You have my thanks, Gulnaz.</D18>
   </Ruslan>
   <Ruslan2>
     <D1 character="Ruslan">I think I saw Serik up ahead. Why don't you chat with him instead?</D1>
   </Ruslan2>
   <Serik>
-    <D1 character="Gulnaz">Hey bird-boy.</D1>
-    <D2 character="Serik">Uh, hey, muscle brain. Also- I like all animals equally. Not just birds.</D2>
-    <D3 character="Gulnaz">Uh-huh. So what're you up to?</D3>
-    <D4 character="Serik">Doing some chores for Dad. </D4>
-    <D5 character="Gulnaz">Well, that's better than participating in his magic classes.</D5>
-    <D6 character="Serik">Oh spirits, I rather clean the stables for a month than attend ONE class.</D6>
-    <D7 character="Gulnaz">You are such a drama queen.</D7>
-    <D8 character="Gulnaz">...I agree though.</D8>
-    <D9 character="Serik">Anyways, I have to get back to my chores. </D9>
-    <D10 character="Gulnaz">Sure you don't need any of my muscly assistance?</D10>
-    <D11 character="Serik">Psh, I won't.</D11>
+    <D1 character="Gulnaz" expression="6">Hey bird-boy.</D1>
+    <D2 character="Serik" expression="4">Uh, hey, muscle brain. Also- I like all animals equally. Not just birds.</D2>
+    <D3 character="Gulnaz" expression="6">Uh-huh. So what're you up to?</D3>
+    <D4 character="Serik" expression="5">Doing some chores for Dad. </D4>
+    <D5 character="Gulnaz" expression="0">Well, that's better than participating in his magic classes.</D5>
+    <D6 character="Serik" expression="0">Oh spirits, I rather clean the stables for a month than attend ONE class.</D6>
+    <D7 character="Gulnaz" expression="5">You are such a drama queen.</D7>
+    <D8 character="Gulnaz" expression="0">...I agree though.</D8>
+    <D9 character="Serik" expression="5">Anyways, I have to get back to my chores. </D9>
+    <D10 character="Gulnaz" expression="5">Sure you don't need any of my muscly assistance?</D10>
+    <D11 character="Serik" expression="2">Psh, I won't.</D11>
   </Serik>
   <Serik2>
-    <D1 character="Gulnaz">Need a hand?</D1>
-    <D2 character="Serik">I'm fine..!</D2>
-    <D3 character="Serik">I think.</D3>
-    <D4 character="Gulnaz">Sure.</D4>
+    <D1 character="Gulnaz" expression="5">Need a hand?</D1>
+    <D2 character="Serik" expression="0">I'm fine..!</D2>
+    <D3 character="Serik" expression="1">I think.</D3>
+    <D4 character="Gulnaz" expression="6">Sure.</D4>
   </Serik2>
   <Serik3>
-    <D1 character="Serik">Boy. I wish I had a AAA sandwich.</D1>
-    <D2 character="Gulnaz">What?</D2>
-    <D3 character="Serik">W- what?</D3>
-    <D4 character="Gulnaz">Uh..........it's nothing. Bye.</D4>
+    <D1 character="Serik" expression="4">Boy. I wish I had a AAA sandwich.</D1>
+    <D2 character="Gulnaz" expression="2">What?</D2>
+    <D3 character="Serik" expression="1">W- what?</D3>
+    <D4 character="Gulnaz" expression="2">Uh..........it's nothing. Bye.</D4>
   </Serik3>
   <enterarea4>
-    <D1 character="Gulnaz">Inzhu's probably here somewhere. </D1>
-    <D2 character="Gulnaz">I should hand over the letter to her.</D2>
+    <D1 character="Gulnaz" expression="6">Inzhu's probably here somewhere. </D1>
+    <D2 character="Gulnaz" expression="6">I should hand over the letter to her.</D2>
   </enterarea4>
   <Inzhu>
     <D1 character="Inzhu">Well, well! If it isn't the lass herself! How goes the hunting?</D1>
-    <D2 character="Gulnaz">Eh. It's been good.</D2>
+    <D2 character="Gulnaz" expression="6">Eh. It's been good.</D2>
     <D3 character="Inzhu">Maybe you should take up magic instead? It's surely much more effective than swinging a piece of metal around.</D3>
-    <D4 character="Gulnaz">NO way! I'm a beast with a sword.</D4>
-    <D5 character="Gulnaz"> Plus, I'm not on board with the magic thing. It's shady, it's direspectful, and it's too good to be true.</D5>
+    <D4 character="Gulnaz" expression="5">NO way! I'm a beast with a sword.</D4>
+    <D5 character="Gulnaz" expression="0"> Plus, I'm not on board with the magic thing. It's shady, it's direspectful, and it's too good to be true.</D5>
     <D6 character="Inzhu">Hum, suit yourself. If you change your mind, Aibek's conducting lessons up ahead. We've got a bunch of carcasses for the instruments from the last hunt.</D6>
-    <D7 character="Gulnaz">Eugh.. Aibek and carcasses.</D7>
+    <D7 character="Gulnaz" expression="0">Eugh.. Aibek and carcasses.</D7>
     <D8 character="Inzhu">Say what you will about Aibek, Gulnaz, but he is the Chieftan. People trust him, as I do.</D8>
-    <D9 character="Gulnaz">Speaking of... Ruslan wanted this letter delivered to Aibek. Here.</D9>
+    <D9 character="Gulnaz" expression="2">Speaking of... Ruslan wanted this letter delivered to Aibek. Here.</D9>
     <D9 character="Inzhu">What's this, I'm a middle man now? </D9>
     <D9 character="Inzhu">Anyway, Temir said she was looking for you. Why don't you go get your sword? She's at her hut to your right.</D9>
-    <D10 character="Gulnaz">Thanks. Let's debate the good of magic some other time.</D10>
+    <D10 character="Gulnaz" expression="5">Thanks. Let's debate the good of magic some other time.</D10>
   </Inzhu>
   <inzhucockblock>
     <D1 character="Inzhu">Woah! Where do you think you're going? Temirs' hut is off to the right.</D1>
   </inzhucockblock>
   <Inzhu2>
     <D1 character="Inzhu">Don't you have a piece of metal to swing around?</D1>
-    <D2 character="Gulnaz">Don't you have a magic spell to fail?</D2>
+    <D2 character="Gulnaz" expression="5">Don't you have a magic spell to fail?</D2>
     <D3 character="Inzhu">Touche.</D3>
   </Inzhu2>
   <Temir>
     <D1 character="Temir">You're here.</D1>
-    <D2 character="Gulnaz">Yes.....</D2>
-    <D3 character="Gulnaz">Yes, I am here.</D3>
+    <D2 character="Gulnaz" expression="1">Yes.....</D2>
+    <D3 character="Gulnaz" expression="1">Yes, I am here.</D3>
     <D4 character="Temir">Here's your sword.</D4>
-    <D5 character="Gulnaz">Yes!</D5>
+    <D5 character="Gulnaz" expression="5">Yes!</D5>
     <D6 character="Temir">Give it a swing on those dummies over there, why don't you?</D6>
   </Temir>
   <Temir2>
@@ -102,57 +102,57 @@
   </Temir2>
   <Temir3>
     <D1 character="Temir">You're not too bad, kid.</D1>
-    <D2 character="Gulnaz">I know.</D2>
+    <D2 character="Gulnaz" expression="5">I know.</D2>
     <D3 character="Temir">Could lose the cockiness.</D3>
-    <D4 character="Gulnaz">I think it's well placed.</D4>
+    <D4 character="Gulnaz" expression="6">I think it's well placed.</D4>
     <D5 character="Temir">Hmph.</D5>
   </Temir3>
   <Temirhashadit>
     <D1 character="Temir">Woah, easy on the dummies, Gulnaz.</D1>
-    <D2 character="Gulnaz">Oh! Uh, whoops!</D2>
+    <D2 character="Gulnaz" expression="1">Oh! Uh, whoops!</D2>
     <D3 character="Temir">Don't make me craft the dummies again.</D3>
   </Temirhashadit>
   <Serikcalls>
-    <D1 character="Serik">Ugh! I need a break.</D1>
-    <D2 character="Serik">This is too much...</D2>
+    <D1 character="Serik" expression="0">Ugh! I need a break.</D1>
+    <D2 character="Serik" expression="5">This is too much...</D2>
   </Serikcalls>
   <Inzhucockblocksagain>
     <D1 character="Inzhu">Uh, are you gonna help out your bestie over there or what?</D1>
   </Inzhucockblocksagain>
   <Serik4>
-    <D1 character="Serik">Oh.... Hey there Gulnaz..</D1>
-    <D2 character="Gulnaz">Those haystacks look pretty heavy, Serik.</D2>
-    <D3 character="Serik">Uh-huh.</D3>
-    <D4 character="Gulnaz">Need a hand?</D4>
-    <D5 character="Serik">No.</D5>
-    <D6 character="Serik">...</D6>
-    <D6 character="Serik">..Yes.</D6>
+    <D1 character="Serik" expression="1">Oh.... Hey there Gulnaz..</D1>
+    <D2 character="Gulnaz" expression="6">Those haystacks look pretty heavy, Serik.</D2>
+    <D3 character="Serik" expression="2">Uh-huh.</D3>
+    <D4 character="Gulnaz" expression="5">Need a hand?</D4>
+    <D5 character="Serik" expression="2">No.</D5>
+    <D6 character="Serik" expression="4">...</D6>
+    <D6 character="Serik" expression="5">..Yes.</D6>
   </Serik4>
   <Serik5>
-    <D1 character="Serik">Wow! Do those even weigh a thing to you?</D1>
-    <D2 character="Gulnaz">Not really, no.</D2>
-    <D3 character="Serik">Well, I'm going uphill to report to my dad. Do you wanna come with?</D3>
-    <D4 character="Gulnaz">Sure, I've got some time to kill.</D4>
+    <D1 character="Serik" expression="6">Wow! Do those even weigh a thing to you?</D1>
+    <D2 character="Gulnaz" expression="6">Not really, no.</D2>
+    <D3 character="Serik" expression="5">Well, I'm going uphill to report to my dad. Do you wanna come with?</D3>
+    <D4 character="Gulnaz" expression="6">Sure, I've got some time to kill.</D4>
   </Serik5>
   <enter1-1>
-    <D1 character="Gulnaz">I know you don't go out often, but what exactly are you gawking at?</D1>
-    <D2 character="GhostSerik">It's nothing! I just haven't been this far from the tribe before...</D2>
-    <D3 character="Gulnaz">You've got to be kidding, right?</D3>
-    <D4 character="GhostSerik">Is your sword alone really going to keep us safe from... whatever's out there?</D4>
-    <D5 character="Gulnaz">Oh, you HAVE to be kidding.</D5>
-    <D6 character="GhostSerik">I just lost my body, so really, I'm not very keen on losing any more of my livilhood. You know. Like dying?</D6>
-    <D7 character="Gulnaz">Listen to me, Serik. All my life, I've been gathering and hunting for game.</D7>
-    <D8 character="Gulnaz"> I know everything there is to survive, and I know this place like the back of my hand!</D8>
-    <D8 character="Gulnaz">Since we've been here for so long. Thanks to your oh-so-great dad.</D8>
-    <D9 character="GhostSerik">...Yeah. </D9>
+    <D1 character="Gulnaz" expression="0">I know you don't go out often, but what exactly are you gawking at?</D1>
+    <D2 character="GhostSerik" expression="1">It's nothing! I just haven't been this far from the tribe before...</D2>
+    <D3 character="Gulnaz" expression="1">You've got to be kidding, right?</D3>
+    <D4 character="GhostSerik" expression="1">Is your sword alone really going to keep us safe from... whatever's out there?</D4>
+    <D5 character="Gulnaz" expression="0">Oh, you HAVE to be kidding.</D5>
+    <D6 character="GhostSerik" expression="0">I just lost my body, so really, I'm not very keen on losing any more of my livilhood. You know. Like dying?</D6>
+    <D7 character="Gulnaz" expression="0">Listen to me, Serik. All my life, I've been gathering and hunting for game.</D7>
+    <D8 character="Gulnaz" expression="5"> I know everything there is to survive, and I know this place like the back of my hand!</D8>
+    <D8 character="Gulnaz" expression="0">Since we've been here for so long. Thanks to your oh-so-great dad.</D8>
+    <D9 character="GhostSerik" expression="3">...Yeah. </D9>
   </enter1-1>
   <desh1-1>
-    <D1 character="Gulnaz">Hold up.</D1>
-    <D2 character="GhostSerik">What! What is it!! Is it Bearguar?!!</D2>
-    <D3 character="Gulnaz">What?! No!</D3>
-    <D4 character="Gulnaz">That thing! Over there!</D4>
-    <D5 character="GhostSerik">WHAT IS THAT?!</D5>
-    <D6 character="Gulnaz">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
+    <D1 character="Gulnaz" expression="">Hold up.</D1>
+    <D2 character="GhostSerik" expression="">What! What is it!! Is it Bearguar?!!</D2>
+    <D3 character="Gulnaz" expression="">What?! No!</D3>
+    <D4 character="Gulnaz" expression="">That thing! Over there!</D4>
+    <D5 character="GhostSerik" expression="">WHAT IS THAT?!</D5>
+    <D6 character="Gulnaz" expression="">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
   </desh1-1>
   <Shake1-1>
     <D1 character="GhostSerik">AAAHHH!!!</D1>
