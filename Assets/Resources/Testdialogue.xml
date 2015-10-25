@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dialogue>
   <Exittent>
-    <D1 character="Gulnaz">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
-    <D2 character="Gulnaz">I wonder what the rest are up to...</D2>
+    <D1 character="Gulnaz" expression="2">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
+    <D2 character="Gulnaz" expression="2">I wonder what the rest are up to...</D2>
   </Exittent>
   <Grave>
     <D1 character="God">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
@@ -12,7 +12,7 @@
     <D5 character="Gulnaz">Coznac definitely needs your guidance now..</D5>
   </Grave>
   <leavearea1>
-    <D1 character="Gulnaz">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
+    <D1 character="Gulnaz" expression="1">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
   </leavearea1>
   <Ruslan>
     <D1 character="Ruslan">Ah, good morning, Gulnaz. You're up early.</D1>
