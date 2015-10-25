@@ -16,7 +16,7 @@ public class SerikFollow : MonoBehaviour {
         float moveX = targetpoint.transform.position.x - transform.position.x;
         float moveZ = targetpoint.transform.position.z - transform.position.z;
         float moveY = targetpoint.transform.position.y - transform.position.y;
-        Vector3 currLocation = new Vector3(transform.position.x + moveX / 6, transform.position.y + moveY / 6, transform.position.z + moveZ / 6);
+        Vector3 currLocation = new Vector3(transform.position.x + moveX / 10, transform.position.y + moveY / 10, transform.position.z + moveZ / 10);
         transform.position = currLocation;
 	
 	}

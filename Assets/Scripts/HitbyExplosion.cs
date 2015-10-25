@@ -16,5 +16,7 @@ public class HitbyExplosion : MonoBehaviour {
     void OnParticleCollision(GameObject other)
     {
         print("burn!!!!");
+        ParticleSystem fire = other.GetComponentInChildren<ParticleSystem>();
+        fire.Play();
     }
 }
