@@ -6118,7 +6118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 528654694}
   m_LocalRotation: {x: 0, y: .740317106, z: 0, w: -.6722579}
-  m_LocalPosition: {x: 165.619995, y: 12.6999998, z: -642.830017}
+  m_LocalPosition: {x: 165.619995, y: 10.1999998, z: -642.830017}
   m_LocalScale: {x: 19.1336975, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10005,7 +10005,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 868942050}
   m_LocalRotation: {x: 0, y: .942614853, z: 0, w: .333882272}
-  m_LocalPosition: {x: 158.889999, y: 11.8000002, z: -658.419983}
+  m_LocalPosition: {x: 158.889999, y: 9.60000038, z: -658.419983}
   m_LocalScale: {x: 15.4711237, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13124,7 +13124,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182917217}
   m_LocalRotation: {x: 0, y: .978090167, z: 0, w: -.208181933}
-  m_LocalPosition: {x: 156.389999, y: 11.8000002, z: -630.820007}
+  m_LocalPosition: {x: 156.389999, y: 9.60000038, z: -630.820007}
   m_LocalScale: {x: 15.4711237, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13571,7 +13571,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227613745}
   m_LocalRotation: {x: 0, y: .95840168, z: 0, w: .285422832}
-  m_LocalPosition: {x: 162.490005, y: 10.71, z: -665.070007}
+  m_LocalPosition: {x: 162.490005, y: 9.5, z: -665.070007}
   m_LocalScale: {x: 14.8186741, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20529,7 +20529,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
   - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
   - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
-  chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
+  chara3: {fileID: 21300000, guid: 62d5508c89f889943813b28e64a3da65, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
   chara6:
