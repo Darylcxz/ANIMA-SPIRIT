@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dialogue>
   <Exittent>
-    <D1 character="Gulnaz">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
-    <D2 character="Gulnaz">I wonder what the rest are up to...</D2>
+    <D1 character="Gulnaz" expression="">Nothing like morning air to get the blood pumping! What a great morning for a hunt!</D1>
+    <D2 character="Gulnaz" expression="">I wonder what the rest are up to...</D2>
   </Exittent>
   <Grave>
-    <D1 character="God">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
-    <D2 character="God">Never forget - Matriarch Gulnara"</D2>
-    <D3 character="Gulnaz">I still miss you, Ne-ma...</D3>
-    <D4 character="Gulnaz">...</D4>
-    <D5 character="Gulnaz">Coznac definitely needs your guidance now..</D5>
+    <D1 character="God" expression="">The stone reads "She who remembers the sacred places, the bodies of water, the origin.</D1>
+    <D2 character="God" expression="">Never forget - Matriarch Gulnara"</D2>
+    <D3 character="Gulnaz" expression="">I still miss you, Ne-ma...</D3>
+    <D4 character="Gulnaz" expression="">...</D4>
+    <D5 character="Gulnaz" expression="">Coznac definitely needs your guidance now..</D5>
   </Grave>
   <leavearea1>
-    <D1 character="Gulnaz">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
+    <D1 character="Gulnaz" expression="">I better talk to Ruslan first, he looks like he wants to talk to me.</D1>
   </leavearea1>
   <Ruslan>
-    <D1 character="Ruslan">Ah, good morning, Gulnaz. You're up early.</D1>
-    <D2 character="Ruslan">Moreso than usual, anyway.</D2>
-    <D3 character="Gulnaz">Mornin' Ruslan. I guess I'm just excited to get my dagger back from the smith!</D3>
-    <D4 character="Gulnaz">Going out for a hunt seems to be the only thing that can take my mind off what has been going on lately...</D4>
-    <D5 character="Ruslan">It is quite the predicament. Our tribe is in disarray, and instrumental magic isn't helping.</D5>
-    <D6 character="Gulnaz">I'm not a fan either... Can't you do something about it- being the Spirit Counselor and all?</D6>
-    <D7 character="Ruslan">You know how it is with Aibek and I... He's obstinate. Only your grandma could ever get to him, spirits bless her.</D7>
-    <D8 character="Ruslan">...</D8>
-    <D9 character="Ruslan">...Gulnaz.</D9>
+    <D1 character="Ruslan" expression="">Ah, good morning, Gulnaz. You're up early.</D1>
+    <D2 character="Ruslan" expression="">Moreso than usual, anyway.</D2>
+    <D3 character="Gulnaz" expression="">Mornin' Ruslan. I guess I'm just excited to get my dagger back from the smith!</D3>
+    <D4 character="Gulnaz" expression="">Going out for a hunt seems to be the only thing that can take my mind off what has been going on lately...</D4>
+    <D5 character="Ruslan" expression="">It is quite the predicament. Our tribe is in disarray, and instrumental magic isn't helping.</D5>
+    <D6 character="Gulnaz" expression="">I'm not a fan either... Can't you do something about it- being the Spirit Counselor and all?</D6>
+    <D7 character="Ruslan" expression="">You know how it is with Aibek and I... He's obstinate. Only your grandma could ever get to him, spirits bless her.</D7>
+    <D8 character="Ruslan" expression="">...</D8>
+    <D9 character="Ruslan" expression="">...Gulnaz.</D9>
     <D10 character="Ruslan">The spirits in this area, I can sense their malaise.</D10>
     <D11 character="Ruslan">We've been in this area for far too long. </D11>
     <D12 character="Ruslan">Magic may be sustaining us, but I fear that staying any longer might bring a blight.</D12>
