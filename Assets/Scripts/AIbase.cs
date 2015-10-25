@@ -235,7 +235,7 @@ public abstract class AIbase : MonoBehaviour {
             AIState = States.doNothing;
             if(Physics.Raycast(transform.position, Vector3.up, out hit, 2))
             {
-                if (GamepadManager.buttonADown && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
+                if (GamepadManager.buttonA && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
                 {
                     AIState = States.possessed;
                     hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
