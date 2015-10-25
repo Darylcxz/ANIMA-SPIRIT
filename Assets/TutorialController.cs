@@ -18,6 +18,7 @@ public class TutorialController : MonoBehaviour {
 	public MovementController _moveScript;
 	public DeshTutorial _dTutScript;
 	public GameObject Serik;
+	GameObject _Gulnaz;
 
 	public int sequenceNum;
 
@@ -49,6 +50,7 @@ public class TutorialController : MonoBehaviour {
 		_desh = GameObject.FindGameObjectWithTag("desh").GetComponent<NavMeshAgent>();
 		_moveScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
 		_dTutScript = GameObject.FindGameObjectWithTag("desh").GetComponent<DeshTutorial>();
+		_Gulnaz = GameObject.FindGameObjectWithTag("Player");
 
 	
 	}
@@ -66,7 +68,7 @@ public class TutorialController : MonoBehaviour {
 		{
 			sequenceNum = 1;
 			CamPanScript.SetMount(mountList[sequenceNum].transform);
-			Debug.Log("dwed");
+			//Debug.Log("dwed");
 		}
 		
 		
@@ -160,12 +162,12 @@ public class TutorialController : MonoBehaviour {
 				}
 				
 
-				if (Input.GetKeyDown(KeyCode.LeftShift) && _moveScript.bForcedMove == false)
+				if ((Input.GetKeyDown(KeyCode.LeftShift) || GamepadManager.shoulderR )&& _moveScript.bForcedMove == false)
 				{
 					slowT = false;
 					_t = 0;
 					Time.timeScale = 1;
-					GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().transform.localEulerAngles = new Vector3(0, 90, 0);
+					_Gulnaz.GetComponent<Transform>().transform.localEulerAngles = new Vector3(0, 90, 0);
 					sequenceNum = 5;
 
 					
@@ -181,6 +183,7 @@ public class TutorialController : MonoBehaviour {
 					DialogueScript.NPCname = "defeated1-1";
 					string textData = _dScript.dialogue.text;
 					_dScript.ParseDialogue(textData);
+					_t = 0;
 					sequenceNum = 6;
 				}
 				
@@ -190,13 +193,28 @@ public class TutorialController : MonoBehaviour {
 				if (DialogueScript._seqNum == 1 && DialogueScript.NPCname.Contains("shoes"))
 				{
 					Serik.SetActive(false);// serik dashes away
+					//DISPLAY JUMP THING
+					sequenceNum = 7;
 				}
-				Debug.Log("dwedwfew");
+				//Debug.Log("dwedwfew");
 				//NPCname = gameObject.name;
 			    
 				
 				break;
 			case 7:
+				Debug.Log(_t + "_t");
+				Vector3 endJumpPos = new Vector3(18, 0, -17);
+				Vector3 jumpLerp = Vector3.Lerp(_Gulnaz.transform.position, endJumpPos, _t);
+				_Gulnaz.transform.position = jumpLerp;
+				if (Input.GetKeyDown(KeyCode.Space) || GamepadManager.buttonA)
+				{
+					_Gulnaz.GetComponent<Animator>().SetBool("bLeap", true);
+					bTimer = true;
+					
+					
+
+					
+				}
 				break;
 
 		}
