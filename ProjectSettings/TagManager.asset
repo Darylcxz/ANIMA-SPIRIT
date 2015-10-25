@@ -26,6 +26,7 @@ TagManager:
   - desh
   - SerikGhost
   - monstaa
+  - lever
   layers:
   - Default
   - TransparentFX
