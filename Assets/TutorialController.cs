@@ -9,6 +9,9 @@ public class TutorialController : MonoBehaviour {
 	//public GameObject _camMovie;
 	public Image _rtText;
 	public Image _aText;
+	public Image _bText;
+	public Image _xText;
+	public Image _yText;
 
 	public Camera _camChar;
 	public Camera _movieCam;
@@ -19,6 +22,7 @@ public class TutorialController : MonoBehaviour {
 	public MovementController _moveScript;
 	public DeshTutorial _dTutScript;
 	public GameObject Serik;
+	public GameObject TargetSerik;
 	GameObject _Gulnaz;
 
 	public int sequenceNum;
@@ -178,9 +182,11 @@ public class TutorialController : MonoBehaviour {
 				//back to player + roll
 				//close graphic
 				_rtText.enabled = false;
-				Debug.Log(_dTutScript.deshDead);
+				_xText.enabled = true;
+				//Debug.Log(_dTutScript.deshDead);
 				if (_dTutScript.deshDead == true)
 				{
+					_xText.enabled = false;
 					DialogueScript.NPCname = "defeated1-1";
 					string textData = _dScript.dialogue.text;
 					_dScript.ParseDialogue(textData);
@@ -191,13 +197,26 @@ public class TutorialController : MonoBehaviour {
 				break;
 			case 6:
 				//player kills desh
+				Serik.GetComponent<SerikFollow>().enabled = false;
+				Vector3 serikEnd = new Vector3(43, 0, -15);
+				Vector3 serikLerp = Vector3.Lerp(TargetSerik.transform.position, serikEnd, _t*2);
+				Serik.transform.position = serikLerp;
+				
 				if (DialogueScript._seqNum == 1 && DialogueScript.NPCname.Contains("shoes"))
 				{
-					Serik.SetActive(false);// serik dashes away
-					//DISPLAY JUMP THING
-					
-					sequenceNum = 7;
+					///Serik.SetActive(false);// serik dashes away		
+					bTimer = true;
+				//	sequenceNum = 7;
 				}
+				if (_t >= 1)
+				{
+					bTimer = false;
+					_t = 0;
+					sequenceNum = 7;
+					
+					//_t = 0;
+				}
+				
 				//Debug.Log("dwedwfew");
 				//NPCname = gameObject.name;
 			    
@@ -212,6 +231,7 @@ public class TutorialController : MonoBehaviour {
 				Vector3 endJumpPos = new Vector3(18, 0, -17);
 				Vector3 jumpLerp = Vector3.Lerp(_Gulnaz.transform.position, endJumpPos, _t/10);
 				_Gulnaz.transform.position = jumpLerp;
+			//	_moveScript.bForcedMove = true;
 				if (Input.GetKeyDown(KeyCode.Space) || GamepadManager.buttonA)
 				{
 					_Gulnaz.GetComponent<Animator>().SetBool("bLeap", true);
@@ -229,8 +249,55 @@ public class TutorialController : MonoBehaviour {
 			case 8:
 				_aText.enabled = false;
 				_Gulnaz.GetComponent<Animator>().SetBool("bLeap", false);
-
+				sequenceNum = 9;
+				
 				break;
+			case 9:
+				//Serik at shoes before dashing off AGAIN
+				serikEnd = new Vector3(38, 0, -6);
+				serikLerp = Vector3.Lerp(Serik.transform.position, serikEnd, _t);
+				Serik.transform.position = serikLerp;
+				if (DialogueScript._seqNum == 2)
+				{
+					bTimer = true;
+				//	Debug.Log("Serik runs away again");
+				}
+				if (_t >= 1)
+				{
+					bTimer = false;
+					Serik.SetActive(false);
+					sequenceNum = 10;
+					_t = 0;
+				}
+				break;
+			case 10:
+				if (DialogueScript.NPCname.Contains("posession"))
+				{
+					Serik.SetActive(true);
+					Serik.GetComponent<SerikFollow>().enabled = true;
+					if (DialogueScript._seqNum == 7)
+					{
+						sequenceNum = 11;
+					}
+				}
+				
+				
+				break;
+			case 11:
+				if (DialogueScript._seqNum == 0 )
+				{
+					_yText.enabled = true;
+					
+				}
+				if (GamepadManager.buttonY || Input.GetMouseButtonDown(1))
+				{
+					sequenceNum = 12;
+				}
+				break;
+			case 12:
+				_yText.enabled = false;
+				break;
+
 
 		}
 	
