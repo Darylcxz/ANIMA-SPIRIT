@@ -190,6 +190,7 @@ public class MovementController : MonoBehaviour {
                 }
                 break;
             case States.stab:
+				_dagger.GetComponent<TrailRenderer>().enabled = true;
 				_dagger.enabled = true;
 				attackSpeed+=Time.deltaTime;
              //   attackMode = 1;
@@ -202,10 +203,12 @@ public class MovementController : MonoBehaviour {
                 else if (ready)
                 {
                     charStates = States.idle;
+					_dagger.GetComponent<TrailRenderer>().enabled = false;
 					_dagger.enabled = false;
                 }
                 break;
             case States.swing:
+				_dagger.GetComponent<TrailRenderer>().enabled = true;
 				_dagger.enabled = true;
 				attackSpeed+=Time.deltaTime;
                // attackMode = 2;
@@ -218,6 +221,7 @@ public class MovementController : MonoBehaviour {
                 else if (ready)
                 {
                     charStates = States.idle;
+					_dagger.GetComponent<TrailRenderer>().enabled = false;
 					_dagger.enabled = false;
                 }          
                 

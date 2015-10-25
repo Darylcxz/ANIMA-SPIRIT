@@ -18,7 +18,7 @@ public class LogsBreak : MonoBehaviour {
 		{
 			gameObject.GetComponent<Animator>().SetBool("bFall", true);
 			GameObject.FindGameObjectWithTag("DeshWall").GetComponent<Animator>().SetBool("bDie", true);
-			Destroy(GameObject.FindGameObjectWithTag("DeshWall").gameObject, 2.5f);
+			Destroy(GameObject.FindGameObjectWithTag("DeshWall").gameObject, 10f);
 		}
 	}
 }

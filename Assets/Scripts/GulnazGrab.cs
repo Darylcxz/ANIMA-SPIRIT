@@ -73,6 +73,15 @@ public class GulnazGrab : MonoBehaviour {
 				GameObject.FindGameObjectWithTag("log").GetComponent<Animator>().SetBool("bLog", true);
 				hit.collider.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
 			}
+			if (hit.collider.tag == "pile")
+			{
+				GameObject.FindGameObjectWithTag("stick").GetComponent<MeshRenderer>().enabled = true;
+				Debug.Log("STICKKK");
+			}
+			if (hit.collider.tag == "Torch")
+			{
+				GameObject.FindGameObjectWithTag("stick").gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+			}
         }
 		
 
