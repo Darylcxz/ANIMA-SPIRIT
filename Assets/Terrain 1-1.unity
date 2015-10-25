@@ -6255,12 +6255,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -12798,12 +12819,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -15546,12 +15588,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -18038,12 +18101,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -26186,12 +26270,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -27253,6 +27358,18 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 410576, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: m_LocalPosition.x
       value: -6.38999987
@@ -27345,18 +27462,15 @@ Prefab:
     - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: chara6
       value: 
-      objectReference: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: chara1
       value: 
-      objectReference: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: chara2
       value: 
-      objectReference: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
       propertyPath: chara3
       value: 
@@ -27795,42 +27909,120 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: .375999987
       objectReference: {fileID: 0}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara1.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara2.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b,
+        type: 3}
+    - target: {fileID: 11411684, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
+      propertyPath: chara6.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 11410170, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
     - {fileID: 6584720, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1087809617 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 115178, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
-  m_PrefabInternal: {fileID: 1087809616}
---- !u!114 &1087809618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1087809617}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9115ee183c725da4c926e59d42a97ac8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
-  dialogs: {fileID: 0}
-  characterpic: {fileID: 0}
-  chara1: {fileID: 21300000, guid: 700f517002f4f6a4ea43e13b48671eee, type: 3}
-  chara2: {fileID: 21300000, guid: 11a04a437b63f4c41abdcab6d9040e91, type: 3}
-  chara3: {fileID: 21300000, guid: d4e817eb8c61d7642b2a739f8cb9bbcc, type: 3}
-  chara4: {fileID: 21300000, guid: 762b728f0448d494d9617a352da89bc5, type: 3}
-  chara5: {fileID: 0}
-  chara6: {fileID: 0}
-  textbox: {fileID: 0}
-  beepsound: {fileID: 940321195}
-  beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
-  _mScript: {fileID: 0}
-  showname: {fileID: 0}
-  charanim: {fileID: 0}
-  serikAnim: {fileID: 0}
 --- !u!4 &1092025805 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: fcc11ecdde7edf94dac577aebbb530ac, type: 3}
@@ -31285,12 +31477,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -36828,12 +37041,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -36947,12 +37181,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 2072623760}
   characterpic: {fileID: 1216009902}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
   chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 1893330995}
   beepsound: {fileID: 940321195}
   beep: {fileID: 8300000, guid: 0d23a62747ef35942ba7052ab4dbc9b6, type: 3}
@@ -48745,7 +49000,7 @@ MonoBehaviour:
   _camChar: {fileID: 940321202}
   _movieCam: {fileID: 328875607}
   CamPanScript: {fileID: 328875609}
-  _dScript: {fileID: 1087809618}
+  _dScript: {fileID: 0}
   mountList:
   - {fileID: 1461382034}
   - {fileID: 1002686603}
