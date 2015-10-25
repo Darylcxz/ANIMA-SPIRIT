@@ -59,10 +59,6 @@ public class DialogueScript : MonoBehaviour
         if (Physics.Raycast(center, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side1, transform.forward, out hit, 1) && !istalking || Physics.Raycast(side2, transform.forward, out hit, 1) && !istalking)
         {
 
-			if (hit.collider.tag == "movable")
-			{
-				Debug.Log("de");
-			}
 			if (Input.GetButtonDown("Action") && hit.collider.tag == "talking")
             {
                 NPCname = hit.collider.name;
