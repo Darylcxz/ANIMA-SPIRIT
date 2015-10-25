@@ -147,7 +147,7 @@ public class DialogueScript : MonoBehaviour
         int expression = 0;
         if(node.Attributes["expression"] != null)
         {
-            expression = int.Parse(node.Attributes["expression"].Value);
+            int.TryParse(node.Attributes["expression"].Value, out expression);
         }
         switch(character)
         {
