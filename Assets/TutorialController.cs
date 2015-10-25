@@ -8,6 +8,7 @@ public class TutorialController : MonoBehaviour {
 	//public GameObject _charCam;
 	//public GameObject _camMovie;
 	public Image _rtText;
+	public Image _aText;
 
 	public Camera _camChar;
 	public Camera _movieCam;
@@ -162,7 +163,7 @@ public class TutorialController : MonoBehaviour {
 				}
 				
 
-				if ((Input.GetKeyDown(KeyCode.LeftShift) || GamepadManager.shoulderR )&& _moveScript.bForcedMove == false)
+				if ((Input.GetKeyDown(KeyCode.LeftShift) || GamepadManager.triggerR > 0 )&& _moveScript.bForcedMove == false)
 				{
 					slowT = false;
 					_t = 0;
@@ -194,6 +195,7 @@ public class TutorialController : MonoBehaviour {
 				{
 					Serik.SetActive(false);// serik dashes away
 					//DISPLAY JUMP THING
+					
 					sequenceNum = 7;
 				}
 				//Debug.Log("dwedwfew");
@@ -202,19 +204,32 @@ public class TutorialController : MonoBehaviour {
 				
 				break;
 			case 7:
+				if (DialogueScript._seqNum != 1)
+				{
+					_aText.enabled = true;
+				}
 				Debug.Log(_t + "_t");
 				Vector3 endJumpPos = new Vector3(18, 0, -17);
-				Vector3 jumpLerp = Vector3.Lerp(_Gulnaz.transform.position, endJumpPos, _t);
+				Vector3 jumpLerp = Vector3.Lerp(_Gulnaz.transform.position, endJumpPos, _t/10);
 				_Gulnaz.transform.position = jumpLerp;
 				if (Input.GetKeyDown(KeyCode.Space) || GamepadManager.buttonA)
 				{
 					_Gulnaz.GetComponent<Animator>().SetBool("bLeap", true);
+					_Gulnaz.GetComponent<Transform>().localEulerAngles = new Vector3(0, 90, 0);
 					bTimer = true;
-					
-					
-
-					
+									
 				}
+				if (_t >= 1)
+				{
+					bTimer = false;
+					sequenceNum = 8;
+					_t = 0;
+				}
+				break;
+			case 8:
+				_aText.enabled = false;
+				_Gulnaz.GetComponent<Animator>().SetBool("bLeap", false);
+
 				break;
 
 		}
