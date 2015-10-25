@@ -18,21 +18,28 @@ public class GulnazGrab : MonoBehaviour {
         center = transform.position + new Vector3(0, 0.5f, 0);
         side1 = center + new Vector3(0.2f, 0, 0);
         side2 = center + new Vector3(-0.2f, 0, 0);
+		Debug.DrawRay(center, transform.forward );
+		Debug.DrawRay(side1, transform.forward );
+		Debug.DrawRay(side2, transform.forward );
 
         if (Physics.Raycast(center, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side1, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side2, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action"))
         {
-            if(!holding && hit.collider.tag == "movable")
+			Debug.Log(hit.collider.tag);
+			if(!holding && hit.collider.tag == "movable")
             {
                 hit.collider.transform.SetParent(transform);
                 holding = true;
             }
-
             else if(holding)
             {
                 hit.collider.transform.parent = null;
                 holding = false;
-                
             }
+			if (hit.collider.tag == "lever")
+			{
+ 				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLever",true);
+				GameObject.Find("gate").GetComponent<Animator>().SetBool("bLever", true);
+			}
         }
 
 	}
