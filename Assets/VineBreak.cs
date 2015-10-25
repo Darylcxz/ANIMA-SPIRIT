@@ -16,6 +16,8 @@ public class VineBreak : MonoBehaviour {
 	{
 		if (col.collider.tag == "dagger" && gameObject.transform.GetChild(0)!= null)
 		{
+			
+
 			gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = false;
 			gameObject.transform.GetChild(1).GetComponent<Rigidbody>().isKinematic = false;
 			gameObject.transform.GetChild(2).GetComponent<Rigidbody>().isKinematic = false;
@@ -40,6 +42,11 @@ public class VineBreak : MonoBehaviour {
 
 			gameObject.GetComponent<Collider>().enabled = false;
 
+			if (gameObject.name.Contains("Wheel"))
+			{
+				GameObject.FindGameObjectWithTag("WaterWheel").GetComponent<Animator>().SetBool("bWheel", true);
+				GameObject.FindGameObjectWithTag("Saw").GetComponent<Animator>().SetBool("bWheel", true);
+			}
 			//gameObject.transform.GetChild(0).GetComponent<Rigidbody>().isKinematic = true;
 			//Destroy(gameObject,0.1f);
 

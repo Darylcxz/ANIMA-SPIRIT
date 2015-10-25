@@ -4,6 +4,7 @@ using System.Collections;
 public class GulnazGrab : MonoBehaviour {
     //private bool touching = false;
     public static bool holding = false;
+	bool bLog;
     private Vector3 center;
     private Vector3 side1;
     private Vector3 side2;
@@ -40,7 +41,13 @@ public class GulnazGrab : MonoBehaviour {
  				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLever",true);
 				GameObject.Find("gate").GetComponent<Animator>().SetBool("bLever", true);
 			}
+			if (hit.collider.tag == "log")
+			{
+				hit.collider.gameObject.GetComponent<Animator>().SetBool("bLog", true);
+				GameObject.FindGameObjectWithTag("log").GetComponent<Animator>().SetBool("bLog", true);
+			}
         }
+		
 
 	}
 
