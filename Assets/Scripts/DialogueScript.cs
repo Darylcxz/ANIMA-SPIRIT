@@ -144,8 +144,11 @@ public class DialogueScript : MonoBehaviour
     private void Checkchara(XmlNode node)
     {
         string character = node.Attributes["character"].Value;
-        int expression = int.Parse(node.Attributes["expression"].Value);
-        print(expression);
+        int expression = 0;
+        if(node.Attributes["expression"] != null)
+        {
+            expression = int.Parse(node.Attributes["expression"].Value);
+        }
         switch(character)
         {
             case "Gulnaz":
