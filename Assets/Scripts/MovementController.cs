@@ -166,22 +166,17 @@ public class MovementController : MonoBehaviour {
 				_mana = false;
                 //MovementLogic(hMoveRight, vMoveRight);
                // RotatingLogic(hMoveRight, vMoveRight);
+				Debug.Log("possss");
 				MovementLogic(GamepadManager.h2, GamepadManager.v2);
 				RotatingLogic(GamepadManager.h2, GamepadManager.v2);
-				
+			
                 if (GameControl.spiritmode == false)
                 {
                     charStates = States.idle;
 					_mana = true;
                     Debug.Log("possass");
                 }
-				if (currMana < 0)
-				{
-					GameControl.spiritmode = false;
-					charStates = States.idle;
-					_mana = true;
-					currMana = 0;
-				}
+				
                 break;
             case States.roll:
                // _rigidBody.AddForce(transform.forward/1.5f,ForceMode.Impulse);
@@ -334,14 +329,23 @@ public class MovementController : MonoBehaviour {
     }
 	void CheckMana()
 	{
-		//_manaBarUI.fillAmount = currMana / maxMana;
-//		Debug.Log(currMana);
-		if (currMana > maxMana && _mana == true) // check if mana is maxed
+		_manaBarUI.fillAmount = currMana / maxMana;
+	//	Debug.Log(currMana);
+		if (currMana < 0)
+		{
+			GameControl.spiritmode = false;
+			currMana = 0;
+			charStates = States.idle;
+			Debug.Log("qweoeo");
+			//_mana = true;
+		}
+		 if (currMana > maxMana && _mana == true) // check if mana is maxed
 		{
 			currMana = maxMana; //caps it back
 			_mana = false;
 		}
-		else if (currMana < maxMana && _mana == true)
+		
+		else if (currMana < maxMana && _mana == false)
 		{
 			currMana += Time.deltaTime/5;	
 		}
