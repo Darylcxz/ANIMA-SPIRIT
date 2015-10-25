@@ -10,12 +10,12 @@ public class DialogueScript : MonoBehaviour
     private XmlNode texttoshow;
     public Text dialogs;
     public Image characterpic;
-    public Sprite chara1;
-    public Sprite chara2;
+    public Sprite[] chara1;
+    public Sprite[] chara2;
     public Sprite chara3;
     public Sprite chara4;
     public Sprite chara5;
-    public Sprite chara6;
+    public Sprite[] chara6;
     public Image textbox;
     private string charaname;
     private RaycastHit hit;
@@ -144,30 +144,28 @@ public class DialogueScript : MonoBehaviour
     private void Checkchara(XmlNode node)
     {
         string character = node.Attributes["character"].Value;
+        int expression = int.Parse(node.Attributes["expression"].Value);
+        print(expression);
         switch(character)
         {
             case "Gulnaz":
-                print("reading from gulnaz");
-                characterpic.sprite = chara1;
+                characterpic.sprite = chara1[expression];
                 showname.text = character;
                 charanim.SetBool("isTalking", true);
                 Invoke("StopAnim", 0.2f);
                 break;
 
             case "Serik":
-                print("reading from serik");
-                characterpic.sprite = chara2;
+                characterpic.sprite = chara2[expression];
                 showname.text = character;
                 break;
 
             case "Temir":
-                print("reading from Temir");
                 characterpic.sprite = chara4;
                 showname.text = character;
                 break;
 
             case "Ruslan":
-                print("reading from Ruslan");
                 characterpic.sprite = chara3;
                 showname.text = character;
                 break;
@@ -178,14 +176,13 @@ public class DialogueScript : MonoBehaviour
                 break;
 
             case "GhostSerik":
-                characterpic.sprite = chara6;
+                characterpic.sprite = chara6[expression];
                 showname.text = "Serik";
 				serikAnim.SetBool("bSerikTalk", true);
                 Invoke("StopAnim", 0.2f);
                 break;
 
             default:
-                print("reading from someone else");
                 characterpic.sprite = null;
                 break;
         }
