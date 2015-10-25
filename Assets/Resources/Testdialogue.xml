@@ -135,24 +135,24 @@
     <D4 character="Gulnaz" expression="6">Sure, I've got some time to kill.</D4>
   </Serik5>
   <enter1-1>
-    <D1 character="Gulnaz">I know you don't go out often, but what exactly are you gawking at?</D1>
-    <D2 character="GhostSerik">It's nothing! I just haven't been this far from the tribe before...</D2>
-    <D3 character="Gulnaz">You've got to be kidding, right?</D3>
-    <D4 character="GhostSerik">Is your sword alone really going to keep us safe from... whatever's out there?</D4>
-    <D5 character="Gulnaz">Oh, you HAVE to be kidding.</D5>
-    <D6 character="GhostSerik">I just lost my body, so really, I'm not very keen on losing any more of my livilhood. You know. Like dying?</D6>
-    <D7 character="Gulnaz">Listen to me, Serik. All my life, I've been gathering and hunting for game.</D7>
-    <D8 character="Gulnaz"> I know everything there is to survive, and I know this place like the back of my hand!</D8>
-    <D8 character="Gulnaz">Since we've been here for so long. Thanks to your oh-so-great dad.</D8>
-    <D9 character="GhostSerik">...Yeah. </D9>
+    <D1 character="Gulnaz" expression="0">I know you don't go out often, but what exactly are you gawking at?</D1>
+    <D2 character="GhostSerik" expression="1">It's nothing! I just haven't been this far from the tribe before...</D2>
+    <D3 character="Gulnaz" expression="1">You've got to be kidding, right?</D3>
+    <D4 character="GhostSerik" expression="1">Is your sword alone really going to keep us safe from... whatever's out there?</D4>
+    <D5 character="Gulnaz" expression="0">Oh, you HAVE to be kidding.</D5>
+    <D6 character="GhostSerik" expression="0">I just lost my body, so really, I'm not very keen on losing any more of my livilhood. You know. Like dying?</D6>
+    <D7 character="Gulnaz" expression="0">Listen to me, Serik. All my life, I've been gathering and hunting for game.</D7>
+    <D8 character="Gulnaz" expression="5"> I know everything there is to survive, and I know this place like the back of my hand!</D8>
+    <D8 character="Gulnaz" expression="0">Since we've been here for so long. Thanks to your oh-so-great dad.</D8>
+    <D9 character="GhostSerik" expression="3">...Yeah. </D9>
   </enter1-1>
   <desh1-1>
-    <D1 character="Gulnaz">Hold up.</D1>
-    <D2 character="GhostSerik">What! What is it!! Is it Bearguar?!!</D2>
-    <D3 character="Gulnaz">What?! No!</D3>
-    <D4 character="Gulnaz">That thing! Over there!</D4>
-    <D5 character="GhostSerik">WHAT IS THAT?!</D5>
-    <D6 character="Gulnaz">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
+    <D1 character="Gulnaz" expression="">Hold up.</D1>
+    <D2 character="GhostSerik" expression="">What! What is it!! Is it Bearguar?!!</D2>
+    <D3 character="Gulnaz" expression="">What?! No!</D3>
+    <D4 character="Gulnaz" expression="">That thing! Over there!</D4>
+    <D5 character="GhostSerik" expression="">WHAT IS THAT?!</D5>
+    <D6 character="Gulnaz" expression="">Keep it down! I don't know what it is, but if it's hostile, I'm ready.</D6>
   </desh1-1>
   <Shake1-1>
     <D1 character="GhostSerik">AAAHHH!!!</D1>
