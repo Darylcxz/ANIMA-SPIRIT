@@ -27,6 +27,12 @@ TagManager:
   - SerikGhost
   - monstaa
   - lever
+  - log
+  - WaterWheel
+  - Saw
+  - DeshWall
+  - stick
+  - pile
   layers:
   - Default
   - TransparentFX
@@ -47,7 +53,7 @@ TagManager:
   - 
   - ground
   - Player
-  - 
+  - vines
   - 
   - 
   - 
