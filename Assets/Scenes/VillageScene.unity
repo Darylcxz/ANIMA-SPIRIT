@@ -6118,7 +6118,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 528654694}
   m_LocalRotation: {x: 0, y: .740317106, z: 0, w: -.6722579}
-  m_LocalPosition: {x: 165.619995, y: 12.6999998, z: -642.830017}
+  m_LocalPosition: {x: 165.619995, y: 10.1999998, z: -642.830017}
   m_LocalScale: {x: 19.1336975, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10005,7 +10005,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 868942050}
   m_LocalRotation: {x: 0, y: .942614853, z: 0, w: .333882272}
-  m_LocalPosition: {x: 158.889999, y: 11.8000002, z: -658.419983}
+  m_LocalPosition: {x: 158.889999, y: 9.60000038, z: -658.419983}
   m_LocalScale: {x: 15.4711237, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13124,7 +13124,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182917217}
   m_LocalRotation: {x: 0, y: .978090167, z: 0, w: -.208181933}
-  m_LocalPosition: {x: 156.389999, y: 11.8000002, z: -630.820007}
+  m_LocalPosition: {x: 156.389999, y: 9.60000038, z: -630.820007}
   m_LocalScale: {x: 15.4711237, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13571,7 +13571,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1227613745}
   m_LocalRotation: {x: 0, y: .95840168, z: 0, w: .285422832}
-  m_LocalPosition: {x: 162.490005, y: 10.71, z: -665.070007}
+  m_LocalPosition: {x: 162.490005, y: 9.5, z: -665.070007}
   m_LocalScale: {x: 14.8186741, y: 1.91732109, z: .440542608}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20513,12 +20513,33 @@ MonoBehaviour:
   dialogue: {fileID: 4900000, guid: 44cfef4c9b4840b4dbe5f459b73ad351, type: 3}
   dialogs: {fileID: 1597601734}
   characterpic: {fileID: 1702126045}
-  chara1: {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
-  chara2: {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
-  chara3: {fileID: 21300000, guid: 38333fc50f38b5141bf1e3c8c779f1b0, type: 3}
+  chara1:
+  - {fileID: 21300000, guid: c0e727ea463a28345b6e277a369f47ea, type: 3}
+  - {fileID: 21300000, guid: 9e1590ed831555547990fd39934ca9bc, type: 3}
+  - {fileID: 21300000, guid: ddb62283b7521c54ab597c4c01571e02, type: 3}
+  - {fileID: 21300000, guid: 46c4380e13613844f8643fb9d8046d8c, type: 3}
+  - {fileID: 21300000, guid: 5959c4436debe89458a5e6f3aecca041, type: 3}
+  - {fileID: 21300000, guid: 3459b7830d00fb945bc6dd18de468e45, type: 3}
+  - {fileID: 21300000, guid: 2b4e77336ff3127418b7cec198bfb2ca, type: 3}
+  chara2:
+  - {fileID: 21300000, guid: d80e6763c113d854e9240ab5d11c131b, type: 3}
+  - {fileID: 21300000, guid: 528940e2119cca346b065252ff919a83, type: 3}
+  - {fileID: 21300000, guid: a72fafccc1476ca4e914c94980b1a40a, type: 3}
+  - {fileID: 21300000, guid: 4968fa59ff43c7443a9b1aa839bc7b86, type: 3}
+  - {fileID: 21300000, guid: da32aac4c6bf92f4c8746ef80f3d91f9, type: 3}
+  - {fileID: 21300000, guid: 6f34721360094a0439fa25c5e6f2de82, type: 3}
+  - {fileID: 21300000, guid: 43b968af9df32014d8f5751a982dad1c, type: 3}
+  chara3: {fileID: 21300000, guid: 62d5508c89f889943813b28e64a3da65, type: 3}
   chara4: {fileID: 21300000, guid: 958fcf7e0c7e75c46b9f6062dd6a00ea, type: 3}
   chara5: {fileID: 21300000, guid: fff2c146b3658b94dbcf8fc14e914d5c, type: 3}
-  chara6: {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
+  chara6:
+  - {fileID: 21300000, guid: fc5bec342b1ec684fb7c8eef11f04d53, type: 3}
+  - {fileID: 21300000, guid: f74e4f2915869f040aa4d6f6195ccb42, type: 3}
+  - {fileID: 21300000, guid: cd4c92ce9afdb7740947f3c01efe069b, type: 3}
+  - {fileID: 21300000, guid: 481e2a5503d201249aac2a444436fd55, type: 3}
+  - {fileID: 21300000, guid: d4cd654533596634093fd8f25e3f7abc, type: 3}
+  - {fileID: 21300000, guid: 89ef6a17e0e85524c8a787346dadfd3b, type: 3}
+  - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 161554415}
   beepsound: {fileID: 80328094}
   beep: {fileID: 8300000, guid: 9043a486907077248b2c6851a4f5e6a5, type: 3}
