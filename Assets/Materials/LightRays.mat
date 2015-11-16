@@ -128,16 +128,20 @@ Material:
         second: 0
       data:
         first:
-          name: _EmissionScaleUI
-        second: 0
-      data:
-        first:
           name: _Mode
         second: 0
       data:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _EmissionScaleUI
+        second: 0
+      data:
+        first:
+          name: _InvFade
+        second: 3
       data:
         first:
           name: _TintColor
@@ -182,10 +186,6 @@ Material:
         first:
           name: _TrOp
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: 3
     m_Colors:
       data:
         first:
