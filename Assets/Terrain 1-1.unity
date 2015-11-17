@@ -398,8 +398,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.05175781e-05, y: -188.000015}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.05175781e-05, y: -119.000008}
+  m_SizeDelta: {x: 0, y: 138.000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &19527225
 MonoBehaviour:
@@ -6969,7 +6969,6 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &256849924
 MonoBehaviour:
@@ -8395,7 +8394,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &328875608
 Transform:
   m_ObjectHideFlags: 0
@@ -17220,8 +17218,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -188}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -119}
+  m_SizeDelta: {x: 0, y: 138}
   m_Pivot: {x: .5, y: .5}
 --- !u!4 &576773144 stripped
 Transform:
@@ -18056,9 +18054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414cd1a768a51944dad5973400d8abae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftFire: {fileID: 1961417183}
-  RightFire: {fileID: 471753862}
-  GateFire: {fileID: 824946668}
 --- !u!1001 &620323972
 Prefab:
   m_ObjectHideFlags: 0
@@ -22865,9 +22860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414cd1a768a51944dad5973400d8abae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftFire: {fileID: 0}
-  RightFire: {fileID: 0}
-  GateFire: {fileID: 0}
 --- !u!65 &824946672
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28705,8 +28697,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.05175781e-05, y: -188.000015}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.05175781e-05, y: -119.000008}
+  m_SizeDelta: {x: 0, y: 138.000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1045822592
 MonoBehaviour:
@@ -35178,8 +35170,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.05175781e-05, y: -188.000015}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.05175781e-05, y: -119.000008}
+  m_SizeDelta: {x: 0, y: 138.000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1270643347
 MonoBehaviour:
@@ -35841,9 +35833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414cd1a768a51944dad5973400d8abae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftFire: {fileID: 1961417183}
-  RightFire: {fileID: 471753862}
-  GateFire: {fileID: 824946668}
 --- !u!1001 &1297572318
 Prefab:
   m_ObjectHideFlags: 0
@@ -50082,7 +50071,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &1910362762
 Transform:
   m_ObjectHideFlags: 0
@@ -53233,8 +53221,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.05175781e-05, y: -188.000015}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.05175781e-05, y: -119.000008}
+  m_SizeDelta: {x: 0, y: 138.000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2010551772
 MonoBehaviour:
