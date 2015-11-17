@@ -68,7 +68,7 @@ public class MovementController : MonoBehaviour {
 	void Start () {
 		_dagger = GameObject.FindGameObjectWithTag("dagger").GetComponent<Collider>();
 		_dagger.enabled = false;
-	
+		_dagger.GetComponent<TrailRenderer>().enabled = false;
         _rigidBody = gameObject.GetComponent<Rigidbody>();
      //   groundDist = gameObject.GetComponent<Collider>().bounds.center.y;
      //   _collider = gameObject.GetComponent<Collider>();
