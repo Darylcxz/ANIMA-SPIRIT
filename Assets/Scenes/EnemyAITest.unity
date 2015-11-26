@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPosses: 0
+  playerMana: {fileID: 1468634689}
   AIState: 1
   retreatDist: 50
   AISpeed: 1
@@ -658,6 +659,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac4c1644446c1444bac3c9e1b0fbcd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rtText: {fileID: 0}
+  _aText: {fileID: 0}
+  _bText: {fileID: 0}
+  _xText: {fileID: 0}
+  _yText: {fileID: 0}
+  _camChar: {fileID: 0}
+  _movieCam: {fileID: 0}
+  CamPanScript: {fileID: 0}
+  _dScript: {fileID: 0}
+  mountList: []
+  _moveScript: {fileID: 0}
+  _dTutScript: {fileID: 0}
+  Serik: {fileID: 0}
+  TargetSerik: {fileID: 0}
+  sequenceNum: 0
+  deshControl: {fileID: 0}
+  _target: {fileID: 0}
+  _desh: {fileID: 0}
 --- !u!4 &992623323
 Transform:
   m_ObjectHideFlags: 0
@@ -872,38 +891,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2c2f5b6f9bd8aa49bec5dfa6f762378, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1468634685 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 147630, guid: 59d5f39d265aaff45b9ee3c3d78c0b36, type: 2}
-  m_PrefabInternal: {fileID: 1287878684}
---- !u!114 &1468634693
+--- !u!114 &1468634689 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468634685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebfb82cc51a96504f9cd3ee3eb86b272, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Display: 0
-  displayed: 0
-  controllerDisplay: {fileID: 0}
-  X: {fileID: 0}
-  Y: {fileID: 0}
-  A: {fileID: 0}
-  B: {fileID: 0}
-  LB: {fileID: 0}
-  RB: {fileID: 0}
-  LT: {fileID: 0}
-  RT: {fileID: 0}
-  LeftStick: {fileID: 0}
-  RightStick: {fileID: 0}
-  Dpad: {fileID: 0}
-  buttons: []
-  sticks: []
-  pad: []
+  m_PrefabParentObject: {fileID: 11477136, guid: 59d5f39d265aaff45b9ee3c3d78c0b36,
+    type: 2}
+  m_PrefabInternal: {fileID: 1287878684}
+  m_Script: {fileID: 11500000, guid: 56f9719705a67e64182c59dc31b5146d, type: 3}
 --- !u!1 &1614108148
 GameObject:
   m_ObjectHideFlags: 0
