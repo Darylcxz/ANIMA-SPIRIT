@@ -50,7 +50,7 @@ public class GulnazGrab : MonoBehaviour {
 
         if (Physics.Raycast(center, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side1, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action") || Physics.Raycast(side2, transform.forward, out hit, 0.5f) && Input.GetButtonDown("Action"))
         {
-			Debug.Log(hit.collider.tag);
+//			Debug.Log(hit.collider.tag);
 			if(!holding && hit.collider.tag == "movable")
             {
                 hit.collider.transform.SetParent(transform);

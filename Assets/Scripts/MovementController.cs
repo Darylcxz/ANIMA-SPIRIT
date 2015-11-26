@@ -224,7 +224,6 @@ public class MovementController : MonoBehaviour {
 					_dagger.GetComponent<TrailRenderer>().enabled = false;
 					_dagger.enabled = false;
                 }          
-                
                 break;
         }
 	}
