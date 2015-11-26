@@ -6,7 +6,7 @@ public class MirrorLizardAI : AIbase {
     private LineRenderer laser;
     public static bool gotLight;
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
         _rigidBody = GetComponent<Rigidbody>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;

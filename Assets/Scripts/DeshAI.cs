@@ -22,13 +22,13 @@ public class DeshAI : AIbase {
 	
 
 	// Use this for initialization
-	void Start () {
+	protected override void Start () {
 
 		health = 3.0f;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        agent = GetComponent<NavMeshAgent>();
+      //  player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+       // agent = GetComponent<NavMeshAgent>();
         _rigidBody = GetComponent<Rigidbody>();
-        origin = gameObject.transform.position;
+       // origin = gameObject.transform.position;
         canPosses = false;
 		ready2 = false;
 
