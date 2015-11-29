@@ -7,6 +7,7 @@ public class HopputScript : AIbase {
 	float jumpRange = 15f;
 	float timerThing = 0.0f;
 	float playerDist;
+	int layerMask = 1 << 18;
 	Animator HopputAnim;
 	GameObject childObj;
 	public enum HopputState
@@ -25,6 +26,7 @@ public class HopputScript : AIbase {
 		base.Start();
 		childObj = gameObject.transform.GetChild(0).gameObject;
 		HopputAnim = gameObject.GetComponentInParent<Animator>();
+		_rigidBody = gameObject.GetComponent<Rigidbody>();
 	}
 	
 	protected override void Roam()
@@ -76,28 +78,16 @@ public class HopputScript : AIbase {
 				//attack anim
 				AISpeed = 5f;
 				MoveTowardsTarget();
-				if (isGrounded())
+				if (isGrounded() && timerThing > 1)
 				{
+					//_rigidBody.AddExplosionForce(30, transform.position, 30, 20,ForceMode.Impulse);
+					Explosion(transform.position, 50);
 					timerThing = 0;
 					hopState = HopputState.IDLE;
 					AISpeed = 1f;
 					HopputAnim.SetInteger("AnimState", 0);
 				}
-				//if (playerDist < 2)
-				//{
-				//	timerThing = 0;
-				//	//instantiate shockwave
-				//	hopState = HopputState.IDLE;
-				//	AISpeed = 1f;
-				//	HopputAnim.SetInteger("AnimState", 0);
-				//}
-				//else if (playerDist > jumpRange)
-				//{
-				//	AISpeed = 1f;
-				//	timerThing = 0;
-				//	hopState = HopputState.IDLE;
-				//	HopputAnim.SetInteger("AnimState", 0);
-				//}
+				
 				break;
 			case HopputState.RECOIL:
 				//hurt anim
@@ -109,6 +99,23 @@ public class HopputScript : AIbase {
 				}
 				break;
 
+		}
+
+	}
+	void Explosion(Vector3 center, float radius)
+	{
+		//Debug.Log(Physics.OverlapSphere(center, radius, 18));
+		//Debug.Log("Boom");
+		Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
+		Debug.Log(hitColliders);
+		foreach(Collider hit in hitColliders)
+		{
+			Debug.Log(hit);
+			Rigidbody rb = hit.GetComponent<Rigidbody>();
+			if (rb != null)
+			{
+				rb.AddExplosionForce(20, center, radius, 2,ForceMode.Impulse);
+			}
 		}
 
 	}
