@@ -7,6 +7,8 @@ public class HopputScript : AIbase {
 	float jumpRange = 15f;
 	float timerThing = 0.0f;
 	float playerDist;
+	Animator HopputAnim;
+	GameObject childObj;
 	public enum HopputState
 	{
 		IDLE,
@@ -18,22 +20,13 @@ public class HopputScript : AIbase {
 	};
 	public HopputState hopState = HopputState.MOVE;
 	// Use this for initialization
-	//void Start () {
+	protected override void Start()
+	{
+		base.Start();
+		childObj = gameObject.transform.GetChild(0).gameObject;
+		HopputAnim = gameObject.GetComponentInParent<Animator>();
+	}
 	
-	//}
-	
-	// Update is called once per frame
-	//void Update () {
-	
-	//}
-
-	//void Start()
-	//{
-	//	//base.Start();
-	//	agent = GetComponent<NavMeshAgent>();
-	//	_rigidBody = GetComponent<Rigidbody>();
-	//	origin = gameObject.transform.position;
-	//}
 	protected override void Roam()
 	{
 		base.Roam();
@@ -42,13 +35,13 @@ public class HopputScript : AIbase {
 		{
 			AIState = States.pursue;
 		}
+		Debug.DrawRay(childObj.transform.position, -Vector3.up, Color.black);
 	}
 	protected override void ActivateAbility()
 	{
-		//explosion.Play();
+		
 		currentTargetPosition = player.transform.position;
-		//MoveTowardsTarget();
-	//	Debug.Log("chasing" + "" + player.transform.position);
+
 
 		switch (hopState)
 		{
@@ -57,32 +50,54 @@ public class HopputScript : AIbase {
 				{
 					timerThing = 0;
 					hopState = HopputState.MOVE;
+					HopputAnim.SetInteger("AnimState", 1);
 				}
 				break;
 			case HopputState.MOVE:
 				MoveTowardsTarget();
+				//maybe make it roam instead?
 				if (playerDist < jumpRange)
 				{
 					hopState = HopputState.SHAKE;
 					timerThing = 0;
+					HopputAnim.SetInteger("AnimState", 2);
 				}
 				break;
 			case HopputState.SHAKE:
 				//shake anim
-				if (timerThing > 2)
+				if (timerThing > 3)
 				{
 					hopState = HopputState.ATTACK;
 					timerThing = 0;
+					HopputAnim.SetInteger("AnimState", 4);
 				}
 				break;
 			case HopputState.ATTACK:
 				//attack anim
+				AISpeed = 5f;
 				MoveTowardsTarget();
-				if (playerDist < 2)
+				if (isGrounded())
 				{
 					timerThing = 0;
 					hopState = HopputState.IDLE;
+					AISpeed = 1f;
+					HopputAnim.SetInteger("AnimState", 0);
 				}
+				//if (playerDist < 2)
+				//{
+				//	timerThing = 0;
+				//	//instantiate shockwave
+				//	hopState = HopputState.IDLE;
+				//	AISpeed = 1f;
+				//	HopputAnim.SetInteger("AnimState", 0);
+				//}
+				//else if (playerDist > jumpRange)
+				//{
+				//	AISpeed = 1f;
+				//	timerThing = 0;
+				//	hopState = HopputState.IDLE;
+				//	HopputAnim.SetInteger("AnimState", 0);
+				//}
 				break;
 			case HopputState.RECOIL:
 				//hurt anim
@@ -90,6 +105,7 @@ public class HopputScript : AIbase {
 				{
 					hopState = HopputState.MOVE;
 					timerThing = 0;
+					HopputAnim.SetInteger("AnimState", 1);
 				}
 				break;
 
@@ -109,5 +125,9 @@ public class HopputScript : AIbase {
 			health--;
 			hopState = HopputState.RECOIL;
 		}
+	}
+	bool isGrounded()
+	{
+		return Physics.Raycast(childObj.transform.position, -Vector3.up, 0.5f);
 	}
 }
