@@ -142,12 +142,12 @@ public abstract class AIbase : MonoBehaviour {
                 break;
             case States.retreat:
                 //runs back to start
-                
-                agent.SetDestination(origin);
+				MoveTowardsTarget();
+               // agent.SetDestination(origin);
 				currentTargetPosition = origin;
-                if (distance < 2)
+                if (distance < 2 && canPosses)
                 {
-                    agent.ResetPath();
+                  //  agent.ResetPath();
 					//FindNewTargetPos();
                     AIState = States.idle;
                     ready = false;
