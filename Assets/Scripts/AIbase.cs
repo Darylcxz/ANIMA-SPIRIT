@@ -41,10 +41,19 @@ public abstract class AIbase : MonoBehaviour {
     float vMove;
     float hMove;
     float speed = 5f; //player movement speed;
-    public float AISpeed = 1f; // AI selfmove speed;
+    protected float AISpeed = 1f; // AI selfmove speed;
 
 	//AI Stats and stuff
 	protected float health;
+
+	//Free wandering stuff
+	public float circleRadius = 2.0f;
+	Vector3 circleCenter;
+	public float offset = 5.0f;
+	float minDistance = 1.0f;
+	float rotationSpeed = 5.0f;
+	protected Vector3 currentTargetPosition;
+	float waitTimer;
 
 
     
@@ -53,12 +62,15 @@ public abstract class AIbase : MonoBehaviour {
 	protected abstract void PassiveAbility();
    // protected abstract void AggroAbility();
 	// Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 		playerMana = GameObject.FindGameObjectWithTag("Player").GetComponent<MovementController>();
         agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
+		waitTimer = 0.0f;
+		circleCenter = transform.position + new Vector3(0, 0, offset);
+		currentTargetPosition = transform.position;
 
     }
 	// Update is called once per frame
@@ -101,8 +113,9 @@ public abstract class AIbase : MonoBehaviour {
                 break;
             case States.walk:
                 //walks forward for a set amount of time (random distance)
-                Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
-                gameObject.transform.localPosition += (transform.forward/35)*AISpeed;
+            //    Invoke("WaitTimer", waitTime*(Random.Range(0.5f,2f)));
+             //   gameObject.transform.localPosition += (transform.forward/35)*AISpeed;
+				MoveTowardsTarget();
                 if(distance > retreatDist)
                 {
                     AIState = States.retreat;
@@ -111,7 +124,7 @@ public abstract class AIbase : MonoBehaviour {
                 }
                 else if (ready)
                 {
-                    AIState = States.rotate;
+                    AIState = States.idle;
                     ready = false;
                     CancelInvoke();
                 }
@@ -131,9 +144,11 @@ public abstract class AIbase : MonoBehaviour {
                 //runs back to start
                 
                 agent.SetDestination(origin);
-                if (distance < 10)
+				currentTargetPosition = origin;
+                if (distance < 2)
                 {
                     agent.ResetPath();
+					//FindNewTargetPos();
                     AIState = States.idle;
                     ready = false;
                     CancelInvoke();
@@ -205,6 +220,35 @@ public abstract class AIbase : MonoBehaviour {
         //}
 
 	}
+	protected void MoveTowardsTarget()
+	{
+		Vector3 direction = currentTargetPosition - transform.position;
+		direction.y = 0;
+		transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
+		if (direction.magnitude > minDistance)
+		{
+			Vector3 moveVector = direction.normalized * AISpeed * Time.deltaTime;
+			transform.position += moveVector;
+		}
+		else if(canPosses)
+		{
+			FindNewTargetPos();
+			ready = true;
+		}
+	}
+	void FindNewTargetPos()
+	{
+		circleCenter = transform.localPosition + Vector3.right * offset;
+		currentTargetPosition = circleCenter + (OnUnitCircle() * circleRadius);
+	}
+
+	Vector3 OnUnitCircle()
+	{
+		float angleInRadians = Random.Range(0, 2 * Mathf.PI);
+		float x = Mathf.Cos(angleInRadians);
+		float z = Mathf.Sin(angleInRadians);
+		return new Vector3(x, 0, z);
+	}
 
     void WaitTimer()
     {
@@ -262,6 +306,14 @@ public abstract class AIbase : MonoBehaviour {
         transform.LookAt(transform.position + targetVelocity);
         _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
     }
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.black;
+		Gizmos.DrawWireSphere(circleCenter, circleRadius);
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireCube(currentTargetPosition, new Vector3(1, 1, 1));
+	}
 
     //void GoodMovement()
     //{

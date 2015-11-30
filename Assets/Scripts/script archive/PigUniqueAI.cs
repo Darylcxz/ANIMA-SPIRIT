@@ -6,11 +6,11 @@ public class PigUniqueAI : AIbase {
 	public ParticleSystem bigboom;
 	public Light glow;
 	// Use this for initialization
-	void Start () {
+//	void Start () {
 
 
 	
-	}
+//	}
 	
 	// Update is called once per frame
 	protected override void ActivateAbility()
