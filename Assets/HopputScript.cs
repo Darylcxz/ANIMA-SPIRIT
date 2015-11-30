@@ -9,7 +9,8 @@ public class HopputScript : AIbase {
 	float playerDist;
 	int layerMask = 1 << 18;
 	Animator HopputAnim;
-	GameObject childObj;
+	public GameObject childObj;
+	RaycastHit hit;
 	public enum HopputState
 	{
 		IDLE,
@@ -19,12 +20,13 @@ public class HopputScript : AIbase {
 		RECOIL
 
 	};
-	public HopputState hopState = HopputState.MOVE;
+	public HopputState hopState = HopputState.IDLE;
 	// Use this for initialization
 	protected override void Start()
 	{
 		base.Start();
-		childObj = gameObject.transform.GetChild(0).gameObject;
+		health = 5;
+		childObj = GameObject.Find("BaseRay");
 		HopputAnim = gameObject.GetComponentInParent<Animator>();
 		_rigidBody = gameObject.GetComponent<Rigidbody>();
 	}
@@ -37,13 +39,13 @@ public class HopputScript : AIbase {
 		{
 			AIState = States.pursue;
 		}
-		Debug.DrawRay(childObj.transform.position, -Vector3.up, Color.black);
+	//	Debug.Log(childObj.transform.position);
+		Debug.DrawRay(childObj.transform.position, new Vector3(0,-0.5f,0), Color.black);
 	}
 	protected override void ActivateAbility()
 	{
 		
 		currentTargetPosition = player.transform.position;
-
 
 		switch (hopState)
 		{
@@ -78,14 +80,17 @@ public class HopputScript : AIbase {
 				//attack anim
 				AISpeed = 5f;
 				MoveTowardsTarget();
-				if (isGrounded() && timerThing > 1)
+				if (timerThing > 1f)
 				{
-					//_rigidBody.AddExplosionForce(30, transform.position, 30, 20,ForceMode.Impulse);
-					Explosion(transform.position, 50);
-					timerThing = 0;
-					hopState = HopputState.IDLE;
-					AISpeed = 1f;
-					HopputAnim.SetInteger("AnimState", 0);
+					Debug.Log(isGrounded() + " = grounded");
+					if (isGrounded())
+					{
+						Explosion(transform.position, 50); 
+						timerThing = 0;
+						hopState = HopputState.IDLE;
+						AISpeed = 1f;
+						HopputAnim.SetInteger("AnimState", 0);
+					}
 				}
 				
 				break;
@@ -104,13 +109,10 @@ public class HopputScript : AIbase {
 	}
 	void Explosion(Vector3 center, float radius)
 	{
-		//Debug.Log(Physics.OverlapSphere(center, radius, 18));
-		//Debug.Log("Boom");
+
 		Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
-		Debug.Log(hitColliders);
 		foreach(Collider hit in hitColliders)
 		{
-			Debug.Log(hit);
 			Rigidbody rb = hit.GetComponent<Rigidbody>();
 			if (rb != null)
 			{
@@ -121,7 +123,6 @@ public class HopputScript : AIbase {
 	}
 	protected override void PassiveAbility()
 	{
-		//  throw new System.NotImplementedException();
 		timerThing += Time.deltaTime;
 	}
 
@@ -130,7 +131,10 @@ public class HopputScript : AIbase {
  		if(col.collider.tag == "dagger")
 		{
 			health--;
-			hopState = HopputState.RECOIL;
+			if (health < 1)
+			{
+				gameObject.SetActive(false);
+			}
 		}
 	}
 	bool isGrounded()
