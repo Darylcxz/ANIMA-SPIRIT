@@ -6459,6 +6459,7 @@ GameObject:
   - 4: {fileID: 562157557}
   - 114: {fileID: 562157558}
   - 114: {fileID: 562157559}
+  - 82: {fileID: 562157560}
   m_Layer: 0
   m_Name: Cameratarget
   m_TagString: Untagged
@@ -6501,6 +6502,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25b6e20c6a27c34a9dba8dc4fadc011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &562157560
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 562157556}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &564532199
 Prefab:
   m_ObjectHideFlags: 0
@@ -20606,7 +20676,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 15bed16c834343e4fa64e07b4ff8d6de, type: 3}
   textbox: {fileID: 161554415}
   beepsound: {fileID: 80328094}
-  beep: {fileID: 8300000, guid: 9043a486907077248b2c6851a4f5e6a5, type: 3}
+  voices:
+  - {fileID: 8300000, guid: f184da1603889544c8c1318dfe03100e, type: 3}
+  - {fileID: 8300000, guid: 49d6d396598726b44aa26f633c332382, type: 3}
   _mScript: {fileID: 1491737867}
   showname: {fileID: 1627148315}
   charanim: {fileID: 812574075}
