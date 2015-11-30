@@ -23,7 +23,7 @@ public class DialogueScript : MonoBehaviour
     private bool textcomplete = false;
     private bool istalking = false;
     public AudioSource beepsound;
-    public AudioClip beep;
+    public AudioClip[] voices;
     public static string NPCname;
     public static bool cantalk;
     private Vector3 center;
@@ -145,14 +145,21 @@ public class DialogueScript : MonoBehaviour
     {
         string character = node.Attributes["character"].Value;
         int expression = 0;
+        int voice = 0;
         if(node.Attributes["expression"] != null)
         {
             int.TryParse(node.Attributes["expression"].Value, out expression);
+        }
+        if(node.Attributes["voice"] != null)
+        {
+            int.TryParse(node.Attributes["voice"].Value, out voice);
         }
         switch(character)
         {
             case "Gulnaz":
                 characterpic.sprite = chara1[expression];
+                beepsound.Stop();
+                beepsound.PlayOneShot(voices[voice]);
                 showname.text = character;
                 charanim.SetBool("isTalking", true);
                 Invoke("StopAnim", 0.2f);
@@ -160,6 +167,8 @@ public class DialogueScript : MonoBehaviour
 
             case "Serik":
                 characterpic.sprite = chara2[expression];
+                beepsound.Stop();
+                beepsound.PlayOneShot(voices[voice]);
                 showname.text = character;
                 break;
 
@@ -180,6 +189,8 @@ public class DialogueScript : MonoBehaviour
 
             case "GhostSerik":
                 characterpic.sprite = chara6[expression];
+                beepsound.Stop();
+                beepsound.PlayOneShot(voices[voice]);
                 showname.text = "Serik";
 				serikAnim.SetBool("bSerikTalk", true);
                 Invoke("StopAnim", 0.2f);
