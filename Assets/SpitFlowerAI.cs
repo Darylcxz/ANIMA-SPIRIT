@@ -5,6 +5,7 @@ public class SpitFlowerAI : MonoBehaviour {
 	GameObject player;
 	GameObject target;
 	public Rigidbody projectile;
+	public Transform shootPoint;
 	Rigidbody _rb;
 	float timer;
 	float distance;
@@ -29,7 +30,7 @@ public class SpitFlowerAI : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 	//	Debug.Log(timer);
 		distance = Vector3.Distance(player.transform.position, transform.position);
 		AILogic();
@@ -52,9 +53,10 @@ public class SpitFlowerAI : MonoBehaviour {
 		{
  			case NeptoAI.IDLE:
 				NeptoController.SetBool("isAttacking", false);
-				if (distance < 15 && timer > 0)
+				if (distance < 15 && timer > 0 && !NeptoController.GetBool("isAttacking"))
 				{
 					Debug.Log("IDLE > SHOOT");
+					NeptoController.SetBool("isAttacking", true);
 					shoot = false;
 					timer = 0;
 					NeptoState = NeptoAI.SHOOT;
@@ -63,12 +65,12 @@ public class SpitFlowerAI : MonoBehaviour {
 			case NeptoAI.SHOOT:
 				NeptoController.SetBool("isAttacking", true);
 				LookAtPlayer();
-				if (timer > 2.5f && !shoot)
+				if (timer > 2.4f && !shoot && NeptoController.GetBool("isAttacking"))
 				{
 					Fire();
 					Debug.Log("Fire");
 				}
-				if (timer >= 3.75f || distance > 15)
+				if ((timer >= 3.75f || distance > 15) && NeptoController.GetBool("isAttacking"))
 				{
 					Debug.Log("SHOOT > IDLE");
 					NeptoController.SetBool("isAttacking", false);
@@ -83,7 +85,7 @@ public class SpitFlowerAI : MonoBehaviour {
 	}
 	void Fire()
 	{
-		Rigidbody projectileClone = Instantiate(projectile, transform.position, Quaternion.identity) as Rigidbody;
+		Rigidbody projectileClone = Instantiate(projectile, shootPoint.position, transform.rotation) as Rigidbody;
 		projectileClone.velocity = transform.forward *20;
 		shoot = true;
 	}
@@ -92,7 +94,7 @@ public class SpitFlowerAI : MonoBehaviour {
 		if (col.collider.tag == "Player")
 		{
  			//play Death2 anim
-			NeptoController.SetBool("isHit", true);
+			//NeptoController.SetBool("isHit", true);
 		}
 		if (col.collider.tag == "Ball")
 		{
