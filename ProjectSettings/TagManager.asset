@@ -33,6 +33,7 @@ TagManager:
   - DeshWall
   - stick
   - pile
+  - Handle
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - 
   - DetectPossess
   - Flammable
-  - 
+  - Arrow
   - 
   - 
   - 

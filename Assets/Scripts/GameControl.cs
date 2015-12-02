@@ -57,7 +57,7 @@ public class GameControl : MonoBehaviour {
             freeze = true;
             //possesionmode.enabled = true;
 			print ("possess mode activated");
-            hitcolliders = Physics.OverlapSphere(character.transform.position, 20, enemylayer);
+            hitcolliders = Physics.OverlapSphere(character.transform.position, 5, enemylayer);
             pointer.transform.localPosition = hitcolliders[ordernum].transform.localPosition + heightplus;
 
 		} else if (spiritmode) {
