@@ -6,9 +6,13 @@ public class MenuSceneScript : MonoBehaviour {
 	Transform currentMount;
 	bool _trigger;
 	bool _fade;
-	float _t;
-	float _t2;
+	public float _t;
+	public float _t2;
 	public CanvasGroup FadeObj;
+	Button butt;
+	bool clicked;
+
+
 	// Use this for initialization
 	void Start () {
 		currentMount = transform;
@@ -17,54 +21,41 @@ public class MenuSceneScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (_trigger)
-		{
+		{			
 			_t += Time.deltaTime/10;
-			
+		}
+		if (_t > 0.08f && _trigger == true)
+		{
+			_trigger = false;
+			clicked = false;
+			butt.GetComponent<Button>().Select();
 		}
 		if (_t > 1)
 		{
 			_t = 1;
-			_trigger = false;
 		}
-
 		transform.position = Vector3.Lerp(transform.position, currentMount.position, _t);
 		transform.rotation = Quaternion.Slerp(transform.rotation, currentMount.rotation, _t);
-		if (_fade)
+		
+		Debug.Log(clicked + " clicked +" + _t + " _t +" + _t2 + " _t2");
+		if (_fade && clicked ==true)
 		{
-			_t2 += Time.deltaTime;
+			_t2 += Time.deltaTime/0.1f;
 		}
-		if(_t2>1)
+		if(_t2>1 && _fade)
 		{
 			_t2 = 1;
 		}
-		if (!_fade)
+		if (!_fade && clicked == true)
 		{
-			_t2 -= Time.deltaTime;
+			_t2 -= Time.deltaTime/0.1f;
+			
 		}
-		if (_t2 < 0)
+		if (_t2 < 0 && !_fade)
 		{
 			_t2 = 0;
 		}
-		//if (_fade && _trigger)
-		//{
-		//	_t2 += Time.deltaTime;
-		//	if (_t2 > 1)
-		//	{
-		//		_t2 = 1;
-		//		_fade = false;
-		//		_trigger = false;
-		//	}
-			
-		//}
-		//else if (!_fade && _trigger)
-		//{
-		//	_t2 -= Time.deltaTime;
-		//	if (_t2 < 0)
-		//	{
-		//		_t2 = 0;
-		//		_fade = true;
-		//	}
-		//}
+		
 		
 		
 		FadeObj.alpha = Mathf.Lerp(0,1,_t2);
@@ -72,12 +63,25 @@ public class MenuSceneScript : MonoBehaviour {
 	}
 	public void SetMount(Transform mountPos)
 	{
-		_t = 0;
-		currentMount = mountPos;
-		_trigger = true;
+		if (!_trigger)
+		{
+			_t = 0;
+			currentMount = mountPos;
+			_trigger = true;
+		}
 	}
 	public void Fade()
 	{
-		_fade = !_fade;
+		Debug.Log("clicked +" + clicked);
+		if (!clicked)
+		{
+			_fade = !_fade;
+			clicked = true;
+		}
+		
+	}
+	public void TestSelect(Button buttock)
+	{
+		butt = buttock;
 	}
 }
