@@ -157,7 +157,7 @@ public abstract class AIbase : MonoBehaviour {
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
                 //with this, the functions below may need to be placed in here.
 				playerMana.currMana -= Time.deltaTime;
-                agent.ResetPath();
+                //agent.ResetPath();
                 ready = false;
                 Camerafollow.targetUnit = gameObject;
                 CheckInput();
@@ -165,7 +165,7 @@ public abstract class AIbase : MonoBehaviour {
                 if (GameControl.spiritmode == false)
                 {
                     AIState = States.idle;
-                    agent.ResetPath();
+                    //agent.ResetPath();
                     ready = false;
                     Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
@@ -178,7 +178,7 @@ public abstract class AIbase : MonoBehaviour {
 
             case States.doNothing:
                 //literally fucking does nothing
-                agent.ResetPath();
+                //agent.ResetPath();
                 ready = false;
                 CancelInvoke();
                 if(GameControl.freeze == false)

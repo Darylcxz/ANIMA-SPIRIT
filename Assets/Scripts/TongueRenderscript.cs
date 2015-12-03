@@ -5,6 +5,8 @@ public class TongueRenderscript : MonoBehaviour {
     private LineRenderer tongue;
     private GameObject tongueStart;
     public static Rigidbody lt;
+    private float dist;
+    private bool detached;
     
 
 	// Use this for initialization
@@ -13,7 +15,7 @@ public class TongueRenderscript : MonoBehaviour {
         tongue = this.gameObject.GetComponent<LineRenderer>();
         tongueStart = GameObject.Find("tongueStart");
         lt = this.gameObject.GetComponent<Rigidbody>();
-        
+        lt.constraints = RigidbodyConstraints.FreezeAll;
 	
 	}
 	
@@ -22,13 +24,24 @@ public class TongueRenderscript : MonoBehaviour {
 
         tongue.SetPosition(0, transform.position);
         tongue.SetPosition(1, tongueStart.transform.position);
-        
+        dist = Vector3.Distance(transform.position, tongueStart.transform.position);
+        Vector3 backDir = tongueStart.transform.position - transform.position;
+        if(dist > 5)
+        {
+            lt.AddForce(backDir, ForceMode.Impulse);
+        }
+
+        if(detached)
+        {
+
+        }
 	
 	}
 
     public static void shootTongue(Vector3 shootdir)
     {
-        lt.velocity = (shootdir * 10);
+        lt.constraints = RigidbodyConstraints.None;
+        lt.AddForce(shootdir, ForceMode.Impulse);
         print("shoooooooot");
         print(shootdir);
     }

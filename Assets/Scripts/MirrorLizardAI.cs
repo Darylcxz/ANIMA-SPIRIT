@@ -10,7 +10,7 @@ public class MirrorLizardAI : AIbase {
 	// Use this for initialization
 	protected override void Start () {
         _rigidBody = GetComponent<Rigidbody>();
-        agent = gameObject.GetComponent<NavMeshAgent>();
+        //agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
         //laser = GetComponent<LineRenderer>();
         handles = GameObject.FindGameObjectsWithTag("Handle");
@@ -18,23 +18,22 @@ public class MirrorLizardAI : AIbase {
 
     protected override void ActivateAbility()
     {
-        TongueRenderscript.shootTongue(transform.forward);
-        //for (int i = 0; i < handles.Length; i++)
-        //{
-        //    Vector3 direction = handles[i].transform.position - transform.position;
-        //    float angle = Vector3.Angle(direction, transform.forward);
-        //    float dist = Vector3.Distance(transform.position, handles[i].transform.position);
+        //TongueRenderscript.shootTongue(transform.forward);
+        for (int i = 0; i < handles.Length; i++)
+        {
+            Vector3 direction = handles[i].transform.position - transform.position;
+            float angle = Vector3.Angle(direction, transform.forward);
+            float dist = Vector3.Distance(transform.position, handles[i].transform.position);
 
-        //    if (dist <= 5 && angle <= 30 || dist <= 5 && angle >= -30)
-        //    {
-        //        TongueRenderscript.shootTongue(direction);
-
-        //    }
-        //    else
-        //    {
-        //        TongueRenderscript.shootTongue(transform.forward);
-        //    }
-        //}
+            if (dist <= 5 && angle <= 30 || dist <= 5 && angle >= -30)
+            {
+                TongueRenderscript.shootTongue(direction);
+            }
+            else
+            {
+                TongueRenderscript.shootTongue(transform.forward);
+            }
+        }
     }
 
     protected override void PassiveAbility()
