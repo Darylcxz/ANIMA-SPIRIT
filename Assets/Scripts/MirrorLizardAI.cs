@@ -8,6 +8,7 @@ public class MirrorLizardAI : AIbase {
     private GameObject[] handles;
     private Vector3 shootDir;
     public static bool attachedtoHandle;
+    bool losttongue;
 	// Use this for initialization
 	protected override void Start () {
         _rigidBody = GetComponent<Rigidbody>();
@@ -28,7 +29,7 @@ public class MirrorLizardAI : AIbase {
                 float angle = Vector3.Angle(direction, transform.forward);
                 float dist = Vector3.Distance(transform.position, handles[i].transform.position);
 
-                if (dist <= 5 && angle <= 30 || dist <= 5 && angle >= -30)
+                if (dist <= 7 && angle <= 30 || dist <= 5 && angle >= -30)
                 {
                     TongueRenderscript.shootTongue(direction);
                 }
@@ -76,5 +77,10 @@ public class MirrorLizardAI : AIbase {
         //    laser.SetPosition(0, transform.position);
         //    laser.SetPosition(1, transform.position);
         //}
+    }
+
+    public static void SeekTongue()
+    {
+        TongueRenderscript.lt.gameObject.transform.position = TongueRenderscript.origin;
     }
 }
