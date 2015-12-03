@@ -32,15 +32,18 @@ public class NeptoProjectile : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.collider.tag == "Player" && !deflect)
+		if (col.collider.tag == "Player")
 		{
 			col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 0, ForceMode.Impulse);
 			Destroy(gameObject, 0.5f);
 		}
-		if (col.collider.tag == "Player" && deflect)
+		if (col.collider.name.Contains( "Golem"))
 		{
-			toSender = true;
 			_rb.velocity = Vector3.zero;
+			if (col.collider.GetComponent<GolemAI>().deflect)
+			{
+				toSender = true;
+			}
 		}
 	}
 	void BackToSender(int test)

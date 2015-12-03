@@ -283,8 +283,7 @@ public class MovementController : MonoBehaviour {
     }
     void MovementLogic(float horizontal, float vertical)
     {
-        if(GameControl.spiritmode == false)
-        {
+ 
             float h2 = horizontal * 2;
             float v2 = vertical * 2;
             Vector3 targetVelocity = new Vector3(h2 + v2, 0, v2 - h2);
@@ -294,13 +293,12 @@ public class MovementController : MonoBehaviour {
             Vector3 vChange = targetVelocity - velocity;
             vChange = new Vector3(Mathf.Clamp(vChange.x, -speed, speed), 0, (Mathf.Clamp(vChange.z, -speed, speed)));
             _rigidBody.AddForce(vChange, ForceMode.VelocityChange);
-        }
         
         
     }
     void RotatingLogic(float h, float v)
     {
-        if (GameControl.spiritmode == false && GulnazGrab.holding == false)
+        if (GulnazGrab.holding == false)
         {
             float h3 = h * 2;
             float v3 = v * 2;
