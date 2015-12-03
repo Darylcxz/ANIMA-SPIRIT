@@ -8,7 +8,7 @@ using System.Collections;
 
 public abstract class AIbase : MonoBehaviour {
 
-	bool autoFire = false;
+	protected bool autoFire = false;
 //	bool isPossessed = false;
     public bool canPosses = true;
 
@@ -40,7 +40,7 @@ public abstract class AIbase : MonoBehaviour {
     //movement stuff
     float vMove;
     float hMove;
-    float speed = 5f; //player movement speed;
+    protected float speed = 5f; //player movement speed;
     protected float AISpeed = 1f; // AI selfmove speed;
 
 	//AI Stats and stuff
