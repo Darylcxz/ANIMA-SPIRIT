@@ -215,19 +215,19 @@
     <D5 character="GhostSerik" expression="1" voice="22">THAT'S MY BUTT! We're talking about my body here!</D5>
     <D5 character="GhostSerik" expression="0" voice="16">And...it's all dirty... and caked in mud. </D5>
     <D6 character="GhostSerik" expression="7" voice="23">Gross......</D6>
-    <D7 character="Archura" expression="0">...</D7>
-    <D8 character="Archura" expression="0">You kids done with your talking yet?</D8>
-    <D9 character="Archura" expression="1">You've got an interesting ability there, boy.</D9>
-    <D10 character="Archura" expression="2">You can thank me for that!</D10>
+    <D7 character="Archura" expression="0" animation="0">...</D7>
+    <D8 character="Archura" expression="0" animation="1">You kids done with your talking yet?</D8>
+    <D9 character="Archura" expression="1" animation="1">You've got an interesting ability there, boy.</D9>
+    <D10 character="Archura" expression="2" animation="3">You can thank me for that!</D10>
     <D11 character="GhostSerik" expression="7">...</D11>
     <D12 character="GhostSerik" expression="7">Ugh... </D12>
     <D13 character="Gulnaz" expression="5" voice="12">Give Serik his body back, you body-stealing thief! </D13>
-    <D14 character="Archura" expression="1">Nope.</D14>
-    <D15 character="Archura" expression="1">It's been fun watching you guys tail after me, but...</D15>
-    <D16 character="Archura" expression="3">If you value your life, you should turn back now.</D16>
-    <D17 character="Archura" expression="1">Also you get a neat party trick out of this!</D17>
-    <D18 character="Archura" expression="2">I say you go back home to your disgusting tribe and continue brandishing your devilry. </D18>
-    <D19 character="Archura" expression="2">See ya.</D19>
+    <D14 character="Archura" expression="1" animation="2">Nope.</D14>
+    <D15 character="Archura" expression="1" animation="0">It's been fun watching you guys tail after me, but...</D15>
+    <D16 character="Archura" expression="3" animation="0">If you value your life, you should turn back now.</D16>
+    <D17 character="Archura" expression="1" animation="3">Also you get a neat party trick out of this!</D17>
+    <D18 character="Archura" expression="2" animation="1">I say you go back home to your disgusting tribe and continue brandishing your devilry. </D18>
+    <D19 character="Archura" expression="2" animation="0">See ya.</D19>
   </Archuraencounter>
   <end1-2>
     <D1 character="Gulnaz" expression="0">How does he even.. bolt off like that.</D1>

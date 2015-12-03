@@ -285,7 +285,7 @@ public abstract class AIbase : MonoBehaviour {
                 if (GamepadManager.buttonA && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
                 {
                     AIState = States.possessed;
-                    hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
+                    hit.collider.gameObject.SetActive(false);
                     GameControl.freeze = false;
                     print("hithithit");
                 }
