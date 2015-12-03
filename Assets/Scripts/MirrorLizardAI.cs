@@ -7,6 +7,7 @@ public class MirrorLizardAI : AIbase {
     public static bool gotLight;
     private GameObject[] handles;
     private Vector3 shootDir;
+    public static bool attachedtoHandle;
 	// Use this for initialization
 	protected override void Start () {
         _rigidBody = GetComponent<Rigidbody>();
@@ -18,22 +19,34 @@ public class MirrorLizardAI : AIbase {
 
     protected override void ActivateAbility()
     {
-        //TongueRenderscript.shootTongue(transform.forward);
-        for (int i = 0; i < handles.Length; i++)
+        if(!attachedtoHandle)
         {
-            Vector3 direction = handles[i].transform.position - transform.position;
-            float angle = Vector3.Angle(direction, transform.forward);
-            float dist = Vector3.Distance(transform.position, handles[i].transform.position);
+            _rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+            for (int i = 0; i < handles.Length; i++)
+            {
+                Vector3 direction = handles[i].transform.position - transform.position;
+                float angle = Vector3.Angle(direction, transform.forward);
+                float dist = Vector3.Distance(transform.position, handles[i].transform.position);
 
-            if (dist <= 5 && angle <= 30 || dist <= 5 && angle >= -30)
-            {
-                TongueRenderscript.shootTongue(direction);
-            }
-            else
-            {
-                TongueRenderscript.shootTongue(transform.forward);
+                if (dist <= 5 && angle <= 30 || dist <= 5 && angle >= -30)
+                {
+                    TongueRenderscript.shootTongue(direction);
+                }
+                else
+                {
+                    TongueRenderscript.shootTongue(transform.forward);
+                }
             }
         }
+
+        else if(attachedtoHandle)
+        {
+            //TongueRenderscript.lt.gameObject.transform.position = transform.position;
+            TongueRenderscript.Move();
+            _rigidBody.constraints = RigidbodyConstraints.None;
+            attachedtoHandle = false;
+        }
+        
     }
 
     protected override void PassiveAbility()
