@@ -55,7 +55,7 @@ public class SpitFlowerAI : MonoBehaviour {
 				NeptoController.SetBool("isAttacking", false);
 				if (distance < 15 && timer > 0 && !NeptoController.GetBool("isAttacking"))
 				{
-					Debug.Log("IDLE > SHOOT");
+//					Debug.Log("IDLE > SHOOT");
 					NeptoController.SetBool("isAttacking", true);
 					shoot = false;
 					timer = 0;
@@ -68,11 +68,11 @@ public class SpitFlowerAI : MonoBehaviour {
 				if (timer > 2.4f && !shoot && NeptoController.GetBool("isAttacking"))
 				{
 					Fire();
-					Debug.Log("Fire");
+				//	Debug.Log("Fire");
 				}
 				if ((timer >= 3.75f || distance > 15) && NeptoController.GetBool("isAttacking"))
 				{
-					Debug.Log("SHOOT > IDLE");
+				//	Debug.Log("SHOOT > IDLE");
 					NeptoController.SetBool("isAttacking", false);
 					NeptoState = NeptoAI.IDLE;
 				}
@@ -86,7 +86,8 @@ public class SpitFlowerAI : MonoBehaviour {
 	void Fire()
 	{
 		Rigidbody projectileClone = Instantiate(projectile, shootPoint.position, transform.rotation) as Rigidbody;
-		projectileClone.velocity = transform.forward *20;
+		projectileClone.SendMessage("OriginPos", transform.position);
+		projectileClone.velocity = transform.forward*20;
 		shoot = true;
 	}
 	void OnCollisionEnter(Collision col)
@@ -99,8 +100,11 @@ public class SpitFlowerAI : MonoBehaviour {
 		if (col.collider.tag == "Ball")
 		{
  			//play Death1 anim
+			Debug.Log("DEAD");
 			NeptoController.SetBool("isDead", true);
 			_rb.isKinematic = false;
+			NeptoState = NeptoAI.DEATH;
+			Destroy(col.collider.gameObject, 0.2f);
 		}
 	}
 }
