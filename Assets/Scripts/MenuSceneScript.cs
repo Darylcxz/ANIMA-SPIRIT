@@ -12,6 +12,8 @@ public class MenuSceneScript : MonoBehaviour {
 	Button butt;
 	bool clicked;
 
+	public GameObject fadeTablet;
+
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +42,7 @@ public class MenuSceneScript : MonoBehaviour {
 		Debug.Log(clicked + " clicked +" + _t + " _t +" + _t2 + " _t2");
 		if (_fade && clicked ==true)
 		{
-			_t2 += Time.deltaTime/0.1f;
+			_t2 += Time.deltaTime/0.8f;
 		}
 		if(_t2>1 && _fade)
 		{
@@ -48,7 +50,7 @@ public class MenuSceneScript : MonoBehaviour {
 		}
 		if (!_fade && clicked == true)
 		{
-			_t2 -= Time.deltaTime/0.1f;
+			_t2 -= Time.deltaTime/0.8f;
 			
 		}
 		if (_t2 < 0 && !_fade)
@@ -59,6 +61,9 @@ public class MenuSceneScript : MonoBehaviour {
 		
 		
 		FadeObj.alpha = Mathf.Lerp(0,1,_t2);
+		fadeTablet.GetComponent<MeshRenderer> ().material.SetColor ("_Color",(new Color (1, 1, 1, Mathf.Lerp (0, 1, _t2))));
+
+
 	
 	}
 	public void SetMount(Transform mountPos)
