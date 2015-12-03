@@ -33,6 +33,7 @@ TagManager:
   - DeshWall
   - stick
   - pile
+  - Ball
   layers:
   - Default
   - TransparentFX

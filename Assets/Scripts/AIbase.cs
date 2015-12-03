@@ -99,7 +99,7 @@ public abstract class AIbase : MonoBehaviour {
             case States.idle:
                 //plays AI specific Animations
                 Invoke("WaitTimer", waitTime);
-
+				_rigidBody.velocity = Vector3.zero;
 
 
 
