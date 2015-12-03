@@ -196,6 +196,17 @@ public class DialogueScript : MonoBehaviour
                 Invoke("StopAnim", 0.2f);
                 break;
 
+            case "Archura":
+                characterpic.sprite = chara6[expression];
+                beepsound.Stop();
+                beepsound.PlayOneShot(voices[voice]);
+                showname.text = "Archura";
+                serikAnim.SetBool("bSerikTalk", true);
+                Invoke("StopAnim", 0.2f);
+                break;
+
+
+
             default:
                 characterpic.sprite = null;
                 break;

@@ -71,7 +71,6 @@ public abstract class AIbase : MonoBehaviour {
 		waitTimer = 0.0f;
 		circleCenter = transform.position + new Vector3(0, 0, offset);
 		currentTargetPosition = transform.position;
-
     }
 	// Update is called once per frame
 	protected void Update () {
@@ -99,7 +98,7 @@ public abstract class AIbase : MonoBehaviour {
             case States.idle:
                 //plays AI specific Animations
                 Invoke("WaitTimer", waitTime);
-
+				_rigidBody.velocity = Vector3.zero;
 
 
 
@@ -158,7 +157,7 @@ public abstract class AIbase : MonoBehaviour {
                 //logic for when possessed. Most probably disabling the charactercontroller of AI
                 //with this, the functions below may need to be placed in here.
 				playerMana.currMana -= Time.deltaTime;
-                agent.ResetPath();
+                //agent.ResetPath();
                 ready = false;
                 Camerafollow.targetUnit = gameObject;
                 CheckInput();
@@ -166,7 +165,7 @@ public abstract class AIbase : MonoBehaviour {
                 if (GameControl.spiritmode == false)
                 {
                     AIState = States.idle;
-                    agent.ResetPath();
+                    //agent.ResetPath();
                     ready = false;
                     Camerafollow.targetUnit = GameObject.Find("Character");
                     CancelInvoke();
@@ -179,7 +178,7 @@ public abstract class AIbase : MonoBehaviour {
 
             case States.doNothing:
                 //literally fucking does nothing
-                agent.ResetPath();
+                //agent.ResetPath();
                 ready = false;
                 CancelInvoke();
                 if(GameControl.freeze == false)
@@ -277,13 +276,18 @@ public abstract class AIbase : MonoBehaviour {
         if(GameControl.freeze && AIState != States.possessed)
         {
             AIState = States.doNothing;
+            Debug.DrawRay(transform.position, Vector3.up * 2);
             if(Physics.Raycast(transform.position, Vector3.up, out hit, 2))
             {
+                Debug.Log("hit!!!!!!");
+                print(hit.collider.name);
+
                 if (GamepadManager.buttonA && hit.collider.name == "arrow" || Input.GetKeyDown("i") && hit.collider.name == "arrow")
                 {
                     AIState = States.possessed;
-                    hit.collider.gameObject.transform.position = new Vector3(0, 100, 0);
+                    hit.collider.gameObject.SetActive(false);
                     GameControl.freeze = false;
+                    print("hithithit");
                 }
             }
         }

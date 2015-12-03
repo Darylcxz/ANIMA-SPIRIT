@@ -57,15 +57,17 @@ public class GameControl : MonoBehaviour {
             freeze = true;
             //possesionmode.enabled = true;
 			print ("possess mode activated");
-            hitcolliders = Physics.OverlapSphere(character.transform.position, 20, enemylayer);
-            pointer.transform.localPosition = hitcolliders[ordernum].transform.localPosition + heightplus;
+            hitcolliders = Physics.OverlapSphere(character.transform.position, 5, enemylayer);
+            pointer.SetActive(true);
+            pointer.transform.position = hitcolliders[ordernum].transform.position + heightplus;
+            Debug.Log("desssssu");
 
 		} else if (spiritmode) {
 
 			print ("possess mode deactivated");
 			Camerafollow.targetUnit = GameObject.Find("Character");
 			spiritmode = false;
-            pointer.transform.position = new Vector3(0, 100, 0);
+            pointer.SetActive(false);
             if(freeze)
             {
                 freeze = false;
