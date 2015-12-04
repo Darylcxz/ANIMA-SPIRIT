@@ -27,11 +27,9 @@ public class TongueRenderscript : MonoBehaviour {
         tongue.SetPosition(0, transform.position);
         tongue.SetPosition(1, tongueStart.transform.position);
         dist = Vector3.Distance(transform.position, tongueStart.transform.position);
-        Vector3 backDir = tongueStart.transform.position - transform.position;
         if(dist > 5)
         {
-            transform.position = tongueStart.transform.position;
-            lt.constraints = RigidbodyConstraints.FreezeAll;
+            MirrorLizardAI.SeekTongue();
         }
 
        
@@ -59,7 +57,7 @@ public class TongueRenderscript : MonoBehaviour {
     {
         Vector3 backDir = lt.gameObject.transform.position - origin;
         Vector3 moveDir = backDir;
-        handle.AddForce(-moveDir, ForceMode.Impulse);
+        handle.AddForce(-moveDir * 3, ForceMode.Impulse);
         lt.transform.position = origin;
     }
 }

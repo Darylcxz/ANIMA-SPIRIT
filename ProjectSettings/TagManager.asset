@@ -34,6 +34,7 @@ TagManager:
   - stick
   - pile
   - Ball
+  - Climable
   layers:
   - Default
   - TransparentFX

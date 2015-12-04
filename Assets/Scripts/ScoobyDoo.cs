@@ -10,6 +10,7 @@ public class ScoobyDoo : MonoBehaviour {
     private GameObject door22;
     private GameObject door31;
     private GameObject door32;
+    private Vector3 targetRot;
     //private GameObject gulnaz;
     //private Rigidbody gul;
 	// Use this for initialization
@@ -27,30 +28,37 @@ public class ScoobyDoo : MonoBehaviour {
     {
         if(other.gameObject.name == "Character")
         {
+            Quaternion lookRot = Quaternion.LookRotation(-Vector3.right, Vector3.up);
             switch(doorNum)
             {
                 case 1:
                     other.gameObject.transform.position = door12.transform.position + door12.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
                 case 2:
                     other.gameObject.transform.position = door11.transform.position + door11.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
                 case 3:
                     other.gameObject.transform.position = door22.transform.position + door22.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
                 case 4:
                     other.gameObject.transform.position = door21.transform.position + door21.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
                 case 5:
                     other.gameObject.transform.position = door32.transform.position + door32.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
                 case 6:
                     other.gameObject.transform.position = door31.transform.position + door31.transform.forward;
+                    other.gameObject.transform.rotation = lookRot;
                     break;
 
             }

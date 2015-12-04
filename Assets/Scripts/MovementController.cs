@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour {
         jump,
         roll,
         possess,
+        climb,
     };
 
    public States charStates = States.idle;
@@ -55,6 +56,7 @@ public class MovementController : MonoBehaviour {
 
     Vector3 groundPos;
     Vector3 playerPos;
+    RaycastHit hit;
 
 	// Mana Stuff;
 
@@ -138,6 +140,7 @@ public class MovementController : MonoBehaviour {
                     charStates = States.roll;
                     isRolling = true;
                 }
+                CheckClimb();
                 break;
             case States.move:
                 RotatingLogic(hMove, vMove);
@@ -154,13 +157,15 @@ public class MovementController : MonoBehaviour {
                 {
                     charStates = States.jump;
                 }
+                CheckClimb();
                 break;
             case States.jump:
                 _rigidBody.AddForce(Vector3.up*jumpForce,ForceMode.Impulse);
                 if (!isGrounded())
                 {
                     charStates = States.idle;
-                }           
+                }
+                CheckClimb();
                 break;
             case States.possess:
 				_mana = false;
@@ -224,6 +229,21 @@ public class MovementController : MonoBehaviour {
 					_dagger.GetComponent<TrailRenderer>().enabled = false;
 					_dagger.enabled = false;
                 }          
+                break;
+
+            case States.climb:
+                
+                if(Physics.Raycast(transform.position, transform.forward, 1))
+                {
+                    ClimbLogic(GamepadManager.v1);
+                }
+
+                else
+                {
+                    _rigidBody.constraints = RigidbodyConstraints.FreezeRotation;
+                    _rigidBody.AddForce(transform.forward * 2, ForceMode.Impulse);
+                    charStates = States.idle;
+                }
                 break;
         }
 	}
@@ -351,4 +371,27 @@ public class MovementController : MonoBehaviour {
 			currMana += Time.deltaTime/5;	
 		}
 	}
+
+    void CheckClimb()
+    {
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 1));
+        {
+            if (GamepadManager.buttonBDown && hit.collider.tag == "Climable")
+            {
+                charStates = States.climb;
+                Quaternion targetRot = Quaternion.LookRotation(-hit.normal, Vector3.up);
+                _rigidBody.rotation = targetRot;
+                transform.position = new Vector3(hit.transform.position.x - 0.35f, transform.position.y, transform.position.z);
+                _rigidBody.constraints = RigidbodyConstraints.FreezeRotation & RigidbodyConstraints.FreezePositionZ & RigidbodyConstraints.FreezePositionX;
+                //charStates = States.climb;
+            }
+        }
+    }
+
+    void ClimbLogic(float v)
+    {
+        Vector3 ClimbForce = Vector3.up * v;
+        ClimbForce.Normalize();
+        _rigidBody.AddForce(ClimbForce * 0.3f, ForceMode.VelocityChange);
+    }
 }

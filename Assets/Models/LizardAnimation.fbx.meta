@@ -102,10 +102,10 @@ ModelImporter:
     400092: tail3 1
     400094: Tail4
     4300000: Object006
-    7400000: Idle
-    7400002: Walk
-    7400004: Lick
-    7400006: IdleBreaker
+    7400000: LizardIdle
+    7400002: LizardWalk
+    7400004: LizardLick
+    7400006: LizardIdleBreaker
     9500000: //RootNode
     13700000: Object006
   materials:
@@ -129,7 +129,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: LizardIdle
       takeName: LizardAnimation3
       firstFrame: 10
       lastFrame: 125
@@ -251,7 +251,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Walk
+      name: LizardWalk
       takeName: LizardAnimation3
       firstFrame: 128
       lastFrame: 158
@@ -373,7 +373,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Lick
+      name: LizardLick
       takeName: LizardAnimation3
       firstFrame: 160
       lastFrame: 200
@@ -495,7 +495,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: IdleBreaker
+      name: LizardIdleBreaker
       takeName: LizardAnimation3
       firstFrame: 210
       lastFrame: 360
