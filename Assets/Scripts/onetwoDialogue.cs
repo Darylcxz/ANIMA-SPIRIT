@@ -23,7 +23,6 @@ public class onetwoDialogue : DialogueScript {
     void CheckVines()
     {
         float disttoV = Vector3.Distance(transform.position, vines.transform.position);
-        print(disttoV);
         if (disttoV <= 2.6)
         {
             climbUI.enabled = true;

@@ -27,7 +27,6 @@ public class TongueRenderscript : MonoBehaviour {
         tongue.SetPosition(0, transform.position);
         tongue.SetPosition(1, tongueStart.transform.position);
         dist = Vector3.Distance(transform.position, tongueStart.transform.position);
-        Vector3 backDir = tongueStart.transform.position - transform.position;
         if(dist > 5)
         {
             MirrorLizardAI.SeekTongue();

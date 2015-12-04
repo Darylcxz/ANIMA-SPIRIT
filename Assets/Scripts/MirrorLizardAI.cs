@@ -8,10 +8,12 @@ public class MirrorLizardAI : AIbase {
     private GameObject[] handles;
     private Vector3 shootDir;
     public static bool attachedtoHandle;
+    private Animator liz;
     bool losttongue;
 	// Use this for initialization
 	protected override void Start () {
         _rigidBody = GetComponent<Rigidbody>();
+        liz = gameObject.GetComponent<Animator>();
         //agent = gameObject.GetComponent<NavMeshAgent>();
         origin = gameObject.transform.position;
         //laser = GetComponent<LineRenderer>();
@@ -52,6 +54,8 @@ public class MirrorLizardAI : AIbase {
 
     protected override void PassiveAbility()
     {
+        float movespeed = _rigidBody.velocity.magnitude;
+        liz.SetFloat("speed", movespeed);
         //if(gotLight)
         //{
         //    if (Physics.Raycast(transform.position, transform.forward, out kk, 200))
