@@ -44,6 +44,15 @@ public class NeptoProjectile : MonoBehaviour {
 			{
 				toSender = true;
 			}
+			else
+			{
+				col.gameObject.GetComponent<Rigidbody>().AddExplosionForce(10, transform.position, 3, 0, ForceMode.Impulse);
+				Destroy(gameObject,0.5f);
+			}
+		}
+		if (col.collider)
+		{
+			Destroy(gameObject, 2.0f);
 		}
 	}
 	void BackToSender(int test)
