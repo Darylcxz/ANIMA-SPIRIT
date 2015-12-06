@@ -78,7 +78,8 @@ public class SpitFlowerAI : MonoBehaviour {
 				}
 				break;
 			case NeptoAI.DEATH:
-
+				gameObject.GetComponent<AudioSource>().Play();
+				Destroy(gameObject, 2f);
 				break;
 
 		}

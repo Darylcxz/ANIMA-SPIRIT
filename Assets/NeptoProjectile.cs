@@ -52,6 +52,7 @@ public class NeptoProjectile : MonoBehaviour {
 		}
 		if (col.collider)
 		{
+			gameObject.GetComponent<AudioSource>().Play();
 			Destroy(gameObject, 2.0f);
 		}
 	}

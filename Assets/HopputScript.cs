@@ -133,7 +133,8 @@ public class HopputScript : AIbase {
 			health--;
 			if (health < 1)
 			{
-				gameObject.SetActive(false);
+				gameObject.GetComponent<AudioSource>().Play();
+				Destroy(gameObject, 1f);
 			}
 		}
 	}
