@@ -74,7 +74,6 @@ public class NeptoProjectile : MonoBehaviour {
 		
 			Vector3 moveVector = direction.normalized * 20 * Time.deltaTime;
 			transform.position += moveVector;
-			//wDebug.Log("back");
 		
 	}
 }
