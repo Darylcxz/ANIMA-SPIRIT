@@ -59,7 +59,7 @@ public class BlockSlide : MonoBehaviour {
 	void CheckRay()
 	{
 
-		if (Physics.Raycast(transform.localPosition, transform.forward, out hit,2) || Physics.Raycast(transform.localPosition + rightOffset, transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, transform.forward, out hit, 2))
+		if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, transform.forward, out hit, 0.5f))
 		{
 			Debug.Log("wtf");
 			if (hit.collider.name == "Character")
@@ -74,7 +74,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 			}
 		}
-		if (Physics.Raycast(transform.localPosition, -transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, -transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, -transform.forward, out hit, 2))
+		if (Physics.Raycast(transform.localPosition, -transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, -transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, -transform.forward, out hit, 0.5f))
 		{
 			if (hit.collider.name == "Character")
 			{
@@ -88,7 +88,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 			}
 		}
-		if (Physics.Raycast(transform.localPosition, -transform.right, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, -transform.right, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, -transform.right, out hit, 2))
+		if (Physics.Raycast(transform.localPosition, -transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, -transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, -transform.right, out hit, 0.5f))
 		{
 			if (hit.collider.name == "Character")
 			{
@@ -102,7 +102,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 			}
 		}
-		if (Physics.Raycast(transform.localPosition, transform.right, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, transform.right, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, transform.right, out hit, 2))
+		if (Physics.Raycast(transform.localPosition, transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, transform.right, out hit, 0.5f))
 		{
 			if (hit.collider.name == "Character")
 			{
@@ -124,7 +124,7 @@ public class BlockSlide : MonoBehaviour {
 		switch (MoveDir)
 		{
  			case MovementStuff.FORWARD:
-				if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, transform.forward, out hit, 2))
+				if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, transform.forward, out hit, 0.5f))
 				{
 					Debug.Log("hit something");
 					if (hit.collider.name != "Character")
@@ -139,7 +139,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 				break;
 			case MovementStuff.BACKWARD:
-				if (Physics.Raycast(transform.localPosition, -transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, -transform.forward, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, -transform.forward, out hit, 2))
+				if (Physics.Raycast(transform.localPosition, -transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, -transform.forward, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, -transform.forward, out hit, 0.5f))
 				{
 					Debug.Log("hit something");
 					if (hit.collider.name != "Character")
@@ -154,7 +154,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 				break;
 			case MovementStuff.LEFT:
-				if (Physics.Raycast(transform.localPosition, -transform.right, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, -transform.right, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, -transform.right, out hit, 2))
+				if (Physics.Raycast(transform.localPosition, -transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, -transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, -transform.right, out hit, 0.5f))
 				{
 					if (hit.collider.name != "Character")
 					{
@@ -168,7 +168,7 @@ public class BlockSlide : MonoBehaviour {
 				}
 				break;
 			case MovementStuff.RIGHT:
-				if (Physics.Raycast(transform.localPosition, transform.right, out hit, 2) || Physics.Raycast(transform.localPosition + rightOffset, transform.right, out hit, 2) || Physics.Raycast(transform.localPosition - rightOffset, transform.right, out hit, 2))
+				if (Physics.Raycast(transform.localPosition, transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition + rightOffset, transform.right, out hit, 0.5f) || Physics.Raycast(transform.localPosition - rightOffset, transform.right, out hit, 0.5f))
 				{
 					if (hit.collider.name != "Character")
 					{

@@ -22,6 +22,7 @@ public class GolemAI : AIbase {
 	{
 		//throw new System.NotImplementedException();
 		GolemController.SetTrigger("Harden");
+		gameObject.GetComponent<AudioSource>().Play();
 		if(!deflect)
 		{
 			deflect = true;

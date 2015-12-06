@@ -3342,22 +3342,6 @@ Prefab:
       propertyPath: playerMana
       value: 
       objectReference: {fileID: 268606602}
-    - target: {fileID: 5422686, guid: a24e548d07566da458e3c9ba7e68aabd, type: 2}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6509312, guid: a24e548d07566da458e3c9ba7e68aabd, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6509312, guid: a24e548d07566da458e3c9ba7e68aabd, type: 2}
-      propertyPath: m_Center.y
-      value: -.319999993
-      objectReference: {fileID: 0}
-    - target: {fileID: 5422686, guid: a24e548d07566da458e3c9ba7e68aabd, type: 2}
-      propertyPath: m_Mass
-      value: 2.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a24e548d07566da458e3c9ba7e68aabd, type: 2}
   m_IsPrefabParent: 0
