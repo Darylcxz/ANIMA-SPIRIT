@@ -445,7 +445,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 191142, guid: 6e377d20bb06f4e4195c900f5296c99d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11422034, guid: 6e377d20bb06f4e4195c900f5296c99d, type: 2}
+      propertyPath: range
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e377d20bb06f4e4195c900f5296c99d, type: 2}
@@ -2187,7 +2191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &794867556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2271,6 +2275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 471702773}
   shootPoint: {fileID: 0}
+  range: 5
   NeptoState: 1
 --- !u!1001 &831282832
 Prefab:
@@ -3651,6 +3656,10 @@ Prefab:
     - target: {fileID: 464878, guid: 0a3264c208e5d5d40a26b09ba5986b12, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 150522, guid: 0a3264c208e5d5d40a26b09ba5986b12, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a3264c208e5d5d40a26b09ba5986b12, type: 2}
