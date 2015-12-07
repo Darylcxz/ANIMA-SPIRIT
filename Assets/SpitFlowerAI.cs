@@ -6,6 +6,7 @@ public class SpitFlowerAI : MonoBehaviour {
 	GameObject target;
 	public Rigidbody projectile;
 	public Transform shootPoint;
+	public float range = 5f;
 	Rigidbody _rb;
 	float timer;
 	float distance;
@@ -53,7 +54,7 @@ public class SpitFlowerAI : MonoBehaviour {
 		{
  			case NeptoAI.IDLE:
 				NeptoController.SetBool("isAttacking", false);
-				if (distance < 15 && timer > 0 && !NeptoController.GetBool("isAttacking"))
+				if (distance < range && timer > 0 && !NeptoController.GetBool("isAttacking"))
 				{
 //					Debug.Log("IDLE > SHOOT");
 					NeptoController.SetBool("isAttacking", true);
@@ -70,7 +71,7 @@ public class SpitFlowerAI : MonoBehaviour {
 					Fire();
 				//	Debug.Log("Fire");
 				}
-				if ((timer >= 3.75f || distance > 15) && NeptoController.GetBool("isAttacking"))
+				if ((timer >= 3.75f || distance > range) && NeptoController.GetBool("isAttacking"))
 				{
 				//	Debug.Log("SHOOT > IDLE");
 					NeptoController.SetBool("isAttacking", false);
@@ -93,10 +94,13 @@ public class SpitFlowerAI : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.collider.tag == "Player")
+		if (col.collider.tag == "dagger")
 		{
  			//play Death2 anim
 			//NeptoController.SetBool("isHit", true);
+			NeptoController.SetBool("isHit", true);
+			_rb.isKinematic = false;
+			NeptoState = NeptoAI.DEATH;
 		}
 		if (col.collider.tag == "Ball")
 		{
